@@ -1,0 +1,10 @@
+.bar-footer{
+  height:70px !important;
+}
+
+.test{
+  color: red;
+}
+.bar .button.button-icon:before {
+    font-size: 4px;
+}
