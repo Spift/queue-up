@@ -32,6 +32,7 @@ a.entrybutton:hover{
 
 a.entrybutton:active{
 	border: 0px;
+        background-color: #2e506d;
 }
 
 /* Join and Create button placment adjustment */
