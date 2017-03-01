@@ -9,59 +9,69 @@ angular.module('app.routes', [])
   $stateProvider
     
   
-
-      .state('tabsController', {
+  /*
+  .state('tabsController', {
     url: '/tabcontroller',
     templateUrl: 'templates/tabsController.html',
     abstract:true
-  })
-
+  })*/
   .state('entryPage', {
     url: '/entrypage',
     templateUrl: 'templates/entryPage.html',
-    controller: 'entryPageCtrl'
+    controller: 'entryPageController'
   })
 
   .state('joinRoom', {
     url: '/joinroom',
     templateUrl: 'templates/joinRoom.html',
-    controller: 'joinRoomCtrl'
+    controller: 'joinRoomController'
   })
 
   .state('createRoom', {
     url: '/createroom',
     templateUrl: 'templates/createRoom.html',
-    controller: 'createRoomCtrl'
+    controller: 'createRoomController'
   })
 
   .state('roomSettings', {
     url: '/roomsettings',
     templateUrl: 'templates/roomSettings.html',
-    controller: 'roomSettingsCtrl'
+    controller: 'roomSettingsController'
   })
 
   .state('teacherHelpQueue', {
     url: '/teacherqueue',
     templateUrl: 'templates/teacherHelpQueue.html',
-    controller: 'teacherHelpQueueCtrl'
+    controller: 'teacherHelpQueueController'
   })
 
   .state('studentHelpQueue', {
     url: '/studentqueue',
     templateUrl: 'templates/studentHelpQueue.html',
-    controller: 'studentHelpQueueCtrl'
+    controller: 'studentHelpQueueController'
   })
 
   .state('getHelp', {
     url: '/gethelp',
     templateUrl: 'templates/getHelp.html',
-    controller: 'getHelpCtrl'
+    controller: 'getHelpController'
   })
 
   .state('settings', {
     url: '/settings',
     templateUrl: 'templates/settings.html',
-    controller: 'settingsCtrl'
+    controller: 'settingsController'
+  })
+
+  .state('test', {
+    url: '/test',
+    templateUrl: 'templates/test.html'
+  })
+
+  .state('studentTabBar', {
+    url: '/studentTabBar',
+    templateUrl: 'templates/studentTabBar.html',
+    abstract:true
   })
 
 $urlRouterProvider.otherwise('/entrypage')

@@ -1,26 +1,91 @@
-<ion-view title="Entry Page" id="page3" style="background-color:#4F7279;">
-  <ion-content padding="true" class="has-header">
-    <div class="spacer" style="width: 300px; height: 293px;"></div>
-    <div class="test">
-      <p> asdasd </p>
-    </div>
+<ion-view title="Entry Page" id="page3" hide-back-button="true" hide-nav-bar="true">
+  <ion-content padding="true" >
+    <!-- class="has-header" -->
 
-    <button ui-sref="entryPage" id="getHelp-button52" class="button button-icon icon ion-gear-a">
+    <!-- style="color:#DFD7D7;" Previous navy color background-->
+
+    <!-- spacer -->
+    <div class="spacer" style="width: 300px; height: 2em;"></div>
+
+    <!-- logo -->
     <div>
-      <i class="icon ion-gear-a"></i>
-      <br>
-      <label>Quit</label>
+    <img src="img/uni_hat.png" alt="Logo" width="100em" style="text-align: center; display: block; margin: auto;">
     </div>
-  </button>
 
-    <form id="entryPage-form2" class="list">
-      <label class="item item-input" id="entryPage-input4" name="name_input">
-        <input type="text" placeholder="<ICON> Enter your name">
-      </label>
-    </form>
-    <div id="entryPage-button-bar2" class="button-bar">
-      <a ui-sref="joinRoom" id="entryPage-button12" style="color:#DFD7D7;" class="button button-assertive  button-block">Join Room</a>
-      <a ui-sref="createRoom" id="entryPage-button15" style="color:#DFD7D7;" class="button button-assertive  button-block">Create Room</a>
+    <!-- spacer -->
+    <div class="spacer" style="width: 300px; height: 19em;"></div>
+
+<!--
+     slider test
+  <ion-slide-box options="data.sliderOptions" slider="data.sliderDelegate">
+          <ion-slide>
+            <h3>Thank you for choosing the Awesome App!</h3>
+            <p>
+              We've worked super hard to make you happy.
+            </p>
+            <p>
+              But if you are angry, too bad.
+            </p>
+          </ion-slide>
+          <ion-slide>
+            <h3>Using Awesome</h3>
+            
+            <div id="list">
+              <h5>Just three steps:</h5>
+              <ol>
+                <li>Be awesome</li>
+                <li>Stay awesome</li>
+                <li>There is no step 3</li>
+              </ol>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <h3>Any questions?</h3>
+            <p>
+              Too bad!
+            </p>
+          </ion-slide>
+    </ion-slide-box>
+
+     -->
+
+    <!-- slider -->
+    <div style="height: 12em;">
+      <ion-slides options="data.sliderOptions" slider="data.sliderDelegate">
+        <ion-slide-page show-pager="true">
+          <div class="slider-container ">
+            <center class="slider-header">Students!</center>
+            <center class="slider-body">Det være seg innlagt humor eller tilfeldig genererte ord som ser langt fra troverdige ut. LAD NU VÆRE SIMON. </center>
+          </div>
+        </ion-slide-page>
+        <ion-slide-page pager="true">
+          <div class="slider-container">
+            <center class="slider-header">Instructors!</center>
+            <center class="slider-body">Tired of never being able to help anybody because there's simply not enough time? Then Teacher's Pet&trade; is just what you need!</center>
+          </div>
+        </ion-slide-page>
+        <ion-slide-page pager="true">
+          <div class="slider-container">
+            <center class="slider-header">Hey! Teacher!</center>
+            <center class="slider-body">Leave them kids alone!</center>
+          </div>
+        </ion-slide-page>
+      </ion-slides>
     </div>
+
+    <!-- name input field -->
+    <label id="entrylabel" class="item item-input" name="name_input">
+      <!--<i class="icon ion-ios-paw" style="padding-right:16px;"></i>-->
+      <img id="unihat" src="img/uni_hat.png" alt="Hat">
+      <div style="padding-right: 16px"></div>
+      <input id="entryname" type="text" placeholder="Enter your name">
+    </label>
+  
+    <!-- join and create room buttons -->
+    <div id="entryPage-button-bar2" class="button-bar">
+      <a ui-sref="joinRoom" id="entryPage-join" href="#entryPage-join" class="entrybutton button button-block">Join Room</a>
+      <a ui-sref="createRoom" id="entryPage-create" class="entrybutton button button-block">Create Room</a>
+    </div>
+  
   </ion-content>
 </ion-view>
