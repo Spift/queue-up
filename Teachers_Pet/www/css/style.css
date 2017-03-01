@@ -61,6 +61,7 @@ a.entrybutton:active{
 
 #entryname {
 	color: white;
+	font-size: 74%;
 	/*width: 96%*/
 }
 
@@ -70,7 +71,7 @@ a.entrybutton:active{
 }
 
 
-/* Lecture room background 
+/* Lecture room background
 #page3 {
 	background: url('../img/lecroom1.jpg') no-repeat center center fixed;
   	background-size: cover;
@@ -81,9 +82,9 @@ a.entrybutton:active{
 /* Brown lecturer background */
 #page3 {
 	background: url('../img/logo3.png') no-repeat center center fixed;
-  	background-position: left; 
+  	background-position: left;
   	background-size: cover;
-} 
+}
 
 #unihat{
 	width: 30px;
@@ -105,19 +106,19 @@ a.entrybutton:active{
 }
 
 
-/* The student button bar 
+/* The student button bar
 #student-tab-bar button{
 	border: 1px black;
   	border-style: solid;
 }
 
-/* The teacher button bar 
+/* The teacher button bar
 #teacher-tab-bar{
 	border: 1px black;
   	border-style: solid;
 }
 
-/* Both bottom bars 
+/* Both bottom bars
 .bar.bar-footer.bar-positive button{
 	border: 1px black;
 	border-style: solid;
