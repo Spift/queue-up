@@ -53,20 +53,11 @@ a.entrybutton:active{
 /* Transparent entry label */
 #entrylabel {
 	background-color: rgba(27,21,18,0.4);
-	width: 80%;
+	width: 60%;
 	margin: auto;
  	border: 1px gray;
  	border-radius: 10px;
   /*	border-style: solid none solid none;*/
-}
-
-/* red transparent entry label */
-#entrylabel-error{
-	background-color: rgba(100,0,0,0.4);
-	width: 80%;
-	margin: auto;
- 	border: 1px gray;
- 	border-radius: 10px;
 }
 
 
@@ -80,7 +71,6 @@ a.entrybutton:active{
 #entryname::-webkit-input-placeholder {
   opacity: 1;
 }
-
 
 
 /* Lecture room background
@@ -139,7 +129,7 @@ a.entrybutton:active{
 
 /*slider stufff*/
 ion-slides{
-  height: 20vh !important;
+  height: 24vh !important;
   color: white;
 }
 
@@ -149,8 +139,8 @@ ion-slides{
 }
 
 .slider-container {
-	margin: auto; !important;
-  	width: 90%; !important;
+	margin: auto;
+  	width: 90%;
   	/*height: 50%;*/
 }
 
@@ -158,16 +148,14 @@ ion-slides{
 	font-family: Helvetica, Sans-Serif;
 	margin: auto;
 	color: white;
-	font-weight: bold !important;
-	font-size: 20px;
-	padding-bottom: 8px;
+	font-weight: bold;
+	font-size: 24px;
 }
 
 .slider-body {
 	font-family: Helvetica, Sans-Serif;
 	color: white;
 	font-size: 14px;
-	font-weight: bold !important;
 }
 
 /* Slider bullet options!!!! */
@@ -177,7 +165,6 @@ ion-slides{
 }
 
 .swiper-pagination-bullet-active{
-
 	background: orange !important;
 	border-color: orange !important;
 }
