@@ -5,8 +5,8 @@
         <input type="text" placeholder="<ICON> Enter Room or Teacher code">
       </label>
     </form>
-    <div id="joinRoom-markdown2" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">Database.getRoomInfo()</p>
+    <div ng-repeat="person in people" id="joinRoom-markdown2" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{person.name}}</p>
     </div>
     <div class="spacer" style="width: 300px; height: 258px;"></div>
     <a ui-sref="studentHelpQueue" id="joinRoom-button16" class="button button-assertive  button-block">Join Room</a>

@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
   'entryPageController', 'createRoomController', 'getHelpController', 'joinRoomController', 'roomSettingsController', 'settingsController',
-  'studentHelpQueueController', 'teacherHelpQueueController'])
+  'studentHelpQueueController', 'teacherHelpQueueController', 'localStorageService', 'ngSanitize', 'firebaseDataService', 'firebase'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   //Transitions 
@@ -85,3 +85,13 @@ angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
     }
   };
 });
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCtyg9Jr6cul02l4OW-TYD9Xd3rsSsP2T4",
+  authDomain: "ta-app-9780d.firebaseapp.com",
+  databaseURL: "https://ta-app-9780d.firebaseio.com",
+  storageBucket: "ta-app-9780d.appspot.com",
+  messagingSenderId: "1024668436557"
+  };
+  firebase.initializeApp(config);
