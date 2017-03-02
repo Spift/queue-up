@@ -49,7 +49,7 @@ a.entrybutton:active{
 }
 
 
-/* Transparent entry label */
+/* Transparent name entrypage input label */
 #entrylabel {
 	background-color: rgba(27,21,18,0.4);
 	width: 80%;
@@ -171,12 +171,14 @@ ion-slides{
 
 /* Slider bullet options!!!! */
 .swiper-pagination-bullet {
-	background-color: white !important;
+	color: white !important;
 	border: 0.4em solid !important; /*size of bullets */
+	opacity: 0.3 !important;
 }
 
 .swiper-pagination-bullet-active{
 
 	background: orange !important;
 	border-color: orange !important;
+	opacity: 1.0 !important;
 }

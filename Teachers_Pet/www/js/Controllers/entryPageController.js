@@ -59,7 +59,7 @@
             initialSlide: 0,
             direction: 'horizontal', //or vertical
             speed: 300, //0.3s transition
-            pager:true,
+            pager: true,
             paginationType: 'bullet',
             loop: true
           };
