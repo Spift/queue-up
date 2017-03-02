@@ -13,79 +13,45 @@
     </div>
 
     <!-- spacer -->
-    <div class="spacer" style="width: 300px; height: 19em;"></div>
+    <div class="spacer" style="width: 300px; height: 21em;"></div>
 
-<!--
-     slider test
-  <ion-slide-box options="data.sliderOptions" slider="data.sliderDelegate">
-          <ion-slide>
-            <h3>Thank you for choosing the Awesome App!</h3>
-            <p>
-              We've worked super hard to make you happy.
-            </p>
-            <p>
-              But if you are angry, too bad.
-            </p>
-          </ion-slide>
-          <ion-slide>
-            <h3>Using Awesome</h3>
-            
-            <div id="list">
-              <h5>Just three steps:</h5>
-              <ol>
-                <li>Be awesome</li>
-                <li>Stay awesome</li>
-                <li>There is no step 3</li>
-              </ol>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <h3>Any questions?</h3>
-            <p>
-              Too bad!
-            </p>
-          </ion-slide>
-    </ion-slide-box>
-
-     -->
 
     <!-- slider -->
-    <div style="height: 12em;">
+    <div style="height: 10em;">
       <ion-slides options="data.sliderOptions" slider="data.sliderDelegate">
-        <ion-slide-page show-pager="true">
+        <ion-slide-page show-pager="true" ng-repeat="sliderPage in sliderData">
           <div class="slider-container ">
-            <center class="slider-header">Students!</center>
-            <center class="slider-body">Det være seg innlagt humor eller tilfeldig genererte ord som ser langt fra troverdige ut. LAD NU VÆRE SIMON. </center>
-          </div>
-        </ion-slide-page>
-        <ion-slide-page pager="true">
-          <div class="slider-container">
-            <center class="slider-header">Instructors!</center>
-            <center class="slider-body">Tired of never being able to help anybody because there's simply not enough time? Then Teacher's Pet&trade; is just what you need!</center>
-          </div>
-        </ion-slide-page>
-        <ion-slide-page pager="true">
-          <div class="slider-container">
-            <center class="slider-header">Hey! Teacher!</center>
-            <center class="slider-body">Leave them kids alone!</center>
+            <center class="slider-header">{{sliderPage.head}}</center>
+            <center ng-bind-html="sliderPage.body" class="slider-body"></center>
           </div>
         </ion-slide-page>
       </ion-slides>
     </div>
 
+    <!-- form error messages 
+    <div class="padding">
+      <p ng-show="nameForm.entryname.$error.required && nameForm.entryname.$dirty" class="fieldError">* Username is required</p>
+      <p ng-show="nameForm.entryname.$error.minlength && nameForm.entryname.$dirty" class="fieldError">* Username must be minimum 3 characters</p>
+      <p ng-show="nameForm.entryname.$error.maxlength && nameForm.entryname.$dirty" class="fieldError">* Username must be maximum 25 characters</p>
+    </div>
+    -->
+
     <!-- name input field -->
-    <label id="entrylabel" class="item item-input" name="name_input">
-      <!--<i class="icon ion-ios-paw" style="padding-right:16px;"></i>-->
-      <img id="unihat" src="img/uni_hat.png" alt="Hat">
-      <div style="padding-right: 16px"></div>
-      <input id="entryname" type="text" placeholder="Enter your name">
-    </label>
-  
+    <form name="nameForm" novalidate>
+      <label id="entrylabel" class="item item-input" name="name_input">
+        <!--<i class="icon ion-ios-paw" style="padding-right:16px;"></i>-->
+        <img id="unihat" src="img/uni_hat.png" alt="Hat">
+        <div style="padding-right: 16px"></div>
+        <input id="entryname" name="entryname" required type="text" ng-minlength="3" ng-maxlength="25" placeholder="Enter your name" ng-model='formData.name'>
+      </label>
+    </form>
+
     <!-- join and create room buttons -->
     <div id="entryPage-button-bar2" class="button-bar">
-      <a ui-sref="joinRoom" id="entryPage-join" href="#entryPage-join" class="entrybutton button button-block">Join Room</a>
-      <a ui-sref="createRoom" id="entryPage-create" class="entrybutton button button-block">Create Room</a>
+      <a ng-click="joinRoomPressed()" id="entryPage-join" class="entrybutton button button-block" ng-disabled="nameForm.$invalid">Join Room</a>
+      <a ng-click="createRoomPressed()" id="entryPage-create" class="entrybutton button button-block" ng-disabled="nameForm.$invalid">Create Room</a>
     </div>
+    
   
   </ion-content>
 </ion-view>
