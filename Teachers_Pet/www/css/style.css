@@ -3,7 +3,7 @@ body{
 }
 
 .bar-footer{
-  height:60px !important;
+  height:10% !important;
 }
 
 .test{
@@ -92,7 +92,7 @@ a.entrybutton:active{
 
 /* Brown lecturer background */
 #page3 {
-	background: url('../img/logo3.png') no-repeat center center fixed;
+	background: url('../img/bg_1.png') no-repeat center center fixed;
   	background-position: left;
   	background-size: cover;
 }
@@ -107,13 +107,11 @@ a.entrybutton:active{
 #queueicon{
 	width: 1.85em;
 	margin-bottom: -0.5em;
-	filter: invert(100%);
 }
 
 #gethelpicon{
 	width: 1.65em;
 	margin-bottom: -0.35em;
-	filter: invert(100%);
 }
 
 
@@ -165,7 +163,7 @@ ion-slides{
 .slider-body {
 	font-family: Helvetica, Sans-Serif;
 	color: white;
-	font-size: 14px;
+	font-size: 87.5%;
 	font-weight: bold !important;
 }
 
