@@ -34,10 +34,6 @@
         }
       ];
 
-      $timeout(function() {
-        $state.go('entrypage');
-      }, 2000);
-
       /*
        * Join Room Button press. Always saves the input content to localstorage
        */
