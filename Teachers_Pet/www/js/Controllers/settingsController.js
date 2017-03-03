@@ -18,6 +18,6 @@
         $ionicNavBarDelegate.title('Settings');
 
         //Show back button
-         $ionicNavBarDelegate.showBackButton(true);
+        $ionicNavBarDelegate.showBackButton(true);
     }
 })();

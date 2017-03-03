@@ -23,6 +23,7 @@ p.icontext{
 a.entrybutton {
 	background-color: #355c7d;
 	color: white;
+	transition: all 0.2s ease 0s;
 }
 
 a.entrybutton:hover{
@@ -117,8 +118,8 @@ a.entrybutton:active{
 }
 
 .bar.bar-footer.bar-royal {
-	background-color: #517899;
-	border-color: #517899;
+	background-color: #517899 !important;
+	border-color: #517899 !important;
 }
 
 /* The student button bar
@@ -148,13 +149,14 @@ ion-slides{
 
 .slider-slide
 {
-  text-align: center;
+  	text-align: center;
 }
 
 .slider-container {
+	border-color: red;
 	color: blue !important;
-	margin: auto; !important;
-  	width: 90%; !important;
+	margin: auto !important;
+  	width: 90% !important;
   	/*height: 50%;*/
 }
 
@@ -164,7 +166,8 @@ ion-slides{
 	color: white;
 	font-weight: bold !important;
 	font-size: 20px;
-	padding-bottom: 8px;
+	padding-bottom: 4%;
+	padding-top: 8%;
 }
 
 .slider-body {
@@ -176,13 +179,16 @@ ion-slides{
 
 /* Slider bullet options!!!! */
 .swiper-pagination-bullet {
+	margin-bottom: 27% !important;
 	color: white !important;
 	border: 0.4em solid !important; /*size of bullets */
 	opacity: 0.3 !important;
 }
 
 .swiper-pagination-bullet-active{
+	margin-bottom: 26.2% !important;
 	background: white !important;
 	border-color: white !important;
 	opacity: 1.0 !important;
+	border: 0.55em solid !important;
 }
