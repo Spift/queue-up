@@ -5,7 +5,7 @@
         .module('entryPageController', [])
         .controller('entryPageController', entryPageController);
 
-    function entryPageController($scope, $stateParams, $state, localStorageService) {
+    function entryPageController($scope, $stateParams, $state, localStorageService, $timeout) {
     	console.log('entry page controller fired');
       console.log('Saved name:' + localStorageService.getName());
       $scope.formData = {};
@@ -33,6 +33,10 @@
           body: "Simon simon simon simon, simon, simon simon. Simon simon simon."
         }
       ];
+
+      $timeout(function() {
+        $state.go('entrypage');
+      }, 2000);
 
       /*
        * Join Room Button press. Always saves the input content to localstorage

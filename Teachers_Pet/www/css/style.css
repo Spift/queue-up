@@ -71,7 +71,9 @@ a.entrybutton:active{
 
 #entryname {
 	color: white;
-	font-size: 74%;
+
+	font-size: 80%;
+	margin-top: 0%;
 	/*width: 96%*/
 }
 
@@ -114,6 +116,10 @@ a.entrybutton:active{
 	margin-bottom: -0.35em;
 }
 
+.bar.bar-footer.bar-royal {
+	background-color: #517899;
+	border-color: #517899;
+}
 
 /* The student button bar
 #student-tab-bar button{
@@ -176,7 +182,6 @@ ion-slides{
 }
 
 .swiper-pagination-bullet-active{
-
 	background: white !important;
 	border-color: white !important;
 	opacity: 1.0 !important;
