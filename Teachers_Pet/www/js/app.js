@@ -11,7 +11,7 @@ angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   //Transitions 
-  //$ionicConfigProvider.views.transition('none');
+  $ionicConfigProvider.views.transition('platform');
 
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
 

@@ -24,54 +24,50 @@ angular.module('app.routes', [])
   .state('joinRoom', {
     url: '/joinroom',
     templateUrl: 'templates/joinRoom.html',
-    controller: 'joinRoomController'
-  })
-
-  .state('createRoom', {
-    url: '/createroom',
-    templateUrl: 'templates/createRoom.html',
-    controller: 'createRoomController'
-  })
-
-  .state('roomSettings', {
-    url: '/roomsettings',
-    templateUrl: 'templates/roomSettings.html',
-    controller: 'roomSettingsController'
-  })
-
-  .state('teacherHelpQueue', {
-    url: '/teacherqueue',
-    templateUrl: 'templates/teacherHelpQueue.html',
-    controller: 'teacherHelpQueueController'
-  })
-
-  .state('studentHelpQueue', {
-    url: '/studentqueue',
-    templateUrl: 'templates/studentHelpQueue.html',
-    controller: 'studentHelpQueueController'
-  })
-
-  .state('getHelp', {
-    url: '/gethelp',
-    templateUrl: 'templates/getHelp.html',
-    controller: 'getHelpController'
+    controller: 'joinRoomController',
+    cache: false
   })
 
   .state('settings', {
     url: '/settings',
     templateUrl: 'templates/settings.html',
-    controller: 'settingsController'
+    controller: 'settingsController',
+    cache: false
   })
 
-  .state('test', {
-    url: '/test',
-    templateUrl: 'templates/test.html'
+  .state('createRoom', {
+    url: '/createroom',
+    templateUrl: 'templates/createRoom.html',
+    controller: 'createRoomController',
+    cache: false
   })
 
-  .state('studentTabBar', {
-    url: '/studentTabBar',
-    templateUrl: 'templates/studentTabBar.html',
-    abstract:true
+  .state('roomSettings', {
+    url: '/roomsettings',
+    templateUrl: 'templates/roomSettings.html',
+    controller: 'roomSettingsController',
+    cache: false
+  })
+
+  .state('teacherHelpQueue', {
+    url: '/teacherqueue',
+    templateUrl: 'templates/teacherHelpQueue.html',
+    controller: 'teacherHelpQueueController',
+    cache: false
+  })
+
+  .state('studentHelpQueue', {
+    url: '/studentqueue',
+    templateUrl: 'templates/studentHelpQueue.html',
+    controller: 'studentHelpQueueController',
+    cache: false
+  })
+
+  .state('getHelp', {
+    url: '/gethelp',
+    templateUrl: 'templates/getHelp.html',
+    controller: 'getHelpController',
+    cache: false
   })
 
 $urlRouterProvider.otherwise('/entrypage')
