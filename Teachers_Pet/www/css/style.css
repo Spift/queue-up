@@ -1,10 +1,9 @@
-/*EMIL GIT TEST*/
 body{
 	position: static;
 }
 
 .bar-footer{
-  height:60px !important;
+  height:10% !important;
 }
 
 .test{
@@ -50,7 +49,7 @@ a.entrybutton:active{
 }
 
 
-/* Transparent entry label */
+/* Transparent name entrypage input label */
 #entrylabel {
 	background-color: rgba(27,21,18,0.4);
 	width: 80%;
@@ -72,7 +71,9 @@ a.entrybutton:active{
 
 #entryname {
 	color: white;
-	/*font-size: 74%;*/
+
+	font-size: 80%;
+	margin-top: 0%;
 	/*width: 96%*/
 }
 
@@ -93,7 +94,7 @@ a.entrybutton:active{
 
 /* Brown lecturer background */
 #page3 {
-	background: url('../img/logo3.png') no-repeat center center fixed;
+	background: url('../img/bg_1.png') no-repeat center center fixed;
   	background-position: left;
   	background-size: cover;
 }
@@ -108,13 +109,11 @@ a.entrybutton:active{
 #queueicon{
 	width: 1.85em;
 	margin-bottom: -0.5em;
-	filter: invert(100%);
 }
 
 #gethelpicon{
 	width: 1.65em;
 	margin-bottom: -0.35em;
-	filter: invert(100%);
 }
 
 .bar.bar-footer.bar-royal {
@@ -170,18 +169,19 @@ ion-slides{
 .slider-body {
 	font-family: Helvetica, Sans-Serif;
 	color: white;
-	font-size: 14px;
+	font-size: 87.5%;
 	font-weight: bold !important;
 }
 
 /* Slider bullet options!!!! */
 .swiper-pagination-bullet {
-	background-color: white !important;
+	color: white !important;
 	border: 0.4em solid !important; /*size of bullets */
+	opacity: 0.3 !important;
 }
 
 .swiper-pagination-bullet-active{
-
 	background: white !important;
 	border-color: white !important;
+	opacity: 1.0 !important;
 }

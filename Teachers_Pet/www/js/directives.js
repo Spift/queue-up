@@ -1,4 +1,4 @@
-var app = angular.module('app.directives', [])
+var app = angular.module('app.directives', []);
 
 app.directive('studentTab', function(){
 	return {

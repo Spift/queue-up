@@ -5,7 +5,7 @@
         .module('entryPageController', [])
         .controller('entryPageController', entryPageController);
 
-    function entryPageController($scope, $stateParams, $state, localStorageService) {
+    function entryPageController($scope, $stateParams, $state, localStorageService, $timeout) {
     	console.log('entry page controller fired');
       console.log('Saved name:' + localStorageService.getName());
       $scope.formData = {};
@@ -34,6 +34,10 @@
         }
       ];
 
+      $timeout(function() {
+        $state.go('entrypage');
+      }, 2000);
+
       /*
        * Join Room Button press. Always saves the input content to localstorage
        */
@@ -59,7 +63,7 @@
             initialSlide: 0,
             direction: 'horizontal', //or vertical
             speed: 300, //0.3s transition
-            pager:true,
+            pager: true,
             paginationType: 'bullet',
             loop: true
           };

@@ -5,22 +5,22 @@
     <!-- style="color:#DFD7D7;" Previous navy color background-->
 
     <!-- spacer -->
-    <div class="spacer" style="width: 300px; height: 2em;"></div>
+    <div class="spacer" style="margin-top: 5%;"></div>
 
     <!-- logo -->
     <div>
-    <img src="img/uni_hat.png" alt="Logo" width="100em" style="text-align: center; display: block; margin: auto;">
+    <img src="img/uni_hat.png" alt="Logo" width="45%" style="text-align: center; display: block; margin: auto;">
     </div>
 
     <!-- spacer -->
-    <div class="spacer" style="width: 300px; height: 21em;"></div>
+    <div class="spacer" style="margin-top: 75%;"></div>
 
 
     <!-- slider -->
-    <div style="height: 10em;">
+    <div style="margin-top: 75%;">
       <ion-slides options="data.sliderOptions" slider="data.sliderDelegate">
         <ion-slide-page show-pager="true" ng-repeat="sliderPage in sliderData">
-          <div class="slider-container ">
+          <div class="slider-container">
             <center class="slider-header">{{sliderPage.head}}</center>
             <center ng-bind-html="sliderPage.body" class="slider-body"></center>
           </div>
@@ -28,21 +28,21 @@
       </ion-slides>
     </div>
 
-    <!-- form error messages 
+    <!-- form error messages
     <div class="padding">
       <p ng-show="nameForm.entryname.$error.required && nameForm.entryname.$dirty" class="fieldError">* Username is required</p>
       <p ng-show="nameForm.entryname.$error.minlength && nameForm.entryname.$dirty" class="fieldError">* Username must be minimum 3 characters</p>
       <p ng-show="nameForm.entryname.$error.maxlength && nameForm.entryname.$dirty" class="fieldError">* Username must be maximum 25 characters</p>
     </div>
-    -->
+  -->
 
     <!-- name input field -->
     <form name="nameForm" novalidate>
       <label id="entrylabel" class="item item-input" name="name_input">
         <!--<i class="icon ion-ios-paw" style="padding-right:16px;"></i>-->
         <img id="unihat" src="img/uni_hat.png" alt="Hat">
-        <div style="padding-right: 16px"></div>
-        <input id="entryname" name="entryname" required type="text" ng-minlength="3" ng-maxlength="25" placeholder="Enter your name" ng-model='formData.name'>
+        <div style="padding-right: 7.5%"></div>
+        <input id="entryname" name="entryname" required type="text" ng-minlength="2" ng-maxlength="25" placeholder="Enter your name" ng-model='formData.name'>
       </label>
     </form>
 
@@ -51,7 +51,7 @@
       <a ng-click="joinRoomPressed()" id="entryPage-join" class="entrybutton button button-block" ng-disabled="nameForm.$invalid">Join Room</a>
       <a ng-click="createRoomPressed()" id="entryPage-create" class="entrybutton button button-block" ng-disabled="nameForm.$invalid">Create Room</a>
     </div>
-    
-  
+
+
   </ion-content>
 </ion-view>
