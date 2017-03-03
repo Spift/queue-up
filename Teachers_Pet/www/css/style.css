@@ -71,7 +71,8 @@ a.entrybutton:active{
 
 #entryname {
 	color: white;
-	font-size: 74%;
+	font-size: 80%;
+	margin-top: 0%;
 	/*width: 96%*/
 }
 
