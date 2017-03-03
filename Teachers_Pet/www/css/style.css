@@ -6,8 +6,8 @@ body{
   height:10% !important;
 }
 
-.test{
-  color: red;
+.bar .title {
+	text-align: center;
 }
 .bar .button.button-icon:before {
     font-size: 4px;
@@ -71,6 +71,7 @@ a.entrybutton:active{
 
 #entryname {
 	color: white;
+
 	font-size: 80%;
 	margin-top: 0%;
 	/*width: 96%*/
@@ -115,6 +116,10 @@ a.entrybutton:active{
 	margin-bottom: -0.35em;
 }
 
+.bar.bar-footer.bar-royal {
+	background-color: #517899;
+	border-color: #517899;
+}
 
 /* The student button bar
 #student-tab-bar button{
@@ -147,6 +152,7 @@ ion-slides{
 }
 
 .slider-container {
+	color: blue !important;
 	margin: auto; !important;
   	width: 90%; !important;
   	/*height: 50%;*/
@@ -176,8 +182,7 @@ ion-slides{
 }
 
 .swiper-pagination-bullet-active{
-
-	background: orange !important;
-	border-color: orange !important;
+	background: white !important;
+	border-color: white !important;
 	opacity: 1.0 !important;
 }

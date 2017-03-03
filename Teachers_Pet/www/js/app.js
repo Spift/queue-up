@@ -10,8 +10,9 @@ angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
   'studentHelpQueueController', 'teacherHelpQueueController', 'localStorageService', 'ngSanitize', 'firebaseDataService', 'firebase'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
-  //Transitions
-  //$ionicConfigProvider.views.transition('none');
+  //Transitions 
+  $ionicConfigProvider.views.transition('platform');
+
 
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
 
