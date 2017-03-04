@@ -11,8 +11,9 @@ angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
   'roomDataService'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
-  //Transitions
-  //$ionicConfigProvider.views.transition('none');
+  //Transitions 
+  $ionicConfigProvider.views.transition('platform');
+
 
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
 

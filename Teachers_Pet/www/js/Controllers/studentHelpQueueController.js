@@ -5,18 +5,11 @@
         .module('studentHelpQueueController', [])
         .controller('studentHelpQueueController', studentHelpQueueController);
 
-    function studentHelpQueueController($scope, $stateParams, $state, roomDataService, firebaseDataService) {
-    	console.log('entry page controller fired');
+
+    function studentHelpQueueController($scope, $stateParams, $state, roomDataService, firebaseDataService, $ionicNavBarDelegate) {
+    	console.log('student page controller fired');
     	
         $scope.room = roomDataService.getRoom();
-
-
-        /*
-    	 * dummy function
-    	 */
-    	$scope.test = function() {
-    		console.log("i do nothing")
-    	}
 
         /* JUST FOr testing */
         $scope.dummyData = [
@@ -37,6 +30,12 @@
           body: "Simon simon simon simon, simon, simon simon. Simon simon simon."
         }
         ];
+
+        // Update the title of the view
+        $ionicNavBarDelegate.title('Student Help Queue');
+
+        //Hide back button
+        $ionicNavBarDelegate.showBackButton(false);
     }
 
 

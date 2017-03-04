@@ -5,16 +5,22 @@
         .module('getHelpController', [])
         .controller('getHelpController', getHelpController);
 
-    function getHelpController($scope, $stateParams, $state) {
+    function getHelpController($scope, $stateParams, $state, $ionicNavBarDelegate) {
     	console.log('get help controller fired');
-    	/*
-    	 * dummy function
-    	 */
+    	
+        // ng-model from help input body
+        $scope.getHelpBody;
+
     	$scope.test = function() {
     		console.log("i do nothing");
     	}
 
-        $scope.getHelpBody;
+        // Update the title of the view
+        $ionicNavBarDelegate.title('Get Help');
+
+        //Hide back button
+        $ionicNavBarDelegate.showBackButton(false);
+
     }
 
 

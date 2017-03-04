@@ -11,9 +11,8 @@ body{
 	border-color: #517899;
 }
 
-/*Bliver test nogensinde brugt?*/
-.test{
-  color: red;
+.bar .title {
+	text-align: center;
 }
 
 .bar .button.button-icon:before {
@@ -24,6 +23,23 @@ p.icontext{
   margin-top: -12px;
   font-size: 12px;
   margin-left: -4px;
+}
+
+/* Color entry page buttons */
+a.entrybutton {
+	background-color: #355c7d;
+	color: white;
+	transition: all 0.2s ease 0s;
+}
+
+a.entrybutton:hover{
+	color: white;
+	background-color: #2e506d;
+}
+
+a.entrybutton:active{
+	border: 0px;
+        background-color: #2e506d;
 }
 
 /* Join and Create button placment adjustment */
@@ -52,8 +68,10 @@ p.icontext{
 */
 
 
-
-
+.bar.bar-footer.bar-royal {
+	background-color: #517899 !important;
+	border-color: #517899 !important;
+}
 
 /* The student button bar
 #student-tab-bar button{
@@ -75,3 +93,54 @@ p.icontext{
 */
 
 
+/*slider stufff*/
+ion-slides{
+  height: 20vh !important;
+  color: white;
+}
+
+.slider-slide
+{
+  	text-align: center;
+}
+
+.slider-container {
+	border-color: red;
+	color: blue !important;
+	margin: auto !important;
+  	width: 90% !important;
+  	/*height: 50%;*/
+}
+
+.slider-header {
+	font-family: Helvetica, Sans-Serif;
+	margin: auto;
+	color: white;
+	font-weight: bold !important;
+	font-size: 20px;
+	padding-bottom: 4%;
+	padding-top: 8%;
+}
+
+.slider-body {
+	font-family: Helvetica, Sans-Serif;
+	color: white;
+	font-size: 87.5%;
+	font-weight: bold !important;
+}
+
+/* Slider bullet options!!!! */
+.swiper-pagination-bullet {
+	margin-bottom: 27% !important;
+	color: white !important;
+	border: 0.4em solid !important; /*size of bullets */
+	opacity: 0.3 !important;
+}
+
+.swiper-pagination-bullet-active{
+	margin-bottom: 26.2% !important;
+	background: white !important;
+	border-color: white !important;
+	opacity: 1.0 !important;
+	border: 0.55em solid !important;
+}

@@ -5,7 +5,7 @@
         .module('settingsController', [])
         .controller('settingsController', settingsController);
 
-    function settingsController($scope, $stateParams, $state, localStorageService) {
+    function settingsController($scope, $stateParams, $state, localStorageService, $ionicNavBarDelegate) {
     	console.log('settings controller fired');
         $scope.formData = {};
         $scope.nameHasNotChanged = false;
@@ -32,7 +32,11 @@
             localStorageService.setName($scope.formData.name);
             $scope.nameHasNotChanged = true;
         }
+
+        // Update the title of the view
+        $ionicNavBarDelegate.title('Settings');
+
+        //Show back button
+        $ionicNavBarDelegate.showBackButton(true);
     }
-
-
 })();

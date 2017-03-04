@@ -5,7 +5,7 @@
         .module('joinRoomController', [])
         .controller('joinRoomController', joinRoomController);
 
-    function joinRoomController($scope, $stateParams, $state, $firebaseObject, $firebaseArray, firebaseDataService, $ionicLoading) {
+    function joinRoomController($scope, $stateParams, $state, $firebaseObject, $firebaseArray, firebaseDataService, $ionicLoading, $ionicNavBarDelegate) {
     	console.log('entry page controller fired');
         $scope.validRoomData = false; // show/hide room info box
         $scope.formData = {};
@@ -69,7 +69,12 @@
             $ionicLoading.hide().then(function(){
                console.log("The loading indicator is now hidden");
             });
-        };
+        }
+
+        // Update the title of the view
+        $ionicNavBarDelegate.title('Join Room!');
+        //Show back button
+        $ionicNavBarDelegate.showBackButton(true);
     }
 
 
