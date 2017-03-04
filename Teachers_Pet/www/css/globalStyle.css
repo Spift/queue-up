@@ -1,0 +1,19 @@
+/* Universal stylings, used across different views*/
+
+/* The standard styling for all buttons in the app */
+a.teacherspet-button {
+	background-color: #355c7d;
+	color: white;
+	border-radius: 10px;
+}
+
+a.teacherspet-button:hover {
+	background-color: #2e506d;
+	color: white;
+}
+
+
+a.teacherspet-button:active {
+	border: 0px;
+	background-color: #2e506d;
+}

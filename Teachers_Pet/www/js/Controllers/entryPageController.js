@@ -33,7 +33,6 @@
           body: "Simon simon simon simon, simon, simon simon. Simon simon simon."
         }
       ];
-
       /*
        * Join Room Button press. Always saves the input content to localstorage
        */

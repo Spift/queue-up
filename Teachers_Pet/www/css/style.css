@@ -3,12 +3,18 @@ body{
 }
 
 .bar-footer{
-  height:10% !important;
+  height:10% !important; 
+}
+
+.bar.bar-footer.bar-royal {
+	background-color: #517899;
+	border-color: #517899;
 }
 
 .bar .title {
 	text-align: center;
 }
+
 .bar .button.button-icon:before {
     font-size: 4px;
 }
@@ -42,7 +48,6 @@ a.entrybutton:active{
 	border-radius: 10px;
 	/*margin-right: 30px;*/
 }
-
 #entryPage-create {
 	margin-left: 10px;
 	border-radius: 10px;
@@ -50,38 +55,7 @@ a.entrybutton:active{
 }
 
 
-/* Transparent name entrypage input label */
-#entrylabel {
-	background-color: rgba(27,21,18,0.4);
-	width: 80%;
-	margin: auto;
- 	border: 1px gray;
- 	border-radius: 10px;
-  /*	border-style: solid none solid none;*/
-}
 
-/* red transparent entry label */
-#entrylabel-error{
-	background-color: rgba(100,0,0,0.4);
-	width: 80%;
-	margin: auto;
- 	border: 1px gray;
- 	border-radius: 10px;
-}
-
-
-#entryname {
-	color: white;
-
-	font-size: 80%;
-	margin-top: 0%;
-	/*width: 96%*/
-}
-
-/* Entrypage name placeholder Color */
-#entryname::-webkit-input-placeholder {
-  opacity: 1;
-}
 
 
 
@@ -93,29 +67,6 @@ a.entrybutton:active{
 }
 */
 
-/* Brown lecturer background */
-#page3 {
-	background: url('../img/bg_1.png') no-repeat center center fixed;
-  	background-position: left;
-  	background-size: cover;
-}
-
-#unihat{
-	width: 30px;
-	margin-left:-5px;
-	margin-right: 8px;
-	margin-top: 2px;
-}
-
-#queueicon{
-	width: 1.85em;
-	margin-bottom: -0.5em;
-}
-
-#gethelpicon{
-	width: 1.65em;
-	margin-bottom: -0.35em;
-}
 
 .bar.bar-footer.bar-royal {
 	background-color: #517899 !important;
@@ -141,6 +92,7 @@ a.entrybutton:active{
 	border-style: solid;
 }
 */
+
 
 /*slider stufff*/
 ion-slides{

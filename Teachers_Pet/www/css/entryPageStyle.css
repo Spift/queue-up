@@ -1,0 +1,99 @@
+/* Stylings specific to the entryPage view */
+
+/* Brown lecturer background */
+#entrypage {
+	background: url('../img/bg_1.png') no-repeat center center fixed;
+  	background-position: left;
+  	background-size: cover;
+}
+
+#unihat{
+	width: 30px;
+	margin-left:-5px;
+	margin-right: 8px;
+	margin-top: 2px;
+}
+
+#queueicon{
+	width: 1.85em;
+	margin-bottom: -0.5em;
+}
+
+#gethelpicon{
+	width: 1.65em;
+	margin-bottom: -0.35em;
+}
+
+/* Input field for giving your name*/
+#entrylabel {/* Transparent name entrypage input label */
+	background-color: rgba(27,21,18,0.4);
+	width: 80%;
+	margin: auto;
+ 	border: 1px gray;
+ 	border-radius: 10px;
+  /*	border-style: solid none solid none;*/
+}	
+#entrylabel-error{/* red transparent entry label */
+	background-color: rgba(100,0,0,0.4);
+	width: 80%;
+	margin: auto;
+ 	border: 1px gray;
+ 	border-radius: 10px;
+}
+#entryname {
+	color: white;
+
+	font-size: 80%;
+	margin-top: 0%;
+	/*width: 96%*/
+}	
+#entryname::-webkit-input-placeholder {/* Entrypage name placeholder Color */
+  opacity: 1;
+}
+
+/*slider stufff*/
+ion-slides{
+  height: 20vh !important;
+  color: white;
+}
+
+.slider-slide
+{
+  text-align: center;
+}
+
+.slider-container {
+	margin: auto; !important;
+  	width: 90%; !important;
+  	/*height: 50%;*/
+}
+
+.slider-header {
+	font-family: Helvetica, Sans-Serif;
+	margin: auto;
+	color: white;
+	font-weight: bold !important;
+	font-size: 20px;
+	padding-bottom: 8px;
+}
+
+.slider-body {
+	font-family: Helvetica, Sans-Serif;
+	color: white;
+	font-size: 87.5%;
+	font-weight: bold !important;
+}
+
+/* Slider bullet options!!!! */
+.swiper-pagination-bullet {
+	color: white !important;
+	border: 0.4em solid !important; /*size of bullets */
+	opacity: 0.3 !important;
+}
+
+.swiper-pagination-bullet-active{
+	background: white !important;
+	border-color: white !important;
+	opacity: 1.0 !important;
+}
+
