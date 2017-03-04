@@ -86,14 +86,14 @@ ion-slides{
 
 /* Slider bullet options!!!! */
 .swiper-pagination-bullet {
-	margin-bottom: 27% !important;
+	margin-bottom: 23% !important;
 	color: white !important;
 	border: 0.4em solid !important; /*size of bullets */
 	opacity: 0.3 !important;
 }
 
 .swiper-pagination-bullet-active{
-	margin-bottom: 26.2% !important;
+	margin-bottom: 22.2% !important;
 	color: white !important;
 	opacity: 1.0 !important;
 	border: 0.75em solid !important;
