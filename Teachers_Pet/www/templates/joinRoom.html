@@ -1,14 +1,41 @@
 <ion-view title="Join Room" id="page4">
   <ion-content padding="true" class="has-header">
-    <form id="joinRoom-form3" class="list">
+    
+    <!-- Room code input -->
+    <form name="roomCodeForm" class="list">
       <label class="item item-input" id="joinRoom-input6" name="room_code">
-        <input type="text" placeholder="<ICON> Enter Room or Teacher code">
+        <i class="icon ion-pound placeholder-icon" style="padding-right: 1em; "></i>
+        <input id="room-code-input" type="text" placeholder="Enter Room Code (try 'room1')" ng-model="formData.code">
       </label>
     </form>
-    <div ng-repeat="person in people" id="joinRoom-markdown2" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">{{person.name}}</p>
+
+    <!-- submit button -->
+    <button ng-click="submitPressed(formData.code)" class="button teacherspet-button button-block">Submit</button> <!-- VERY HACKY, FIX ME -->
+
+    <!-- Card showing Room information. Only visible after pressing submit and given that the code is correct. 'room1' works for now -->
+    <div class="card" ng-show="validRoomData">
+      <div class="item item-divider">
+        {{room.title}}
+        <div class="item-icon-right">
+          <div class="icon ion-ios-close-empty" ng-click="closeCard(roomCodeForm)"></div> <!-- if left as an <a> tag, the close icon becomes blue???-->
+        </div>
+      </div>
+      <div class="item item-text-wrap">
+        {{room.description}}
+        <div class="row">
+      </div>
+      </div>
+      <div class="item item-divider">
+        <div class="col text-center" ng-click="joinRoomPressed()">
+            <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Join this Room&nbsp;</a>
+        </div>
+      </div>
+      </div>
     </div>
-    <div class="spacer" style="width: 300px; height: 258px;"></div>
-    <a ui-sref="studentHelpQueue" id="joinRoom-button16" class="button button-assertive  button-block">Join Room</a>
+   
+    <!-- testin stuff --> 
+    <!--div ng-repeat="person in people" id="joinRoom-markdown2" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{person.name}}</p>
+    </div-->
   </ion-content>
 </ion-view>

@@ -1,4 +1,4 @@
-<ion-view title="Entry Page" id="page3" hide-back-button="true" hide-nav-bar="true">
+<ion-view title="Entry Page" id="entrypage" hide-back-button="true" hide-nav-bar="true">
   <ion-content padding="true" >
     <!-- class="has-header" -->
 
@@ -17,7 +17,7 @@
 
 
     <!-- slider -->
-    <div style="margin-top: 75%;">
+    <div style="margin-top: 70%;">
       <ion-slides options="data.sliderOptions" slider="data.sliderDelegate">
         <ion-slide-page show-pager="true" ng-repeat="sliderPage in sliderData">
           <div class="slider-container">
@@ -35,7 +35,6 @@
       <p ng-show="nameForm.entryname.$error.maxlength && nameForm.entryname.$dirty" class="fieldError">* Username must be maximum 25 characters</p>
     </div>
   -->
-
     <!-- name input field -->
     <form name="nameForm" novalidate>
       <label id="entrylabel" class="item item-input" name="name_input">
@@ -48,8 +47,8 @@
 
     <!-- join and create room buttons -->
     <div id="entryPage-button-bar2" class="button-bar">
-      <a ng-click="joinRoomPressed()" id="entryPage-join" class="entrybutton button button-block" ng-disabled="nameForm.$invalid">Join Room</a>
-      <a ng-click="createRoomPressed()" id="entryPage-create" class="entrybutton button button-block" ng-disabled="nameForm.$invalid">Create Room</a>
+      <a ng-click="joinRoomPressed()" id="entryPage-join" class="teacherspet-button button button-block" ng-disabled="nameForm.$invalid">Join Room</a>
+      <a ng-click="createRoomPressed()" id="entryPage-create" class="teacherspet-button button button-block" ng-disabled="nameForm.$invalid">Create Room</a>
     </div>
 
 

@@ -1,14 +1,25 @@
 <ion-view title="Settings" id="page12">
   <ion-content padding="true" class="has-header">
     <ion-list id="settings-list7">
-      <label class="item item-input" id="settings-input16">
-        <input type="text" placeholder="Current Name">
-      </label>
+      
+      <!-- update name list item -->
+      <form name="nameForm" novalidate>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+              <input type="text" placeholder="Your name" ng-model='formData.name' id="update-name-input" required type="text" ng-minlength="2" ng-maxlength="25">
+            </label>
+            <a ng-click="refreshNamePressed()" class="button button-small" ng-disabled="nameForm.$invalid || nameHasNotChanged">Update</a>
+        </div>
+      </form>
+
+      <!-- other list items -->
       <ion-item id="settings-list-item24">notification settings</ion-item>
       <ion-item id="settings-list-item28">Appearance</ion-item>
-      <ion-toggle toggle-class="toggle-assertive" id="settings-toggle5">Study Mode</ion-toggle>
+      <ion-toggle toggle-class="toggle-positive" id="settings-toggle5">Study Mode</ion-toggle>
       <ion-item id="settings-list-item26">About</ion-item>
       <ion-item id="settings-list-item27">Feedback</ion-item>
     </ion-list>
+
+
   </ion-content>
 </ion-view>

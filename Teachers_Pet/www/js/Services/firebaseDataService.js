@@ -6,53 +6,52 @@
         .factory('firebaseDataService', firebaseDataService);
 
     /*
-     * Just a dummy service to see if firebase works.....
+     * Fetch (mainly room?) Data from Firebase DB.
+     * TODO: make a function in which the data is returned as a firebaseObject so we can have the live update feature which is needed for the question list
      */
-    function firebaseDataService($firebaseObject, $firebaseArray) {
-    	/*
-    	 * Fetch all the data listed in the People database.
-    	 */
-    	function getPeople() {
-    		var peopleRef = firebase.database().ref("People");
-  			var people = $firebaseArray(peopleRef);
+    function firebaseDataService($firebaseObject, $firebaseArray, $ionicLoading) {
+        /*
+         * Fetch a room listed in the Rooms database.
+         */
+        function getRoom(roomCode) {
+            var ref = firebase.database().ref("Rooms/" + roomCode);
+            //var people = $firebaseArray(peopleRef);
+            var promise = ref.once('value');
+            return promise;
 
-  			return people;
-    	}
-    	/*
-    	 * Fetch a single person listed in the People database.
-    	 */
-    	function getPersonByName(name) {
-    		var peopleRef = firebase.database().ref("People/" + name);
-  			var person = $firebaseArray(peopleRef);
+            //TODO: add some logic for distinguishing between room codes and ADMIN codes.
+            //Maybe if we have the length of the two codes be different
+            //that would be a good way of easily knowing one from the other...
+            //var roomRef = firebase.database().ref("Rooms/" + roomCode);
+            //var room = $firebaseArray(roomRef);
+            //return room;
+        }
+        /*
+         * show the loading dialog
+         */
+        function showLoadingDialog() {
+            $ionicLoading.show({
+              template: '<p>Fetching Stuff...</p><ion-spinner></ion-spinner>'
+            })
+            .then(function(){
+               console.log("The loading indicator is now displayed");
+            });
+        };
+        /*
+         * hide the loading dialog
+         */
+        function hideLoadingDialog(){
+            $ionicLoading.hide().then(function(){
+               console.log("The loading indicator is now hidden");
+            });
+        };
 
-  			return person;
-    	}
-    	/*
-    	 * Add specific person from People database
-    	 */
-    	function addPerson(name, age) {
-        var personRef = firebase.database().ref("People/" + name);
-        personRef.set({'name' : name,
-                        'age' : age});
-    	}
-    	/*
-    	 * Remove specific person from People database
-    	 */
-    	function removePerson(id) {
-        console.log(id);
-    		var personRef = firebase.database().ref("People/" + id);
-        personRef.remove();
-    	}
-
-    	/*
-    	 * Available methods that the service should offer to the controller must be listed here:
-    	 */
-    	return {
-    		getPeople : getPeople,
-    		getPersonByName : getPersonByName,
-    		removePerson : removePerson,
-    		addPerson : addPerson
-    	}
+        /*
+         * Available methods that the service should offer to the controller must be listed here:
+         */
+        return {
+            getRoom : getRoom,
+        }
     }
 
 })();
