@@ -120,6 +120,7 @@ a.entrybutton:active{
 .bar.bar-footer.bar-royal {
 	background-color: #517899 !important;
 	border-color: #517899 !important;
+	background-image: none !important;
 }
 
 /* The student button bar
