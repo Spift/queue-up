@@ -5,14 +5,8 @@
         .module('createRoomController', [])
         .controller('createRoomController', createRoomController);
 
-    function createRoomController($scope, $stateParams, $state, $ionicNavBarDelegate) {
+    function createRoomController($scope, $stateParams, $state, $ionicNavBarDelegate, $ionicHistory) {
     	console.log('create room controller fired');
-    	/*
-    	 * dummy function
-    	 */
-    	$scope.test = function() {
-    		console.log("i do nothing")
-    	}
 
         // Update the title of the view
         $ionicNavBarDelegate.title('Create Room');

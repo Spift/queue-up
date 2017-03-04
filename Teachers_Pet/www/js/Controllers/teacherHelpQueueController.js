@@ -7,12 +7,14 @@
 
     function teacherHelpQueueController($scope, $stateParams, $state, $ionicNavBarDelegate) {
     	console.log('Teacher help queue controller fired');
-    	/*
-    	 * dummy function
-    	 */
-    	$scope.test = function() {
-    		console.log("i do nothing")
-    	}
+    	
+        /* Highlighting tabbar appropriately */
+        $scope.tabClicked = function(element, o_icon1, o_icon2){
+            document.getElementById(element).style.opacity = 1;
+            document.getElementById(o_icon1).style.opacity = 0.3;
+            document.getElementById(o_icon2).style.opacity = 0.3;
+            console.log(element +" highlighted!");
+        }
 
         // Update the title of the view
         $ionicNavBarDelegate.title('Teacher Help Queue');

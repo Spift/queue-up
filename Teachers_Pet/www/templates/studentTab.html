@@ -1,28 +1,28 @@
 <div class="bar bar-footer bar-royal">
   <div id="student-tab-bar" class="button-bar">
-  <button ui-sref="studentHelpQueue" id="getHelp-button52" class="button button-icon">
-    <div>
+  <button ng-click="tabClicked('queueDiv', 'getHelpDiv', 'settingsDiv', 'quitDiv')" ui-sref="studentHelpQueue" id="getHelp-button52" class="button button-icon">
+    <div id="queueDiv">
       <img id="queueicon" src="img/queue.png" alt="Queue">
       <br>
       <p class="icontext">Queue</p>
     </div>
     </button>
-  <button ui-sref="getHelp" id="getHelp-button51" class="button button-icon">
-    <div>
+  <button ng-click="tabClicked('getHelpDiv', 'queueDiv', 'settingsDiv', 'quitDiv')" ui-sref="getHelp" id="getHelp-button51" class="button button-icon">
+    <div id="getHelpDiv">
         <img id="gethelpicon" src="img/get_help.png" alt="Queue">
       <br>
       <p class="icontext">Get Help</p>
     </div>
     </button>
-  <button ui-sref="settings" id="getHelp-button50" class="button button-icon">
-    <div>
+  <button ng-click="tabClicked('settingsDiv', 'queueDiv', 'getHelpDiv', 'quitDiv')" ui-sref="settings" id="getHelp-button50" class="button button-icon">
+    <div id="settingsDiv">
       <i class="icon ion-gear-a"></i>
       <br>
       <p class="icontext">Settings</p>
     </div>
     </button>
-  <button ui-sref="entryPage" id="getHelp-button49" class="button button-icon">
-    <div>
+  <button ng-click="tabClicked('quitDiv', 'queueDiv', 'settingsDiv', 'getHelpDiv')" ui-sref="entryPage" id="getHelp-button49" class="button button-icon">
+    <div id="quitDiv">
       <i class="icon ionicons ion-android-exit"></i>
       <br>
       <p class="icontext">Quit</p>

@@ -7,13 +7,17 @@ a.teacherspet-button {
 	border-radius: 10px;
 }
 
-a.teacherspet-button:hover {
+.button.teacherspet-button:hover {
 	background-color: #2e506d;
 	color: white;
 }
 
 
-a.teacherspet-button:active {
+.button.teacherspet-button.active, .button.teacherspet-button.activated {
 	border: 0px;
 	background-color: #2e506d;
+}
+
+.icon.ion-ios-settings-strong:active {
+	opacity: 0.7;
 }

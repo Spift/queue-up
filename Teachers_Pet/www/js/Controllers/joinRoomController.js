@@ -43,6 +43,7 @@
             formToClear.$setPristine();
             formToClear.$setUntouched();
         };
+
         /*
          * Look up room in firebaseDB
          */
