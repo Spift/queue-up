@@ -9,27 +9,32 @@
       </label>
     </form>
 
-    <!-- submit button -->
-    <button ng-click="submitPressed(formData.code)" class="button teacherspet-button button-block">Submit</button> <!-- VERY HACKY, FIX ME -->
+
+    <!-- Error code shown if inputted room code doesnt correspond to a room in database -->
+    <div style="margin:auto; width:50%; text-align:center" ng-show="showRoomNotFoundError">
+      <div style="color: red">I could not find the room you were looking for :( </div>
+    </div>
+    
+    <!-- Spinner that only shows while searching Database for room data -->
+    <div style="margin:auto; width:50%; text-align:center" ng-show="showLoadingSpinner">
+    <ion-spinner></ion-spinner>
+    </div>
 
     <!-- Card showing Room information. Only visible after pressing submit and given that the code is correct. 'room1' works for now -->
     <div class="card" ng-show="validRoomData">
       <div class="item item-divider">
         {{room.title}}
         <div class="item-icon-right">
-          <div class="icon ion-ios-close-empty" ng-click="closeCard(roomCodeForm)"></div> <!-- if left as an <a> tag, the close icon becomes blue???-->
+          <div class="icon ion-ios-close-empty" ng-click="closePreview(roomCodeForm)"></div> <!-- if left as an <a> tag, the close icon becomes blue???-->
         </div>
       </div>
       <div class="item item-text-wrap">
         {{room.description}}
-        <div class="row">
-      </div>
       </div>
       <div class="item item-divider">
         <div class="col text-center" ng-click="joinRoomPressed()">
             <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Join this Room&nbsp;</a>
         </div>
-      </div>
       </div>
     </div>
    

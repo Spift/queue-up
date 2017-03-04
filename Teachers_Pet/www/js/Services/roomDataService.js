@@ -10,7 +10,6 @@
      */
     function roomDataService($firebaseObject, $firebaseArray) {
     	var roomFirebaseObject = {};
-
         /*
          * Get the firebase object that contains all data for the current room
          */
