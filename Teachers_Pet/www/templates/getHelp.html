@@ -1,21 +1,36 @@
 <ion-view title="Get Help" id="page10" style="background-color:default;">
   <ion-content padding="true" class="has-header">
-    <div id="getHelp-markdown7" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">{{getHelpBody}}</p>
-    </div>
-    <div class="spacer" style="width: 300px; height: 214px;"></div>
-    <form id="getHelp-form15" class="list">
-      <label class="item item-select" id="getHelp-select1">
-        <span class="input-label">Select</span>
-        <select></select>
+
+    <form name="addQuestionForm" class="list">
+      <!-- question title input -->
+      <label class="item item-input">
+        <i class="icon ion-pizza placeholder-icon" style="padding-right: 1em; "></i>
+        <input id="room-code-input" type="text" placeholder="Enter question title (min. 2 chars)" ng-model="formData.title" required type="text" ng-minlength="2" ng-maxlength="25">
       </label>
-      <div class="spacer" style="width: 300px; height: 13px;"></div>
-      <label class="item item-input" id="getHelp-input15">
-        <span class="input-label">Input</span>
-        <input type="text" ng-model="getHelpBody" placeholder="">
+      <!-- question body input -->
+      <label class="item item-input">
+        <i class="icon ion-wineglass placeholder-icon" style="padding-right: 1em; "></i>
+        <input id="room-code-input" type="text" placeholder="Enter question text (min. 16 chars)" ng-model="formData.body" required type="text" ng-minlength="16" ng-maxlength="140">
+      </label>
+      <!-- category drop downnn -->
+      <label class="item item-select">
+        <select ng-model=formData.category required>
+          <option ng-repeat="category in room.Categories">{{category}}</option>
+        </select>
       </label>
     </form>
-    <a ui-sref="studentHelpQueue" id="getHelp-button33" class="button button-assertive  button-block">Queue up</a>
+
+
+    <!-- The question preview box-->
+    <div class="card" ng-hide="addQuestionForm.$invalid">
+      <div class="item item-divider">{{formData.title}}: {{formData.category}}</div>
+      <div class="item item-text-wrap">{{formData.body}}</div>
+      <div class="item item-divider">
+        <div class="col text-center" ng-click="submitQuestion()">
+            <a class="button icon-right ion-chevron-right button-clear button-dark" ng-disabled="addQuestionForm.$invalid" style="text-align:center;">Get Help!&nbsp;</a>
+        </div>
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>

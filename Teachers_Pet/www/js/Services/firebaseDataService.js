@@ -6,14 +6,7 @@
         .factory('firebaseDataService', firebaseDataService);
 
     /*
-     * Fetch (mainly room?) Data from Firebase DB.
-     * TODO: make a function in which the data is returned as a firebaseObject so we can have the live update feature which is needed for the question list
-     * ***********************
-
-
-     just return firebaseObject(ref) in resolution...
-     
-
+     * read and write Data from Firebase DB.
      */
     function firebaseDataService($firebaseObject, $firebaseArray, $ionicLoading) {
         /*
@@ -32,20 +25,22 @@
             return room;
         }
         /*
-         * Fetch a room listed in the Rooms database. THIS IS NOT USED:.....:::::
+         * Add a question to a room.
+         * it is assumed that the question is well-formed, maybe we should ceck that though......
+         * //TODO catch errors here by promise resolution on push() call....
          */
-        function getRoomOLD(roomCode) {
-            var ref = firebase.database().ref("Rooms/" + roomCode);
-            //var people = $firebaseArray(peopleRef);
-            var promise = ref.once('value');
-            return promise;
+        function addQuestion(roomCode, question) {
+            var ref = firebase.database().ref("Rooms/" + roomCode + "/Questions");
+            ref.push(question);
         }
         /*
          * Available methods that the service should offer to the controller must be listed here:
          */
         return {
             getRoom : getRoom,
+            addQuestion : addQuestion
         }
     }
 
 })();
+
