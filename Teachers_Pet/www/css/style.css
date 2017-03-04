@@ -54,20 +54,7 @@ a.entrybutton:active{
 	margin-right: 10px;
 }
 
-
-
-
-
-
-/* Lecture room background
-#page3 {
-	background: url('../img/lecroom1.jpg') no-repeat center center fixed;
-  	background-size: cover;
-  	box-shadow: inset 0 0 5em 1em #000;
-}
-*/
-
-
+/* Footer bar settings */ 
 .bar.bar-footer.bar-royal {
 	background-color: #517899 !important;
 	border-color: #517899 !important;
@@ -97,7 +84,7 @@ a.entrybutton:active{
 /*slider stufff*/
 ion-slides{
   height: 20vh !important;
-  color: white;
+  /*border: 1px solid;*/
 }
 
 .slider-slide
@@ -132,16 +119,16 @@ ion-slides{
 
 /* Slider bullet options!!!! */
 .swiper-pagination-bullet {
-	margin-bottom: 27% !important;
-	color: white !important;
+	color: black !important;
 	border: 0.4em solid !important; /*size of bullets */
 	opacity: 0.3 !important;
+	margin-bottom: 27% !important;
 }
 
 .swiper-pagination-bullet-active{
 	margin-bottom: 26.2% !important;
-	background: white !important;
-	border-color: white !important;
+	background: black !important;
+	border-color: black !important;
 	opacity: 1.0 !important;
-	border: 0.55em solid !important;
+	border: 0.75em solid !important;
 }

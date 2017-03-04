@@ -13,28 +13,7 @@
 
 
     <!-- spacer -->
-    <div class="spacer" style="margin-top: 75%;"></div>
-
-
-    <!-- slider -->
-    <div style="margin-top: 70%;">
-      <ion-slides options="data.sliderOptions" slider="data.sliderDelegate">
-        <ion-slide-page show-pager="true" ng-repeat="sliderPage in sliderData">
-          <div class="slider-container">
-            <center class="slider-header">{{sliderPage.head}}</center>
-            <center ng-bind-html="sliderPage.body" class="slider-body"></center>
-          </div>
-        </ion-slide-page>
-      </ion-slides>
-    </div>
-
-    <!-- form error messages
-    <div class="padding">
-      <p ng-show="nameForm.entryname.$error.required && nameForm.entryname.$dirty" class="fieldError">* Username is required</p>
-      <p ng-show="nameForm.entryname.$error.minlength && nameForm.entryname.$dirty" class="fieldError">* Username must be minimum 3 characters</p>
-      <p ng-show="nameForm.entryname.$error.maxlength && nameForm.entryname.$dirty" class="fieldError">* Username must be maximum 25 characters</p>
-    </div>
-  -->
+    <div class="spacer" style="margin-top: 30%;"></div>
 
     <!-- name input field -->
     <form name="nameForm" novalidate>
@@ -45,14 +24,6 @@
         <input id="entryname" name="entryname" required type="text" ng-minlength="2" ng-maxlength="25" placeholder="Enter your name" ng-model='formData.name'>
       </label>
     </form>
-
-        <!-- form error messages
-    <div class="padding">
-      <p ng-show="nameForm.entryname.$error.required && nameForm.entryname.$dirty" class="fieldError">* Username is required</p>
-      <p ng-show="nameForm.entryname.$error.minlength && nameForm.entryname.$dirty" class="fieldError">* Username must be minimum 3 characters</p>
-      <p ng-show="nameForm.entryname.$error.maxlength && nameForm.entryname.$dirty" class="fieldError">* Username must be maximum 25 characters</p>
-    </div>
-    -->
 
     <!-- join and create room buttons -->
     <div id="entryPage-button-bar2" class="button-bar">
