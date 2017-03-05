@@ -73,27 +73,3 @@
         $ionicNavBarDelegate.showBackButton(true);
     }
 })();
-
-
-/*
-THE OLD submitpressed function in case ill need it ....
-            showLoadingDialog();
-            //data promise resolution
-            firebaseDataService.getRoom(roomCode)
-            .then(function (result) {
-                // This only happens after the data has been fetched
-                if(result.val() == null) {//invalid room code!!!
-                    console.log('No room with that code was found in the Database...')
-                }else{
-                    $scope.room = result.val();
-                    $scope.validRoomData = true; // will make room info appear
-                }
-                hideLoadingDialog();
-                console.log(result.val());
-            })
-            .catch(function (err) {
-                // This is where errors land
-                hideLoadingDialog();
-                console.log('joinRoomController.submitPressed() Error', err.code);
-            });
-            */

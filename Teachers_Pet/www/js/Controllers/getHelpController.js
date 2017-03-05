@@ -22,6 +22,12 @@
             firebaseDataService.addQuestion($scope.room.$id, question);
             $state.go("studentHelpQueue");
         }
+        /*
+         * Close the preview if the user decides to start over with the authoring of their question
+         */
+        $scope.closePreview = function(formToClear) {
+            $scope.formData = {};
+        }
 
         // Update the title of the view
         $ionicNavBarDelegate.title('Get Help');

@@ -23,7 +23,12 @@
 
     <!-- The question preview box-->
     <div class="card" ng-hide="addQuestionForm.$invalid">
-      <div class="item item-divider">{{formData.title}}: {{formData.category}}</div>
+      <div class="item item-divider">
+        {{formData.title}}: {{formData.category}}
+        <div class="item-icon-right">
+          <div class="icon ion-ios-close-empty" ng-click="closePreview(addQuestionForm)"></div> <!-- if left as an <a> tag, the close icon becomes blue???-->
+        </div>
+      </div>
       <div class="item item-text-wrap">{{formData.body}}</div>
       <div class="item item-divider">
         <div class="col text-center" ng-click="submitQuestion()">
