@@ -21,3 +21,16 @@ a.teacherspet-button {
 .icon.ion-ios-settings-strong:active {
 	opacity: 0.7;
 }
+
+/* The tabbar styling on highlight */
+.inactivetabs{
+	opacity: 0.3;
+}
+.activetab{
+	opacity: 1 !important;
+}
+
+/* Button highlighted as soon as pressed */
+.button.button-icon.active, .button.button-icon.activated{
+	opacity: 1.0 !important;
+}
