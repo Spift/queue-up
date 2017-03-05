@@ -5,10 +5,11 @@
         .module('entryPageController', [])
         .controller('entryPageController', entryPageController);
 
-    function entryPageController($scope, $stateParams, $state, localStorageService, $timeout) {
+    function entryPageController($scope, $location, $rootScope, $stateParams, $state, localStorageService, $timeout) {
     	console.log('entry page controller fired');
       console.log('Saved name:' + localStorageService.getName());
       $scope.formData = {};
+
       // if a name exists in local storage, put it in the input field. -1 is an error code i just came up with ......
       var name = localStorageService.getName();
       if(name != -1) {
@@ -33,6 +34,7 @@
           body: "Simon simon simon simon, simon, simon simon. Simon simon simon."
         }
       ];
+
       /*
        * Join Room Button press. Always saves the input content to localstorage
        */

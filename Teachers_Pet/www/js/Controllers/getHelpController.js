@@ -12,6 +12,7 @@
         /*
          * Submit a question with the data from the form in the view
          */
+
         $scope.submitQuestion = function() {
             var question = {'title': $scope.formData.title,
                             'body': $scope.formData.body,
@@ -33,7 +34,6 @@
         $ionicNavBarDelegate.title('Get Help');
         //Hide back button
         $ionicNavBarDelegate.showBackButton(false);
-
     }
 
 

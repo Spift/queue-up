@@ -6,9 +6,9 @@
         .controller('studentHelpQueueController', studentHelpQueueController);
 
 
-    function studentHelpQueueController($scope, $stateParams, $state, roomDataService, firebaseDataService, $ionicNavBarDelegate) {
+    function studentHelpQueueController($scope, $location, $stateParams, $state, roomDataService, firebaseDataService, $ionicNavBarDelegate) {
     	console.log('student page controller fired');
-    	
+
         $scope.room = roomDataService.getRoom();
         console.log($scope.room);
 
