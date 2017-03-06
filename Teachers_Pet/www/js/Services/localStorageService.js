@@ -44,7 +44,7 @@
     	function checkLocalStorageSupport() {
     		if (typeof(Storage) !== "undefined") {
 			    return false;
-			} 
+			}
 			return true;
     	}
     	/*
