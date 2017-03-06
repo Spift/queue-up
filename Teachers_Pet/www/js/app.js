@@ -8,7 +8,7 @@
 angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
   'entryPageController', 'createRoomController', 'getHelpController', 'joinRoomController', 'roomSettingsController', 'settingsController',
   'studentHelpQueueController', 'tabController', 'teacherHelpQueueController', 'localStorageService', 'ngSanitize', 'firebaseDataService', 'firebase',
-  'roomDataService'])
+  'roomDataService', 'codeGeneratorService'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   //Transitions 

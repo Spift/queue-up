@@ -10,7 +10,7 @@
     	 * Fetch the name stored locally on the users device
     	 */
     	function getName() {
-    		name = localStorage.getItem("name");
+    		var name = localStorage.getItem("name");
     		if(name == "null") { // is this a good error code?
     			return -1;
     		}
@@ -22,6 +22,22 @@
     	function setName(name) {
     		localStorage.setItem("name", name); // store with id = "name"
     	}
+        /*
+         * Fetch the student id stored locally on the users device
+         */
+        function getStudentID() {
+            var id = localStorage.getItem("ID");
+            if(id == "null") { // is this a good error code?
+                return -1;
+            }
+            return id;
+        }
+        /*
+         * Store the student id locally on the users device
+         */
+        function setStudentID(ID) {
+            localStorage.setItem("ID", ID); // store with id = "ID"
+        }
     	/*
     	 * Check that local storage is supported (should be)
     	 */
@@ -37,6 +53,8 @@
     	return {
     		getName : getName,
     		setName : setName,
+            setStudentID:setStudentID,
+            getStudentID:getStudentID,
     		checkLocalStorageSupport:checkLocalStorageSupport
     	}
     }
