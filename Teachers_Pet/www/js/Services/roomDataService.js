@@ -22,7 +22,12 @@
         function setRoom(newRoom) {
             roomFirebaseObject = newRoom;
         }
-
+        /*
+         * Clear the room saved in this service, because were going to another room.
+         */
+        function clearRoom() {
+            roomFirebaseObject = {};
+        }
     	/*
     	 * Available methods that the service should offer to the controller must be listed here:
     	 */

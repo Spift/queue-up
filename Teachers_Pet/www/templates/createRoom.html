@@ -7,11 +7,13 @@
             <i class="icon ion-social-sass placeholder-icon" style="padding-right: 1em; "></i>
             <input id="room-name-input" type="text" placeholder="Enter the name of your room" ng-model="formData.roomName" required type="text" ng-minlength="2" ng-maxlength="25">
           </ion-item>
+          
           <!-- Room description input -->
           <ion-item class="item item-input">
             <i class="icon ion-social-octocat placeholder-icon" style="padding-right: 1em; "></i>
             <input id="room-description-input" type="text" placeholder="Enter a description for the room" ng-model="formData.description" required type="text" ng-minlength="12" ng-maxlength="140">
           </ion-item>
+          
           <!-- Room categories input -->
           <ion-item id="sub-label" class="item item-input">
             <i class="icon ion-social-freebsd-devil placeholder-icon" style="padding-right: 1em; "></i>
@@ -30,13 +32,20 @@
           </ion-list>
           <!-- <div class="spacer" style="width: 300px; height: 83px;"></div> -->
         </form>
+        
+        <!-- create room button -->
         <div class="card">
           <div class="item item-divider">
             <div class="col text-center">
-              <a ng-click="createRoom()" ng-disabled="createRoomForm.$invalid || formData.subjects.length === 0" class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Create Room&nbsp;</a>
+              <a ng-click="createRoom()" ng-disabled="createRoomForm.$invalid || formData.subjects.length === 0" ng-hide="loadingRoomData" class="button icon-right ion-chevron-right button-clear button-dark" ng-disabled="createRoomForm.$invalid" style="text-align:center;">Create Room&nbsp;</a>
+              <!-- Spinner that only shows while searching Database for room data -->
+              <div style="margin:auto; width:50%; text-align:center" ng-show="loadingRoomData">
+                <ion-spinner></ion-spinner>
+              </div>
             </div>
           </div>
         </div>
+        
   </ion-content>
 </ion-view>
 
