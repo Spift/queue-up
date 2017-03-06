@@ -1,5 +1,23 @@
 /* Stylings specific to the entryPage view */
 
+/* The video background */
+.bg-vid {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: 100%;;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+}
+
 /* Brown lecturer background */
 #entrypage {
 	background: url('../img/bg_1.png') no-repeat center center fixed;
@@ -32,7 +50,7 @@
  	border: 1px gray;
  	border-radius: 10px;
   /*	border-style: solid none solid none;*/
-}	
+}
 #entrylabel-error{/* red transparent entry label */
 	background-color: rgba(100,0,0,0.4);
 	width: 80%;
@@ -46,7 +64,7 @@
 	font-size: 80%;
 	margin-top: 0%;
 	/*width: 96%*/
-}	
+}
 #entryname::-webkit-input-placeholder {/* Entrypage name placeholder Color */
   opacity: 1;
 }
@@ -98,4 +116,3 @@ ion-slides{
 	opacity: 1.0 !important;
 	border: 0.70em solid !important;
 }
-
