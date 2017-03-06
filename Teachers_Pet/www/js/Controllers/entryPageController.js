@@ -5,9 +5,11 @@
         .module('entryPageController', [])
         .controller('entryPageController', entryPageController);
 
-    function entryPageController($scope, $location, $rootScope, $stateParams, $state, localStorageService, $timeout) {
+    function entryPageController($scope, $location, $rootScope, $stateParams, $state, localStorageService, $timeout, codeGeneratorService) {
     	console.log('entry page controller fired');
-      console.log('Saved name:' + localStorageService.getName());
+      console.log('Stored name:' + localStorageService.getName());
+      console.log('Stored ID:' + localStorageService.getStudentID());
+
       $scope.formData = {};
 
       // if a name exists in local storage, put it in the input field. -1 is an error code i just came up with ......
@@ -15,26 +17,12 @@
       if(name != -1) {
         $scope.formData.name = name;
       }
-      // slider data
-      $scope.sliderData = [
-        {
-          head: "Students!",
-          body: "Det være seg innlagt humor eller tilfeldig genererte ord som ser langt fra troverdige ut."
-        },
-        {
-          head: "Teachers!",
-          body: "Tired of never being able to help anybody because there's simply not enough time? Then Teacher's Pet&trade; is just what you need!"
-        },
-        {
-          head: "Schul lehrer!",
-          body: "Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie."
-        },
-        {
-          head: "Simon",
-          body: "Simon simon simon simon, simon, simon simon. Simon simon simon."
-        }
-      ];
-
+      //if an id has NOT previously been created for this user, generate one and store it locally
+      var id = localStorageService.getStudentID();
+      if(id == -1) {
+        var newID = codeGeneratorService.generateCode(10);//10 chars were arbitrarily chosen........
+        localStorageService.setStudentID(newID);
+      }
       /*
        * Join Room Button press. Always saves the input content to localstorage
        */
@@ -80,6 +68,26 @@
           });
       };
       setupSlider();
+
+      // slider data
+      $scope.sliderData = [
+        {
+          head: "Students!",
+          body: "Det være seg innlagt humor eller tilfeldig genererte ord som ser langt fra troverdige ut."
+        },
+        {
+          head: "Teachers!",
+          body: "Tired of never being able to help anybody because there's simply not enough time? Then Teacher's Pet&trade; is just what you need!"
+        },
+        {
+          head: "Schul lehrer!",
+          body: "Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie."
+        },
+        {
+          head: "Simon",
+          body: "Simon simon simon simon, simon, simon simon. Simon simon simon."
+        }
+      ];
 
     }
 

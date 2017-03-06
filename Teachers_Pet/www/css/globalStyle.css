@@ -1,5 +1,15 @@
 /* Universal stylings, used across different views*/
 
+/* Highlighted question box header bar*/
+.item.item-divider.highlighted {
+	background-color: pink;
+}
+
+/* Highlighted question box header bar*/
+.item.item-text-wrap.highlighted {
+	background-color: pink;
+}
+
 /* The standard styling for all buttons in the app */
 a.teacherspet-button {
 	background-color: #355c7d;

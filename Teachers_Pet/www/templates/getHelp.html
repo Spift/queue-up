@@ -2,28 +2,27 @@
   <ion-content padding="true" class="has-header">
 
     <form name="addQuestionForm" class="list">
-      <!-- question title input -->
-      <label class="item item-input">
-        <i class="icon ion-pizza placeholder-icon" style="padding-right: 1em; "></i>
-        <input id="room-code-input" type="text" placeholder="Enter question title (min. 2 chars)" ng-model="formData.title" required type="text" ng-minlength="2" ng-maxlength="25">
-      </label>
-      <!-- question body input -->
-      <label class="item item-input">
-        <i class="icon ion-wineglass placeholder-icon" style="padding-right: 1em; "></i>
-        <input id="room-code-input" type="text" placeholder="Enter question text (min. 16 chars)" ng-model="formData.body" required type="text" ng-minlength="16" ng-maxlength="140">
-      </label>
       <!-- category drop downnn -->
       <label class="item item-select">
         <select ng-model=formData.category required>
           <option ng-repeat="category in room.Categories">{{category}}</option>
         </select>
       </label>
+      <!-- question body input -->
+      <label class="item item-input">
+        <i class="icon ion-wineglass placeholder-icon" style="padding-right: 1em; "></i>
+        <input id="room-code-input" type="text" placeholder="Enter question text (min. 16 chars)" ng-model="formData.body" required type="text" ng-minlength="16" ng-maxlength="140">
+      </label>
     </form>
-
 
     <!-- The question preview box-->
     <div class="card" ng-hide="addQuestionForm.$invalid">
-      <div class="item item-divider">{{formData.title}}: {{formData.category}}</div>
+      <div class="item item-divider">
+        {{student}} &nbsp; {{formData.category}}
+        <div class="item-icon-right">
+          <div class="icon ion-ios-close-empty" ng-click="closePreview(addQuestionForm)"></div> <!-- if left as an <a> tag, the close icon becomes blue???-->
+        </div>
+      </div>
       <div class="item item-text-wrap">{{formData.body}}</div>
       <div class="item item-divider">
         <div class="col text-center" ng-click="submitQuestion()">

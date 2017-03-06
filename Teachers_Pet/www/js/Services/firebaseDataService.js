@@ -16,9 +16,6 @@
             //TODO: add some logic for distinguishing between room codes and ADMIN codes.
             //Maybe if we have the length of the two codes be different
             //that would be a good way of easily knowing one from the other...
-            //var roomRef = firebase.database().ref("Rooms/" + roomCode);
-            //var room = $firebaseArray(roomRef);
-            //return room;
             var ref = firebase.database().ref("Rooms/" + roomCode);
             var room = $firebaseObject(ref);
                     
