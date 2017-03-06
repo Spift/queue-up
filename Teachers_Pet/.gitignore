@@ -1,6 +1,16 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+.DS_Store
+Teachers_Pet/.DS_Store
+Teachers_Pet/resources/.DS_Store
+Teachers_Pet/resources/ios/.DS_Store
+Teachers_Pet/www/.DS_Store
+Teachers_Pet/www/css/.DS_Store
+Teachers_Pet/www/img/.DS_Store
+Teachers_Pet/www/js/.DS_Store
+
+
 node_modules/
 platforms/
 plugins/
