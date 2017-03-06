@@ -26,6 +26,7 @@
                         };
             console.log(room);
             firebaseDataService.addRoom(room);
+            roomDataService.setRoom(room);
             $state.go("teacherHelpQueue");
         }
 

@@ -5,8 +5,9 @@
         .module('teacherHelpQueueController', [])
         .controller('teacherHelpQueueController', teacherHelpQueueController);
 
-    function teacherHelpQueueController($scope, $stateParams, $state, $ionicNavBarDelegate) {
+    function teacherHelpQueueController($scope, roomDataService, $stateParams, $state, $ionicNavBarDelegate) {
     	console.log('Teacher help queue controller fired');
+        $scope.room = roomDataService.getRoom();
     	
         // Update the title of the view
         $ionicNavBarDelegate.title('Teacher Help Queue');
