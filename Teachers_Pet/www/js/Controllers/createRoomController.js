@@ -5,7 +5,7 @@
         .module('createRoomController', [])
         .controller('createRoomController', createRoomController);
 
-    function createRoomController($scope, firebaseDataService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, $ionicHistory) {
+    function createRoomController($scope, codeGeneratorService, firebaseDataService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, $ionicHistory) {
     	console.log('create room controller fired');
 
         $scope.formData = {};
@@ -18,8 +18,8 @@
         $scope.createRoom = function() {
             var room = {'Categories': $scope.formData.subjects,
                         'Questions': {},
-                        'admin_code': 'dummyting',
-                        'code': '12345',
+                        'admin_code': codeGeneratorService.generateCode(6),
+                        'code': codeGeneratorService.generateCode(5),
                         'description': $scope.formData.description,
                         'no_of_admins': 1,
                         'title': $scope.formData.roomName
