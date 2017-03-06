@@ -14,6 +14,4 @@
         //Hide back button
         $ionicNavBarDelegate.showBackButton(false);
     }
-
-
 })();

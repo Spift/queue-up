@@ -24,13 +24,23 @@ a.teacherspet-button {
 
 /* The tabbar styling on highlight */
 .inactivetabs{
-	opacity: 0.3;
+	opacity: 1.0;
 }
 .activetab{
-	opacity: 1 !important;
+	opacity: 0.3 !important;
 }
 
 /* Button highlighted as soon as pressed */
 .button.button-icon.active, .button.button-icon.activated{
 	opacity: 1.0 !important;
+}
+
+/* Add button size */
+#add-button:before{
+	font-size: 180%;
+	padding-right: 15%;
+}
+
+#createRoomForm .item.item-input{
+	height: 3em;
 }

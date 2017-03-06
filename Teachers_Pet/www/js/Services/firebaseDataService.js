@@ -24,6 +24,11 @@
                     
             return room;
         }
+
+        function addRoom(roomObj){
+            var ref = firebase.database().ref("Rooms/");
+            ref.child(roomObj.code).set(roomObj);
+        }
         /*
          * Add a question to a room.
          * it is assumed that the question is well-formed, maybe we should ceck that though......
@@ -38,7 +43,8 @@
          */
         return {
             getRoom : getRoom,
-            addQuestion : addQuestion
+            addQuestion : addQuestion,
+            addRoom : addRoom
         }
     }
 
