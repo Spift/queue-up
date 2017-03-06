@@ -11,7 +11,7 @@
     	 */
     	function getName() {
     		var name = localStorage.getItem("name");
-    		if(name == "null") { // is this a good error code?
+    		if(name == null) { // is this a good error code?
     			return -1;
     		}
     		return name;
@@ -27,7 +27,7 @@
          */
         function getStudentID() {
             var id = localStorage.getItem("ID");
-            if(id == "null") { // is this a good error code?
+            if(id == null) { // is this a good error code?
                 return -1;
             }
             return id;
