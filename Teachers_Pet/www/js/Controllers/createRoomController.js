@@ -16,6 +16,7 @@
          * Add a room with the data from the form in the view
          */
         $scope.createRoom = function() {
+            $scope.loadingRoomData = true;
             var room = {'Categories': $scope.formData.subjects,
                         'Questions': {},
                         'admin_code': codeGeneratorService.generateCode(6),
@@ -32,7 +33,6 @@
          * This is almost identical to function in JoinRoomControlller. Maybe move to service somehow??
          */
         function findRoomInDatabase(roomCode) {
-            $scope.loadingRoomData = true;
             $scope.room = firebaseDataService.getRoom(roomCode);
             $scope.room.$loaded()
             .then(function() {

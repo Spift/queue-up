@@ -32,10 +32,11 @@
             $scope.showRoomNotFoundError = false;
             $scope.showLoadingSpinner = false;
             $scope.formData = {};
-            $scope.joinAsAdmin = false;
             if($scope.joinAsAdmin) {
+                $scope.joinAsAdmin = false;
                 $state.go("teacherHelpQueue");
             }else{
+                $scope.joinAsAdmin = false;
                 $state.go("studentHelpQueue");
             }
         };
