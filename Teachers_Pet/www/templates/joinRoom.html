@@ -8,6 +8,15 @@
         <input id="room-code-input" type="text" placeholder="Enter Room Code (try 'room1')" ng-model="formData.code">
       </label>
     </form>
+    <!-- Admin code input -->
+    <form name="adminCodeForm" class="list" ng-show="joinAsAdmin">
+      <label class="item item-input" name="admin_code">
+        <i class="icon ion-university placeholder-icon" style="padding-right: 1em; "></i>
+        <input id="room-code-input" type="text" placeholder="Enter Teacher code (try 'room1A')" ng-model="formData.adminCode">
+      </label>
+    </form>
+    <a ng-click="toggleAdmin()" ng-hide="joinAsAdmin">Need to join as a teacher?</a>
+    <a ng-click="toggleAdmin()" ng-show="joinAsAdmin">Need to join as a student?</a>
 
 
     <!-- Error code shown if inputted room code doesnt correspond to a room in database -->
@@ -21,7 +30,7 @@
     </div>
 
     <!-- Card showing Room information. Only visible after pressing submit and given that the code is correct. 'room1' works for now -->
-    <div class="card" ng-show="validRoomData">
+    <div class="card" ng-show="validRoomData && (formData.adminCode == room.admin_code || !joinAsAdmin)">
       <div class="item item-divider">
         {{room.title}}
         <div class="item-icon-right">
@@ -33,7 +42,7 @@
       </div>
       <div class="item item-divider">
         <div class="col text-center" ng-click="joinRoomPressed()">
-            <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Join this Room&nbsp;</a>
+            <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">{{getJoinButtonText()}}&nbsp;</a>
         </div>
       </div>
     </div>
