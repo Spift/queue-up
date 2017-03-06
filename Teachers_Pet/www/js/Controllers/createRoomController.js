@@ -34,6 +34,7 @@
         $scope.addSubject = function(){
             console.log('added subject: ' + $scope.formData.subject);
             $scope.formData.subjects.push($scope.formData.subject);
+            $scope.formData.subject='';
         }
         // Update the title of the view
         $ionicNavBarDelegate.title('Create Room');
