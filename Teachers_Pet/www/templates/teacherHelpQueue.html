@@ -7,12 +7,15 @@
     </div>
     <div class="spacer" style="width: 300px; height: 0px;"></div>
     <button id="teacherHelpQueue-button26" class="button button-positive  button-block">Clear queue for certain subject</button>
-    <ion-list id="teacherHelpQueue-list2">
-      <ion-item id="teacherHelpQueue-list-item10">Item 1</ion-item>
-      <ion-item id="teacherHelpQueue-list-item11">Item 2</ion-item>
-      <ion-item class="item-divider" id="teacherHelpQueue-list-item-divider1"> Subject</ion-item>
-      <ion-item id="teacherHelpQueue-list-item12">Brødtekst</ion-item>
-    </ion-list>
+    
+    <!-- the actual Queue -->
+    <div ng-repeat="question in room.Questions">
+      <div class="card">
+        <div class="item item-divider">{{$index+1}}. {{question.category}}, {{question.student}}</div>
+        <div class="item item-text-wrap">{{question.body}}</div>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>
 

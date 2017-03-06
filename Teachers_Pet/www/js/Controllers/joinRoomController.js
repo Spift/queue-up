@@ -28,18 +28,14 @@
          * Join Room button was pressed, so goto student help queue. Or admin queue if admin code was entered
          */
         $scope.joinRoomPressed = function(formToClear) {
+            $scope.validRoomData = false;
+            $scope.showRoomNotFoundError = false;
+            $scope.showLoadingSpinner = false;
+            $scope.formData = {};
+            $scope.joinAsAdmin = false;
             if($scope.joinAsAdmin) {
-                $scope.validRoomData = false;
-                $scope.showRoomNotFoundError = false;
-                $scope.showLoadingSpinner = false;
-                $scope.formData = {};
                 $state.go("teacherHelpQueue");
             }else{
-                $scope.validRoomData = false;
-                $scope.showRoomNotFoundError = false;
-                $scope.showLoadingSpinner = false;
-                $scope.formData = {};
-                $scope.joinAsAdmin = false;
                 $state.go("studentHelpQueue");
             }
         };
