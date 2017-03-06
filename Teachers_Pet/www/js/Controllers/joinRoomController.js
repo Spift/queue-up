@@ -11,6 +11,7 @@
         $scope.showLoadingSpinner = false; // show/hide the loading thing
         $scope.showRoomNotFoundError = false;
         $scope.formData = {};
+        $scope.joinAsAdmin = false;
         var roomCodeLength = 5; // the standard length of a room Code: if innput field text has this length, we automatically look in firebase for a room. no need for a button press
         /*
          * Every time the roomCode input field changes, if it has the right length, search firebase for a valid room
@@ -27,11 +28,20 @@
          * Join Room button was pressed, so goto student help queue. Or admin queue if admin code was entered
          */
         $scope.joinRoomPressed = function(formToClear) {
-            $scope.validRoomData = false;
-            $scope.showRoomNotFoundError = false;
-            $scope.showLoadingSpinner = false;
-            $scope.formData = {};
-            $state.go("studentHelpQueue");
+            if($scope.joinAsAdmin) {
+                $scope.validRoomData = false;
+                $scope.showRoomNotFoundError = false;
+                $scope.showLoadingSpinner = false;
+                $scope.formData = {};
+                $state.go("teacherHelpQueue");
+            }else{
+                $scope.validRoomData = false;
+                $scope.showRoomNotFoundError = false;
+                $scope.showLoadingSpinner = false;
+                $scope.formData = {};
+                $scope.joinAsAdmin = false;
+                $state.go("studentHelpQueue");
+            }
         };
         /*
          * Close room info preview and reset input field 
@@ -65,6 +75,25 @@
                 // This is where errors land. We should show an UI error as well here
                 console.log('joinRoomController.findRoomInDatabase() Error', err.code);
             });
+        }
+        /*
+         * get the text that appears on the join button (teacher or student);
+         */
+        $scope.getJoinButtonText = function() {
+            if($scope.joinAsAdmin) {
+                return "Join as Teacher";
+            }
+            return "Join this Room";
+        }
+        /*
+         * Toggle joinAsAdmintt
+         */
+        $scope.toggleAdmin = function() {
+            if($scope.joinAsAdmin) {
+                $scope.joinAsAdmin = false;
+            }else{
+                $scope.joinAsAdmin = true;
+            }
         }
 
         // Update the title of the view
