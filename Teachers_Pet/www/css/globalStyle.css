@@ -48,7 +48,7 @@ a.teacherspet-button {
 /* Add button size */
 #add-button:before{
 	font-size: 180%;
-	padding-right: 15%;
+	padding-right: 40%;
 }
 
 #createRoomForm .item.item-input{

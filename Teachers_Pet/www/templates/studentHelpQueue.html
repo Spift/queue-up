@@ -7,6 +7,11 @@
       <p style="color:#000000;">You are #1 in line</p>
     </div>
 
+    <!-- Error code shown if no questions have been posted yet-->
+    <div style="margin:auto; width:90%; text-align:center" ng-show="room.Questions===undefined">
+      <div style="color: grey">No one has asked any questions yet.<br>Why not be the first? Press "Get Help"!</div>
+    </div>
+
     <!-- the actual Queue -->
     <div ng-repeat="question in room.Questions">
       <div class="card">
