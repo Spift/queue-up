@@ -56,7 +56,8 @@
          */
         $scope.addSubject = function(){
             $scope.formData.subjects.push($scope.formData.subject);
-            $scope.formData.subject='';
+            setTimeout(function() {$scope.formData.subject='';
+            }, 0);
         }
 
         /* Check if subject field is valid NOT OPTIMAL */

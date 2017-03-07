@@ -45,12 +45,30 @@ a.teacherspet-button {
 	opacity: 1.0 !important;
 }
 
+/*Create room form fittings....*/
+
 /* Add button size */
 #add-button:before{
 	font-size: 180%;
-	padding-right: 40%;
+	padding-right: 35%;
 }
 
 #createRoomForm .item.item-input{
+	width: 100.5%;
+	margin-left: -0.25%;
+}
+
+#createRoomForm .item.item-input, #subjectForm .item.item-input{
+	height: 3em;
+}
+
+#subjectForm .item.item-input{
+	margin-top: -5.9%;
+	border-bottom-right-radius: 2.5px;
+	border-bottom-left-radius: 2.5px;
+}
+
+#subjectList .item.item-input{
+	margin-top: -0.5%;
 	height: 3em;
 }
