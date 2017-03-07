@@ -12,6 +12,12 @@
 
       $scope.formData = {};
 
+      /* video background script necessary to run the vid */
+      var video = document.getElementById('video-bg');
+      video.addEventListener('canplay', function() {
+          video.play();
+      })
+
       // if a name exists in local storage, put it in the input field. -1 is an error code i just came up with ......
       var name = localStorageService.getName();
       if(name != -1) {

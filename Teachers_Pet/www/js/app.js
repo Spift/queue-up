@@ -11,7 +11,7 @@ angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
   'roomDataService', 'codeGeneratorService'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
-  //Transitions 
+  //Transitions
   $ionicConfigProvider.views.transition('platform');
 
 
@@ -29,9 +29,9 @@ angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.styleLightContent();
     }
-  });
+  })
 })
 
 /*

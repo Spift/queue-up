@@ -1,21 +1,13 @@
 /* Stylings specific to the entryPage view */
 
 /* The video background */
-.bg-vid {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: 100%;;
-	z-index: -100;
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	-moz-transform: translateX(-50%) translateY(-50%);
-	-ms-transform: translateX(-50%) translateY(-50%);
-	-o-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
-	background-size: cover;
+#video-bg {
+	position: fixed;
+	top: 0%;
+	bottom: 0;
+	left: -130%;
+	z-index: -1;
+	border-style: none;
 }
 
 /* Brown lecturer background */
@@ -23,6 +15,7 @@
 	background: url('../img/bg_1.png') no-repeat center center fixed;
   	background-position: left;
   	background-size: cover;
+		border-style: none;
 }
 
 #unihat{
