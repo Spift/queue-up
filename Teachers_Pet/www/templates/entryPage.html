@@ -1,10 +1,10 @@
 <ion-view title="Entry Page" id="entrypage" hide-back-button="true" hide-nav-bar="true">
 
-  <ion-content padding="true" has-bouncing="false" has-tabs="false" has-header="false" style="top: 0px; border-style: none;">
+  <ion-content padding="false" has-bouncing="false" has-tabs="false" hide-nav-bar="true" has-header="false" style="top: 0px; border-style: none; transform: none;">
 
     <!-- Video background -->
     <video id="video-bg" webkit-playsinline playsinline autoplay muted loop poster="img/bg_1.png">
-      <source src="img/lec_1.mp4" type="video/mp4">
+      <source src="img/lec_1_high.mp4" type="video/mp4">
       <source src="img/lec_1.webm" type="video/webm">
     </video>
 
@@ -12,16 +12,14 @@
 
     <!-- style="color:#DFD7D7;" Previous navy color background-->
 
-    <!-- spacer -->
-    <div class="spacer" style="margin-top: 5%;"></div>
-
     <!-- logo -->
     <div>
-    <img src="img/uni_hat.png" alt="Logo" width="45%" style="text-align: center; display: block; margin: auto;">
+    <img src="img/uni_hat.png" alt="Logo" style="width: 50%;
+    	transform: translate(50%, 50%);">
     </div>
 
     <!-- spacer -->
-    <div class="spacer" style="margin-top: 30%;"></div>
+    <div class="spacer" style="margin-top: 30%; transform: none;"></div>
 
     <!-- name input field -->
     <form name="nameForm" novalidate>
