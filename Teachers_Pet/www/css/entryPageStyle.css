@@ -4,32 +4,35 @@
 	height: 100%;
 }
 
+.scroll-bar-indicator
+{
+	display: none;
+}
+
+div.scroll-bar.scroll-bar-v{
+	display: none;
+}
+
 /* The video background */
 #video-bg {
 	position: fixed;
 	margin-top: -50%;
 	height: 101%;
-	bottom: 0px;
+	bottom: 0%;
 	z-index: -1;
 	border-style: none;
 	left: 50%;
 	margin-right: -50%;
-	transform: translate(-50%, 0%);
+	transform: translate(-50%, 0.5%);
 }
 
 /* Brown lecturer background */
 #entrypage {
-	background: url('../img/bg_1.png') no-repeat center center fixed;
-  	background-position: left;
-  	background-size: cover;
-		border-style: none;
 }
 
 #unihat{
-	width: 30px;
-	margin-left:-5px;
-	margin-right: 8px;
-	margin-top: 2px;
+	width: 15%;
+	padding: 3% 6% 1% 1%;
 }
 
 #queueicon{
@@ -46,55 +49,69 @@
 #entrylabel {/* Transparent name entrypage input label */
 	background-color: rgba(27,21,18,0.4);
 	width: 80%;
-	margin: auto;
+	margin-left: 10%;
+	margin-right: 10%; /* Beware, added automatically by label */
  	border: 1px gray;
  	border-radius: 10px;
-  /*	border-style: solid none solid none;*/
 }
+
 #entrylabel-error{/* red transparent entry label */
 	background-color: rgba(100,0,0,0.4);
 	width: 80%;
-	margin: auto;
  	border: 1px gray;
  	border-radius: 10px;
 }
 #entryname {
 	color: white;
-
 	font-size: 80%;
-	margin-top: 0%;
-	/*width: 96%*/
 }
 #entryname::-webkit-input-placeholder {/* Entrypage name placeholder Color */
   opacity: 1;
 }
 
+/* Color entry page buttons */
+a.entrybutton {
+	background-color: #355c7d;
+	color: white;
+	transition: all 0.2s ease 0s;
+}
+
+a.entrybutton:hover{
+	color: white;
+	background-color: #2e506d;
+}
+
+a.entrybutton:active{
+	border: 0px;
+    background-color: #2e506d;
+}
+
+/* Join and Create button placment adjustment */
+#entryPage-join {
+	/*padding-left: 10px;*/
+	border-radius: 10px;
+	transform: scale(0.9, 0.9);
+	/*margin-right: 30px;*/
+}
+#entryPage-create {
+	/*margin-left: 10px;*/
+	border-radius: 10px;
+	transform: scale(0.9, 0.9);
+	/*margin-right: 10px;*/
+}
+
 div.slider{
 	height: 24%;
 	width: 101%;
-	transform: translate(-0.5%, 9%);
+	transform: translate(-0.5%, 10.5%);
 	border: 1px solid;
 	border-color: white;
 }
 
-/*slider stufff
-ion-slides{
-	position: fixed;
-  height: 10%;
-  color: white;
-  width: 10%;
-  transform: translate(0%, 0%);
-  border: 1px solid;
-  border-collapse: true;
-}
-
-.slider-slide{
-  text-align: center;
-}
-*/
-
 .slider-header {
 	font-family: Helvetica, Sans-Serif;
+	height: 100%;
+	width: 100%;
 	margin: auto;
 	color: white;
 	font-weight: bold !important;
@@ -104,28 +121,20 @@ ion-slides{
 
 .slider-body {
 	font-family: Helvetica, Sans-Serif;
+	height: 100%;
+	width: 100%;
 	color: white;
 	font-size: 1.8vh;
 	font-weight: bold !important;
 	padding-top: 5%;
 }
 
-span.slider-pager-page.active{
+span.slider-pager-page {
+	height: 100%;
+	width: 100%;
 	color: white;
 }
 
-/* Slider bullet options!!!! */
-.swiper-pagination-bullet {
-	/*margin-bottom: 23% !important;*/
-	margin-bottom: -2% !important;
-	color: black !important;
-	border: 0.4em solid !important; /*size of bullets */
-	opacity: 0.3 !important;
-}
-
-.swiper-pagination-bullet-active{
-	/*margin-bottom: 21.9% !important;*/
-	color: #eaeaea !important;
-	opacity: 1 !important;
-	/*border: 0.70em solid !important;*/
+span.slider-pager-page.active{
+	color: white;
 }

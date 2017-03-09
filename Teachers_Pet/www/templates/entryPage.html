@@ -1,38 +1,30 @@
 <ion-view title="Entry Page" id="entrypage" hide-back-button="true" hide-nav-bar="true">
 
-  <ion-content padding="false" has-bouncing="false" has-tabs="false" hide-nav-bar="true" has-header="false" style="top: 0px; border-style: none; transform: none;">
-
-    <!-- Video background -->
-    <video id="video-bg" webkit-playsinline playsinline autoplay muted loop poster="img/bg_1.png">
-      <source src="img/lec_1_blur.mp4" type="video/mp4">
-      <source src="img/lec_1.webm" type="video/webm">
-    </video>
+  <ion-content has-bouncing="false" style="height: 100%; top: 1px;">
 
     <!-- class="has-header" -->
 
     <!-- style="color:#DFD7D7;" Previous navy color background-->
 
-    <!-- logo -->
+    <!-- logo
     <div>
-    <img src="img/uni_hat.png" alt="Logo" style="width: 50%;
-    	transform: translate(50%, 50%);">
+    <img src="img/uni_hat.png" alt="Logo" style="width: 50%; height: 100%; transform: translate(50%, 50%);">
     </div>
+    -->
 
     <!-- spacer -->
-    <div class="spacer" style="margin-top: 30%; transform: none;"></div>
+    <div class="spacer" style="height: 35%;"></div>
 
     <!-- name input field -->
-    <form name="nameForm" novalidate>
+    <form name="nameForm" novalidate style="width: 100%; height: 7%;">
       <label id="entrylabel" class="item item-input" name="name_input">
-        <!--<i class="icon ion-ios-paw" style="padding-right:16px;"></i>-->
         <img id="unihat" src="img/uni_hat.png" alt="Hat">
-        <div style="padding-right: 7.5%"></div>
         <input id="entryname" name="entryname" required type="text" ng-minlength="2" ng-maxlength="25" placeholder="Enter your name" ng-model='formData.name'>
       </label>
     </form>
 
     <!-- join and create room buttons -->
-    <div id="entryPage-button-bar2" class="button-bar">
+    <div class="button-bar" style="width: 100%; height: 10%;">
       <a ng-click="joinRoomPressed()" id="entryPage-join" class="teacherspet-button button button-block" ng-disabled="nameForm.$invalid" >Join Room</a>
       <a ng-click="createRoomPressed()" id="entryPage-create" class="teacherspet-button button button-block" ng-disabled="nameForm.$invalid">Create Room</a>
     </div>
@@ -48,7 +40,7 @@
       </ion-slide-page>
     </ion-slides>
     -->
-    <ion-slide-box>
+  <ion-slide-box>
     <ion-slide show-pager="true" ng-repeat="sliderPage in sliderData">
         <div>
           <center class="slider-header">{{sliderPage.head}}</center>
@@ -57,6 +49,11 @@
     </ion-slide>
   </ion-slide-box>
 
+  <!-- Video background -->
+  <video id="video-bg" webkit-playsinline playsinline autoplay muted loop poster="img/bg_1.png">
+    <source src="img/lec_1_blur.mp4" type="video/mp4">
+    <source src="img/lec_1.webm" type="video/webm">
+  </video>
 
   </ion-content>
 </ion-view>
