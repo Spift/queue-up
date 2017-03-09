@@ -1,13 +1,20 @@
 /* Stylings specific to the entryPage view */
 
+.scroll {
+	height: 100%;
+}
+
 /* The video background */
 #video-bg {
 	position: fixed;
-	top: 0%;
-	bottom: 0;
-	left: -130%;
+	margin-top: -50%;
+	height: 100%;
+	bottom: 0px;
 	z-index: -1;
 	border-style: none;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, 0%);
 }
 
 /* Brown lecturer background */
@@ -73,14 +80,11 @@ ion-slides{
   border-collapse: true;
 }
 
-.slider-slide
-{
+.slider-slide{
   text-align: center;
 }
 
 .slider-container {
-	margin: auto; !important;
-  	width: 90%; !important;
   	/*height: 50%;*/
 }
 

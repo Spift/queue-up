@@ -1,5 +1,5 @@
 <ion-view title="Create Room" id="page5">
-  <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header" style="top: 0px; margin-top: 44px;">
      <ion-nav-back-button></ion-nav-back-button>
         <form id="createRoomForm" name="createRoomForm" class="list" novalidate>
           <!-- Room name input -->
@@ -7,14 +7,14 @@
             <i class="icon ion-social-sass placeholder-icon" style="padding-right: 1em; "></i>
             <input id="room-name-input" type="text" placeholder="Enter the name of your room" ng-model="formData.roomName" required type="text" ng-minlength="2" ng-maxlength="25">
           </ion-item>
-          
+
           <!-- Room description input -->
           <ion-item class="item item-input">
             <i class="icon ion-social-octocat placeholder-icon" style="padding-right: 1em; "></i>
             <input id="room-description-input" type="text" placeholder="Enter a description for the room" ng-model="formData.description" required type="text" ng-minlength="12" ng-maxlength="140">
           </ion-item>
           </form>
-          
+
           <!-- Room categories input -->
           <form name="subjectForm" id="subjectForm">
           <ion-item id="sub-label" class="item item-input">
@@ -23,7 +23,7 @@
             <a id="add-button" ng-click="addSubject()" ng-disabled="subjectForm.$invalid" class="button button-icon icon ion-ios-plus-outline"></a>
           </ion-item>
           </form>
-  
+
           <!-- Spacer -->
           <div class="spacer" style="margin-top: 5%;"></div>
 
@@ -34,7 +34,7 @@
             </ion-item>
           </ion-list>
           <!-- <div class="spacer" style="width: 300px; height: 83px;"></div> -->
-        
+
         <!-- create room button -->
         <div class="card">
           <div class="item item-divider">
@@ -47,7 +47,6 @@
             </div>
           </div>
         </div>
-        
+
   </ion-content>
 </ion-view>
-

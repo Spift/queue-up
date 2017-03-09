@@ -16,9 +16,14 @@
     <preference name="FadeSplashScreenDuration" value="3000" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
-    <preference name="SplashScreen" value="none" />
+    <!-- Sets the splash screen cover -->
+    <preference name="SplashScreen" value="false" />
+    <!-- Background video setings on the entry page -->
     <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false"/>
+    <!-- Force portrait orientation, disables landscape orientation -->
+    <preference name="orientation" value="portrait"/>
+    <!-- Fix for Cordova whitelist plugin -->
     <allow-navigation href="https://*/*"/>
     <allow-navigation href="http://*/*"/>
     <feature name="StatusBar">
