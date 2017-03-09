@@ -8,7 +8,7 @@
 #video-bg {
 	position: fixed;
 	margin-top: -50%;
-	height: 100%;
+	height: 101%;
 	bottom: 0px;
 	z-index: -1;
 	border-style: none;
@@ -69,13 +69,21 @@
   opacity: 1;
 }
 
-/*slider stufff*/
-ion-slides{
-  height: 25.5vh !important;
-  color: white;
-  width: 110% !important;
-  transform: translate(-5%, 0%);
+div.slider{
+	height: 24%;
+	width: 101%;
+	transform: translate(-0.5%, 9%);
+	border: 1px solid;
+	border-color: white;
+}
 
+/*slider stufff
+ion-slides{
+	position: fixed;
+  height: 10%;
+  color: white;
+  width: 10%;
+  transform: translate(0%, 0%);
   border: 1px solid;
   border-collapse: true;
 }
@@ -83,10 +91,7 @@ ion-slides{
 .slider-slide{
   text-align: center;
 }
-
-.slider-container {
-  	/*height: 50%;*/
-}
+*/
 
 .slider-header {
 	font-family: Helvetica, Sans-Serif;
@@ -94,8 +99,7 @@ ion-slides{
 	color: white;
 	font-weight: bold !important;
 	font-size: 20px;
-	padding-bottom: 4%;
-	padding-top: 12%;
+	padding-top: 5%;
 }
 
 .slider-body {
@@ -103,6 +107,11 @@ ion-slides{
 	color: white;
 	font-size: 1.8vh;
 	font-weight: bold !important;
+	padding-top: 5%;
+}
+
+span.slider-pager-page.active{
+	color: white;
 }
 
 /* Slider bullet options!!!! */

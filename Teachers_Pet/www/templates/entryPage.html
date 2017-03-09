@@ -4,7 +4,7 @@
 
     <!-- Video background -->
     <video id="video-bg" webkit-playsinline playsinline autoplay muted loop poster="img/bg_1.png">
-      <source src="img/lec_1_high.mp4" type="video/mp4">
+      <source src="img/lec_1_blur.mp4" type="video/mp4">
       <source src="img/lec_1.webm" type="video/webm">
     </video>
 
@@ -37,17 +37,25 @@
       <a ng-click="createRoomPressed()" id="entryPage-create" class="teacherspet-button button button-block" ng-disabled="nameForm.$invalid">Create Room</a>
     </div>
 
-        <!-- slider -->
-    <div style="margin-top: 15.6%;">
-      <ion-slides  options="data.sliderOptions" slider="data.sliderDelegate">
-        <ion-slide-page show-pager="true" ng-repeat="sliderPage in sliderData">
-          <div class="slider-container">
-            <center class="slider-header">{{sliderPage.head}}</center>
-            <center ng-bind-html="sliderPage.body" class="slider-body"></center>
-          </div>
-        </ion-slide-page>
-      </ion-slides>
-    </div>
+    <!-- slider -->
+    <!--
+    <ion-slides  options="data.sliderOptions" slider="data.sliderDelegate">
+      <ion-slide-page show-pager="true" ng-repeat="sliderPage in sliderData">
+        <div class="slider-container">
+          <center class="slider-header">{{sliderPage.head}}</center>
+          <center ng-bind-html="sliderPage.body" class="slider-body"></center>
+        </div>
+      </ion-slide-page>
+    </ion-slides>
+    -->
+    <ion-slide-box>
+    <ion-slide show-pager="true" ng-repeat="sliderPage in sliderData">
+        <div>
+          <center class="slider-header">{{sliderPage.head}}</center>
+          <center ng-bind-html="sliderPage.body" class="slider-body"></center>
+       </div>
+    </ion-slide>
+  </ion-slide-box>
 
 
   </ion-content>
