@@ -64,8 +64,13 @@
 
 /*slider stufff*/
 ion-slides{
-  height: 20vh !important;
+  height: 25.5vh !important;
   color: white;
+  width: 110% !important;
+  transform: translate(-5%, 0%);
+
+  border: 1px solid;
+  border-collapse: true;
 }
 
 .slider-slide
@@ -85,27 +90,29 @@ ion-slides{
 	color: white;
 	font-weight: bold !important;
 	font-size: 20px;
-	padding-bottom: 8px;
+	padding-bottom: 4%;
+	padding-top: 12%;
 }
 
 .slider-body {
 	font-family: Helvetica, Sans-Serif;
 	color: white;
-	font-size: 87.5%;
+	font-size: 1.8vh;
 	font-weight: bold !important;
 }
 
 /* Slider bullet options!!!! */
 .swiper-pagination-bullet {
-	margin-bottom: 23% !important;
-	color: white !important;
+	/*margin-bottom: 23% !important;*/
+	margin-bottom: -2% !important;
+	color: black !important;
 	border: 0.4em solid !important; /*size of bullets */
 	opacity: 0.3 !important;
 }
 
 .swiper-pagination-bullet-active{
-	margin-bottom: 21.9% !important;
-	color: white !important;
-	opacity: 1.0 !important;
-	border: 0.70em solid !important;
+	/*margin-bottom: 21.9% !important;*/
+	color: #eaeaea !important;
+	opacity: 1 !important;
+	/*border: 0.70em solid !important;*/
 }
