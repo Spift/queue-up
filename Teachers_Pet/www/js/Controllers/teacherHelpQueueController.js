@@ -11,7 +11,7 @@
         console.log($scope.room.Questions);
     	
         // Update the title of the view
-        $ionicNavBarDelegate.title('Teacher Help Queue');
+        $ionicNavBarDelegate.title($scope.room.title);
 
         //Hide back button
         $ionicNavBarDelegate.showBackButton(false);

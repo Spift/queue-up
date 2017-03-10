@@ -4,7 +4,7 @@
 
     <!-- Random Queue information -->
     <div id="studentHelpQueue-markdown5" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">You are #1 in line</p>
+      <p style="color:#000000;">{{room.title}}<br>{{room.description}}</p>
     </div>
 
     <!-- Error code shown if no questions have been posted yet-->
@@ -15,7 +15,12 @@
     <!-- the actual Queue -->
     <div ng-repeat="question in room.Questions">
       <div class="card">
-        <div class="item item-divider" ng-class="{'item item-divider highlighted' : question.studentID == studentID}">{{$index+1}}. {{question.category}}, {{question.student}}</div>
+        <div class="item item-divider" ng-class="{'item item-divider highlighted' : question.studentID == studentID}">
+          {{$index+1}}. {{question.student}}, {{question.category}}
+          <div class="item-icon-right" ng-show="question.studentID == studentID">
+            <div class="icon ion-ios-close-empty" ng-click="deleteMyQuestion($index)"></div> <!--if left as an <a> tag, icon becomes blue?-->
+          </div>
+        </div>
         <div class="item item-text-wrap" ng-class="{'item item-text-wrap highlighted' : question.studentID == studentID}">{{question.body}}</div>
       </div>
     </div>

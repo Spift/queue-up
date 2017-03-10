@@ -20,12 +20,10 @@
       })
 
       document.addEventListener("pause", () => {
-
         console.log('paused');
       }, false);
 
       document.addEventListener("resume", () => {
-
         console.log('resume');
         video.play();
       }, false);

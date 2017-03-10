@@ -2,12 +2,14 @@
 
 /* Highlighted question box header bar*/
 .item.item-divider.highlighted {
-	background-color: pink;
+	background-color: #517899;
+	color: white;
+	font-weight: bold;
 }
 
 /* Highlighted question box header bar*/
 .item.item-text-wrap.highlighted {
-	background-color: pink;
+	/*background-color: pink;*/
 }
 
 /* The standard styling for all buttons in the app */
