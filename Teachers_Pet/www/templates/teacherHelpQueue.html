@@ -16,7 +16,7 @@
     <!-- the actual Queue -->
     <div ng-repeat="question in room.Questions">
       <div class="card">
-        <div class="item item-divider">{{$index+1}}. {{question.category}}, {{question.student}}</div>
+        <div class="item item-divider">{{$index+1}}. {{question.student}}, {{question.category}}</div>
         <div class="item item-text-wrap">{{question.body}}</div>
       </div>
     </div>

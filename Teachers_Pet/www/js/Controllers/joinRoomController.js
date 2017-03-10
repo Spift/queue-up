@@ -25,7 +25,7 @@
             }
         }, true);
         /*
-         * Join Room button was pressed, so goto student help queue. Or admin queue if admin code was entered
+         * Join Room button was pressed, so goto student help queue. Or admin queue if admin code was also entered
          */
         $scope.joinRoomPressed = function(formToClear) {
             $scope.validRoomData = false;
