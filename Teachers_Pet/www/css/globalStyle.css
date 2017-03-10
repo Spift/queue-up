@@ -72,3 +72,31 @@ a.teacherspet-button {
 	margin-top: -0.5%;
 	height: 3em;
 }
+
+/* GetHelp subject placeholder */
+select:required:invalid {
+  color: #a5a5a5;
+}
+
+select{
+	direction: ltr !important;
+	width: 100% !important;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: black;
+}
+
+/* Bottom margin for pages so it is not hidden behind footer */
+ion-content{
+	position: relative;
+	margin-bottom: 15% !important;
+}
+
+ion-content.no-footer{
+	margin-bottom: 0% !important;
+}

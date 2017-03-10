@@ -5,6 +5,7 @@
       <!-- category drop downnn -->
       <label class="item item-select">
         <select ng-model=formData.category required>
+          <option value="" disabled selected hidden>Add a subject</option>
           <option ng-repeat="category in room.Categories">{{category}}</option>
         </select>
       </label>

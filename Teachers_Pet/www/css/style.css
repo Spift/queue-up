@@ -1,14 +1,8 @@
 body{
 	position: static;
 }
-
 .bar-footer{
   height:10% !important;
-}
-
-.bar.bar-footer.bar-royal {
-	background-color: #517899;
-	border-color: #517899;
 }
 
 .bar .title {
@@ -39,6 +33,7 @@ p.icontext{
 }
 */
 
+
 /* The teacher button bar
 #teacher-tab-bar{
 	border: 1px black;
@@ -46,9 +41,4 @@ p.icontext{
 }
 */
 
-/* Both bottom bars
-.bar.bar-footer.bar-positive button{
-	border: 1px black;
-	border-style: solid;
-}
-*/
+
