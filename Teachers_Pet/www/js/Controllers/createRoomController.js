@@ -55,10 +55,22 @@
          * Add a subject to the subject list
          */
         $scope.addSubject = function(){
-            console.log('added subject: ' + $scope.formData.subject);
             $scope.formData.subjects.push($scope.formData.subject);
-            $scope.formData.subject='';
+            setTimeout(function() {$scope.formData.subject='';
+            }, 0);
         }
+
+        /* Check if subject field is valid NOT OPTIMAL */
+        $scope.checkIfValid = function(input){
+            var inputValLen = document.getElementById(input).value.length;
+            return(inputValLen < 2 || inputValLen > 24);
+        }
+
+        /* Remove a subject from the subject list */
+        $scope.removeSubject = function(index){
+            $scope.formData.subjects.splice(index, 1);
+        }
+
         // Update the title of the view
         $ionicNavBarDelegate.title('Create Room');
         //Show back button
