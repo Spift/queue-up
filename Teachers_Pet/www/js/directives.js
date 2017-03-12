@@ -3,16 +3,12 @@ var app = angular.module('app.directives', []);
 
 
 app.directive('teachersPetTabBar', function(){
-	var logScope = function(scope, element, attrs) {
-		console.log("scope.page is", scope.template);
-	}
 	return {
 		scope: {
 			page: '@',
 			template: '@',
 		},
 		template: '<div ng-include="template"></div>',
-		link: logScope,
 	};
 });
 

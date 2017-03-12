@@ -9,12 +9,12 @@
     	console.log('Room settings controller fired');
         $scope.room = roomDataService.getRoom();
         $scope.nothingHasChanged = true; //bool for keeping track of whether the room objects data differs from what is in the input fields. If it differs we un-gray the refresh button.
-        $scope.subjects = $scope.room.Categories;
-        //$scope.formData.subjects = [];
+        $scope.subjects = [];
+        setSubjects();
         $scope.formData = {
             roomName : $scope.room.title,
-            description : $scope.room.description
-            //subjects : $scope.room.Categories
+            description : $scope.room.description,
+            subject : ""
         };
         /*
          *  Watch for ANY changes to the form, and make refresh clickable if change has occur(r)ed
@@ -31,11 +31,10 @@
          * runs through all input forms and compares whether they match the room data. if not the refresh button should be made clickable
          */
         function somethingHasChanged() {
-            console.log("somethingHasChanged" + $scope.subjects);
-            console.log($scope.room.Categories);
+            console.log(compareSubjects());
             return ($scope.formData.roomName != $scope.room.title ||
-                                          $scope.formData.description != $scope.room.description ||
-                                          $scope.subjects != $scope.room.Categories);
+                    $scope.formData.description != $scope.room.description ||
+                    !compareSubjects());
         }
         /*
          * write what is in the input fields to the room object, i.e. save it to the database for all to see and enjoy.
@@ -50,25 +49,19 @@
             
             $scope.room.title = $scope.formData.roomName;
             $scope.room.description = $scope.formData.description;
-            $scope.room.Categories = $scope.subjects;
             $scope.nothingHasChanged = true;
+            //setSubjects();
             console.log("changes added");
         }
         /*
          * Add a subject to the subject list when clicking the PLUS button
          */
         $scope.addSubject = function() {
-            console.log("addSubject fired");
-            $scope.subjects.push($scope.formData.subject);
-            $scope.formData = {};
-            $scope.formData = {
-                roomName : $scope.room.title,
-                description : $scope.room.description
-                /*subjects : $scope.room.Categories*/
-            };
-
-            //formToClear.$setPristine();
-            //formToClear.$setUntouched();
+            console.log("addSubject fired", $scope.formData.subject.length);
+            if($scope.formData.subject != "") { // for some reason this fires twice when the plus button is clicked so this check is necessary...
+                $scope.subjects.push($scope.formData.subject);
+                $scope.formData.subject = "";
+            }
         }   
         /*
          * Remove a subject from the subject list
@@ -76,6 +69,30 @@
         $scope.removeSubject = function(index){
             console.log("removeSubject fired");
             $scope.subjects.splice(index, 1);
+            //$scope.nothingHasChanged = false;
+            $scope.formData.subject = " ";//provoke the watch function to trigger thus enabling the refresh button
+        }
+        /*
+         * Fill the subjects array "manually" or else firebase will keep it updated live which makes it impossible to check for changes....
+         */
+        function setSubjects() {
+            for(var i = 0; i < $scope.room.Categories.length; i++) {
+                $scope.subjects.push($scope.room.Categories[i]);
+            }
+        }
+        /*
+         * Compare subjects array with firebase categories array "manually" as they are not the same type
+         */
+        function compareSubjects() {
+            if($scope.room.Categories.length != $scope.subjects.length) {
+                return false;
+            }
+            for(var i = 0; i < $scope.room.Categories.length; i++) {
+                if($scope.subjects[i] != $scope.room.Categories[i]) {
+                    return false;
+                }
+            }
+            return true;
         }
 
         // Update the title of the view

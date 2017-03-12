@@ -19,22 +19,14 @@
         <input id="room-description-input" type="text" placeholder="Enter a description for the room" ng-model="formData.description" required type="text" ng-minlength="12" ng-maxlength="140">
       </label>
       
-      <!-- Room categories input -->
+      <!-- Room categories input THIS IS DISABLED IN A BIT OF A HACKY WAY-->
       <div id="sub-label" class="item item-input">
         <i class="icon ion-happy placeholder-icon" style="padding-right: 1em; "></i>
-        <input id="room-subject-input" name="sub_input" type="text" placeholder="Enter a subject" ng-model="formData.subject" type="text" ng-minlength="2" ng-maxlength="140">
-        <a id="add-button" ng-click="addSubject()" class="button button-icon icon ion-ios-plus-outline"></a>
+        <input id="room-subject-input" name="sub_input" type="text" placeholder="Enter a subject" ng-model="formData.subject" type="text">
+        <a ng-disabled="formData.subject.length < 2 || formData.subject.length > 32" ng-click="addSubject()" class="button button-icon icon ion-ios-plus-outline"></a>
       </div>
     </form>  
 
-    <!-- Room categories input -->
-    <!--form name="subjectForm" id="subjectForm">
-      <ion-item id="sub-label" class="item item-input">
-        <i class="icon ion-social-freebsd-devil placeholder-icon" style="padding-right: 1em; "></i>
-        <input name="sub_input" required type="text" placeholder="Enter a subject" ng-model="formData.subject" type="text" ng-minlength="2" ng-maxlength="140">
-        <a class="button button-icon icon ion-ios-plus-outline" id="add-button" ng-click="addSubject(subjectForm)" ng-disabled="subjectForm.$invalid"></a>
-      </ion-item>
-    </form-->
 
     <!-- Spacer -->
     <div class="spacer" style="margin-top: 5%;"></div>
@@ -48,7 +40,7 @@
     </ion-list>
 
     <!-- refresh button-->
-    <div class="button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || roomDetailsForm.$invalid || subjects.length === 0" ng-click="applyChanges()">Apply Changes</div>
+    <div class="button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || (roomDetailsForm.$invalid && formData.subject.length >= 2) || subjects.length === 0" ng-click="applyChanges()">Apply Changes</div>
     <!-- leave/delete button-->
     <a ui-sref="entryPage" class="button icon-right ion-android-walk button-assertive button-block">[Delete/Leave] Room</a>
     
