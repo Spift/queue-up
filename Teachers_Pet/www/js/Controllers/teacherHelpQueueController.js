@@ -8,7 +8,6 @@
     function teacherHelpQueueController($scope, roomDataService, $stateParams, $state, $ionicNavBarDelegate) {
     	console.log('Teacher help queue controller fired');
         $scope.room = roomDataService.getRoom();
-        console.log($scope.room.Questions);
     	
         // Update the title of the view
         $ionicNavBarDelegate.title($scope.room.title);

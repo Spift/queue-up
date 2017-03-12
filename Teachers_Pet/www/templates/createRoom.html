@@ -13,28 +13,27 @@
             <i class="icon ion-social-octocat placeholder-icon" style="padding-right: 1em; "></i>
             <input id="room-description-input" type="text" placeholder="Enter a description for the room" ng-model="formData.description" required type="text" ng-minlength="12" ng-maxlength="140">
           </ion-item>
+          </form>
 
-        </form>
-
-        <!-- Room categories input -->
-        <form name="subjectForm" id="subjectForm">
+          <!-- Room categories input -->
+          <form name="subjectForm" id="subjectForm">
           <ion-item id="sub-label" class="item item-input">
             <i class="icon ion-social-freebsd-devil placeholder-icon" style="padding-right: 1em; "></i>
             <input id="rrr" required name="sub_input" type="text" placeholder="Enter a subject" ng-model="formData.subject" type="text" ng-minlength="2" ng-maxlength="140">
             <a id="add-button" ng-click="addSubject()" ng-disabled="subjectForm.$invalid" class="button button-icon icon ion-ios-plus-outline"></a>
           </ion-item>
-        </form>
+          </form>
 
-        <!-- Spacer -->
-        <div class="spacer" style="margin-top: 5%;"></div>
+          <!-- Spacer -->
+          <div class="spacer" style="margin-top: 5%;"></div>
 
-        <!-- Category list -->
-        <ion-list required id="subjectList" ng-repeat="subject in formData.subjects track by $index">
-          <ion-item class="item item-input item-icon-right">{{$index+1}}. {{subject}}
-          <a class="button button-icon icon ion-ios-trash-outline" ng-click="removeSubject($index)"></a>
-          </ion-item>
-        </ion-list>
-        <!-- <div class="spacer" style="width: 300px; height: 83px;"></div> -->
+          <!-- Category list -->
+          <ion-list required id="subjectList">
+            <ion-item class="item item-input item-icon-right" ng-repeat="subject in formData.subjects track by $index">{{$index+1}}. {{subject}}
+            <a class="button button-icon icon ion-ios-minus-outline" ng-click="removeSubject($index)"></a>
+            </ion-item>
+          </ion-list>
+          <!-- <div class="spacer" style="width: 300px; height: 83px;"></div> -->
 
         <!-- create room button -->
         <div class="card">
