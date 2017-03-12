@@ -11,6 +11,7 @@
         $scope.showLoadingSpinner = false; // show/hide the loading thing
         $scope.showRoomNotFoundError = false;
         $scope.formData = {code: "fcuzn", adminCode : "dsfm1x"};
+
         $scope.joinAsAdmin = false;
         var roomCodeLength = 5; // the standard length of a room Code: if innput field text has this length, we automatically look in firebase for a room. no need for a button press
         /*
