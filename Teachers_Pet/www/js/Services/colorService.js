@@ -30,12 +30,10 @@
 		/*
     	 * does what is says on the tin. <dampen> argument toggles whether or not the color should be desaturated
     	 */
-		function getColorFromString(str, dampen=true){
+		function getColorFromString(str, desaturation=0.7){
 			var i = hashCode(str);
 		    var color = Colors[Math.abs(i % Colors.length)];
-		    if(dampen) {
-		    	color = dampenColor(color, 0.7);
-			}
+		    color = dampenColor(color, desaturation);
 		    return color;
 		}
     	/*

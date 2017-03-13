@@ -14,10 +14,10 @@
 
     <!-- the actual Queue -->
     <div class="card" ng-repeat="question in room.Questions">
-      <div ng-style="{'background-color': getSubjectColor(question.category), 'border-color': getSubjectColor(question.category)}" ng-click="expandQuestion($index)" class="item item-divider">
+      <div ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" ng-click="expandQuestion($index)" class="item item-divider">
         {{$index+1}}. {{question.student}}, {{question.category}}
       </div>
-      <div ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
+      <div ng-style="{'background-color': getSubjectColor(question.category, 0.9), 'border-color': getSubjectColor(question.category, 0.4)}" ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
     </div>
 
   </ion-content>

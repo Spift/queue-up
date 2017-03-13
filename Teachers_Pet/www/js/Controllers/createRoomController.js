@@ -73,8 +73,8 @@
         /*
          * get a color based on subject string
          */
-        $scope.getSubjectColor = function(subject) {
-            var color = colorService.getColorFromString(subject);
+        $scope.getSubjectColor = function(subject, desaturation) {
+            var color = colorService.getColorFromString(subject, desaturation);
             return color;
         }
 

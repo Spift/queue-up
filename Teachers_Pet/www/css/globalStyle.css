@@ -1,5 +1,10 @@
 /* Universal stylings, used across different views*/
 
+/*font size of all lists. This was made to specifically target the category lists, so maybe make a custom class for that...*/
+.item.item-input.item-icon-right.category-item {
+	font-size: 14px !important;
+}
+
 /* Highlighted question box header bar*/
 .item.item-divider.highlighted {
 	background-color: #517899;
