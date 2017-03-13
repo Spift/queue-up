@@ -6,7 +6,6 @@
       <p style="color:#000000;">40 students need help with greedy algorithms</p>
     </div>
     <div class="spacer" style="width: 300px; height: 0px;"></div>
-    <button id="teacherHelpQueue-button26" class="button button-positive  button-block">Clear queue for certain subject</button>
     
     <!-- Error code shown if no questions have been posted yet-->
     <div style="margin:auto; width:90%; text-align:center" ng-show="room.Questions===undefined">
@@ -14,11 +13,11 @@
     </div>
 
     <!-- the actual Queue -->
-    <div ng-repeat="question in room.Questions">
-      <div class="card">
-        <div class="item item-divider">{{$index+1}}. {{question.student}}, {{question.category}}</div>
-        <div class="item item-text-wrap">{{question.body}}</div>
+    <div class="card" ng-repeat="question in room.Questions">
+      <div ng-style="{'background-color': getSubjectColor(question.category), 'border-color': getSubjectColor(question.category)}" ng-click="expandQuestion($index)" class="item item-divider">
+        {{$index+1}}. {{question.student}}, {{question.category}}
       </div>
+      <div ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
     </div>
 
   </ion-content>

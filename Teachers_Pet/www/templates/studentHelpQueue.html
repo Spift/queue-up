@@ -12,16 +12,14 @@
     </div>
 
     <!-- the actual Queue -->
-    <div ng-repeat="question in room.Questions">
-      <div class="card">
-        <div class="item item-divider" ng-class="{'item item-divider highlighted' : question.studentID == studentID}">
-          {{$index+1}}. {{question.student}}, {{question.category}}
-          <div class="item-icon-right" ng-show="question.studentID == studentID">
-            <div class="icon ion-ios-close-empty" ng-click="deleteMyQuestion($index)"></div> <!--if left as an <a> tag, icon becomes blue?-->
-          </div>
+    <div class="card" ng-repeat="question in room.Questions">
+      <div ng-click="expandQuestion($index)" class="item item-divider" ng-class="{'item item-divider highlighted' : question.studentID == studentID}">
+        {{$index+1}}. {{question.student}}, {{question.category}}
+        <div class="item-icon-right" ng-show="question.studentID == studentID">
+          <div class="icon ion-ios-close-empty" ng-click="deleteMyQuestion($index); $event.stopPropagation();"></div> <!--if left as an <a> tag, icon becomes blue?-->
         </div>
-        <div class="item item-text-wrap" ng-class="{'item item-text-wrap highlighted' : question.studentID == studentID}">{{question.body}}</div>
       </div>
+      <div ng-show="visibleQuestion == $index" class="item item-text-wrap" ng-class="{'item item-text-wrap highlighted' : question.studentID == studentID}">{{question.body}}</div>
     </div>
 
   </ion-content>

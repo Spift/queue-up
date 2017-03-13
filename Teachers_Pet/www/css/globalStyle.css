@@ -3,6 +3,7 @@
 /* Highlighted question box header bar*/
 .item.item-divider.highlighted {
 	background-color: #517899;
+	border-color: #517899;
 	color: white;
 	font-weight: bold;
 }

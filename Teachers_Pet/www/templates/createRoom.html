@@ -29,7 +29,7 @@
 
           <!-- Category list -->
           <ion-list required id="subjectList">
-            <ion-item class="item item-input item-icon-right" ng-repeat="subject in formData.subjects track by $index">{{$index+1}}. {{subject}}
+            <ion-item ng-style="{'background-color': getSubjectColor(subject), 'border-color': getSubjectColor(subject)}" class="item item-input item-icon-right" ng-repeat="subject in formData.subjects track by $index">{{$index+1}}. {{subject}}
             <a class="button button-icon icon ion-ios-minus-outline" ng-click="removeSubject($index)"></a>
             </ion-item>
           </ion-list>

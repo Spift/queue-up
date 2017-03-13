@@ -5,7 +5,7 @@
         .module('roomSettingsController', [])
         .controller('roomSettingsController', roomSettingsController);
 
-    function roomSettingsController($scope, $stateParams, $state, $ionicNavBarDelegate, roomDataService, firebaseDataService) {
+    function roomSettingsController($scope, $stateParams, colorService, $state, $ionicNavBarDelegate, roomDataService, firebaseDataService) {
     	console.log('Room settings controller fired');
         $scope.room = roomDataService.getRoom();
         $scope.nothingHasChanged = true; //bool for keeping track of whether the room objects data differs from what is in the input fields. If it differs we un-gray the refresh button.
@@ -70,7 +70,14 @@
             console.log("removeSubject fired");
             $scope.subjects.splice(index, 1);
             //$scope.nothingHasChanged = false;
-            $scope.formData.subject = " ";//provoke the watch function to trigger thus enabling the refresh button
+            $scope.formData.subject = " ";//***VERY HACKY*** provoke the watch function to trigger thus enabling the refresh button
+        }
+        /*
+         * get a color based on subject string
+         */
+        $scope.getSubjectColor = function(subject) {
+            var color = colorService.getColorFromString(subject);
+            return color;
         }
         /*
          * Fill the subjects array "manually" or else firebase will keep it updated live which makes it impossible to check for changes....

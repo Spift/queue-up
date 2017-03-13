@@ -5,7 +5,7 @@
         .module('createRoomController', [])
         .controller('createRoomController', createRoomController);
 
-    function createRoomController($scope, codeGeneratorService, firebaseDataService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, $ionicHistory) {
+    function createRoomController($scope, colorService, codeGeneratorService, firebaseDataService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, $ionicHistory) {
     	console.log('create room controller fired');
 
         $scope.formData = {};
@@ -69,6 +69,13 @@
         /* Remove a subject from the subject list */
         $scope.removeSubject = function(index){
             $scope.formData.subjects.splice(index, 1);
+        }
+        /*
+         * get a color based on subject string
+         */
+        $scope.getSubjectColor = function(subject) {
+            var color = colorService.getColorFromString(subject);
+            return color;
         }
 
         // Update the title of the view
