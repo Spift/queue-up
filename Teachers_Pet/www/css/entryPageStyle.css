@@ -41,7 +41,7 @@ div.scroll-bar.scroll-bar-v{
  * Refers to ion-nav-view, mainly used to set the background image
  */
 #entrypage {
-	background: url('../img/bg_1.png') no-repeat center center fixed;
+	background: url('../img/bg_1.jpg') no-repeat center center fixed;
 	background-size: cover;
 }
 
@@ -54,7 +54,7 @@ div.scroll-bar.scroll-bar-v{
 }
 
 /**
-* 
+*
 */
 
 #queueicon{
@@ -153,4 +153,14 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 	font-size: 1.8vh;
 	font-weight: bold !important;
 	padding-top: 5%;
+}
+
+span.slider-pager-page {
+	height: 100%;
+	width: 100%;
+	color: black;
+}
+
+span.slider-pager-page.active{
+	color: white;
 }

@@ -1,13 +1,21 @@
 /* Universal stylings, used across different views*/
 
+/*font size of all lists. This was made to specifically target the category lists, so maybe make a custom class for that...*/
+.item.item-input.item-icon-right.category-item {
+	font-size: 14px !important;
+}
+
 /* Highlighted question box header bar*/
 .item.item-divider.highlighted {
-	background-color: pink;
+	background-color: #517899;
+	border-color: #517899;
+	color: white;
+	font-weight: bold;
 }
 
 /* Highlighted question box header bar*/
 .item.item-text-wrap.highlighted {
-	background-color: pink;
+	/*background-color: pink;*/
 }
 
 /* The standard styling for all buttons in the app */
@@ -71,4 +79,32 @@ a.teacherspet-button {
 #subjectList .item.item-input{
 	margin-top: -0.5%;
 	height: 3em;
+}
+
+/* GetHelp subject placeholder */
+select:required:invalid {
+  color: #a5a5a5;
+}
+
+select{
+	direction: ltr !important;
+	width: 100% !important;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: black;
+}
+
+/* Bottom margin for pages so it is not hidden behind footer */
+ion-content{
+	position: relative;
+	margin-bottom: 15% !important;
+}
+
+ion-content.no-footer{
+	margin-bottom: 0% !important;
 }

@@ -5,6 +5,7 @@
       <!-- category drop downnn -->
       <label class="item item-select">
         <select ng-model=formData.category required>
+          <option value="" disabled selected hidden>Add a subject</option>
           <option ng-repeat="category in room.Categories">{{category}}</option>
         </select>
       </label>
@@ -35,4 +36,4 @@
 </ion-view>
 
 <!-- Bottom tab bar -->
-<student-tab></student-tab>
+<teachers-pet-tab-bar page="getHelp", template="templates/studentTab.html"></teachers-pet-tab-bar>

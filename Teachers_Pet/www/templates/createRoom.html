@@ -1,5 +1,5 @@
 <ion-view title="Create Room" id="page5">
-  <ion-content padding="true" class="has-header" style="top: 0px; margin-top: 44px;">
+  <ion-content padding="true" class="has-header no-footer" style="top: 0px; margin-top: 44px;">
      <ion-nav-back-button></ion-nav-back-button>
         <form id="createRoomForm" name="createRoomForm" class="list" novalidate>
           <!-- Room name input -->
@@ -28,9 +28,9 @@
           <div class="spacer" style="height: 2%;"></div>
 
           <!-- Category list -->
-          <ion-list required id="subjectList" ng-repeat="subject in formData.subjects track by $index">
-            <ion-item class="item item-input item-icon-right">{{$index+1}}. {{subject}}
-            <a class="button button-icon icon ion-ios-trash-outline" ng-click="removeSubject($index)"></a>
+          <ion-list required id="subjectList">
+            <ion-item ng-style="{'background-color': getSubjectColor(subject, 0.9), 'border-color': getSubjectColor(subject, 0.7)}" class="item item-input item-icon-right category-item" ng-repeat="subject in formData.subjects track by $index">{{$index+1}}. {{subject}}
+            <a class="button button-icon icon ion-ios-minus-outline" ng-click="removeSubject($index)"></a>
             </ion-item>
           </ion-list>
           <!-- <div class="spacer" style="width: 300px; height: 83px;"></div> -->

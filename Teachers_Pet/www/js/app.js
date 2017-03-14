@@ -7,8 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
   'entryPageController', 'createRoomController', 'getHelpController', 'joinRoomController', 'roomSettingsController', 'settingsController',
-  'studentHelpQueueController', 'tabController', 'teacherHelpQueueController', 'localStorageService', 'ngSanitize', 'firebaseDataService', 'firebase',
-  'roomDataService', 'codeGeneratorService'])
+  'studentHelpQueueController', 'teacherHelpQueueController', 'localStorageService', 'ngSanitize', 'firebaseDataService', 'firebase',
+  'roomDataService', 'codeGeneratorService', 'colorService'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   //Transitions

@@ -1,28 +1,28 @@
-<div class="bar bar-footer bar-royal" ng-controller="tabController as tabC">
+<div class="bar bar-footer bar-royal">
   <div id="student-tab-bar" class="button-bar">
   <button ui-sref="studentHelpQueue" id="getHelp-button52" class="button button-icon">
-    <div class="inactivetabs" ng-class="{activetab: tabC.isActive('/studentqueue')}">
+    <div class="inactivetabs" ng-class="{'activetab': page == 'studentHelpQueue'}">
       <img id="queueicon" src="img/queue.png" alt="Queue">
       <br>
       <p class="icontext">Queue</p>
     </div>
     </button>
   <button ui-sref="getHelp" id="getHelp-button51" class="button button-icon">
-    <div class="inactivetabs" ng-class="{activetab: tabC.isActive('/gethelp')}">
+    <div class="inactivetabs" ng-class="{activetab: page == 'getHelp'}">
         <img id="gethelpicon" src="img/get_help.png" alt="Queue">
       <br>
       <p class="icontext">Get Help</p>
     </div>
     </button>
   <button ui-sref="settings" id="getHelp-button50" class="button button-icon">
-    <div class="inactivetabs" ng-class="{activetab: tabC.isActive('/settings')}">
+    <div class="inactivetabs">
       <i class="icon ion-gear-a"></i>
       <br>
       <p class="icontext">Settings</p>
     </div>
     </button>
   <button ui-sref="entryPage" id="getHelp-button49" class="button button-icon">
-    <div class="inactivetabs">
+    <div class="inactivetabs" ng-class="{'activetab': page == settings}">
       <i class="icon ionicons ion-android-exit"></i>
       <br>
       <p class="icontext">Quit</p>

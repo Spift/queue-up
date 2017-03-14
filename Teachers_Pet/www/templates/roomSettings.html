@@ -1,33 +1,53 @@
 <ion-view title="Room Settings" id="page9" >
   <ion-content padding="true" class="has-header" style="top: 0px; margin-top: 44px;">
     <div id="roomSettings-markdown6" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">ROOM code </p>
+      <p>Room Code: {{room.code}}</p>
+      <p>Teacher Code: {{room.admin_code}}</p>
+    </div>
+    
+    <!-- room details form -->
+    <form name="roomDetailsForm" class="list" novalidate>  
+      <!-- Room name input -->
+      <label class="item item-input">
+        <i class="icon ion-medkit placeholder-icon" style="padding-right: 1em; "></i>
+        <input id="room-name-input" type="text" placeholder="Enter the name of your room" ng-model="formData.roomName" required type="text" ng-minlength="2" ng-maxlength="25">
+      </label>
+      
+      <!-- Room description input -->
+      <label class="item item-input">
+        <i class="icon ion-funnel placeholder-icon" style="padding-right: 1em; "></i>
+        <input id="room-description-input" type="text" placeholder="Enter a description for the room" ng-model="formData.description" required type="text" ng-minlength="12" ng-maxlength="140">
+      </label>
+      
+      <!-- Room categories input THIS IS DISABLED IN A BIT OF A HACKY WAY-->
+      <div id="sub-label" class="item item-input">
+        <i class="icon ion-happy placeholder-icon" style="padding-right: 1em; "></i>
+        <input id="room-subject-input" name="sub_input" type="text" placeholder="Enter a subject" ng-model="formData.subject" type="text">
+        <a ng-disabled="formData.subject.length < 2 || formData.subject.length > 32" ng-click="addSubject()" class="button button-icon icon ion-ios-plus-outline"></a>
+      </div>
+    </form>  
 
-      <p style="color:#000000;">TEACHER code</p>
-    </div>
-    <form id="roomSettings-form12" class="list">
-      <label class="item item-input" id="roomSettings-input11" name="room_code">
-        <input type="text" placeholder="<ICON> Current Room Name">
-      </label>
-    </form>
-    <form id="roomSettings-form13" class="list">
-      <label class="item item-input" id="roomSettings-input12" name="subject_input">
-        <input type="text" placeholder="Enter a Subject <ADD BUTTON>">
-      </label>
-    </form>
-    <ion-list id="roomSettings-list5">
-      <ion-item id="roomSettings-list-item17">Item 1</ion-item>
-      <ion-item id="roomSettings-list-item18">Item 2</ion-item>
-      <ion-item id="roomSettings-list-item19">Item 3</ion-item>
+
+    <!-- Spacer -->
+    <div class="spacer" style="margin-top: 5%;"></div>
+
+    <!-- Category list -->
+    <ion-list id="subjectList">
+      <ion-item ng-style="{'background-color': getSubjectColor(subject, 0.9), 'border-color': getSubjectColor(subject, 0.7)}" class="item item-input item-icon-right category-item" ng-repeat="subject in subjects track by $index">
+        {{subject}}
+        <a class="button button-icon icon ion-ios-minus-outline" ng-click="removeSubject($index)"></a>
+      </ion-item>
     </ion-list>
-    <a ui-sref="teacherHelpQueue" id="roomSettings-button25" class="button button-assertive  button-block">Update Room</a>
-    <div id="roomSettings-button-bar4" class="button-bar">
-      <a ui-sref="entryPage" id="roomSettings-button31" class="button button-assertive  button-block">Delete/Leave Room</a>
-    </div>
+
+    <!-- refresh button-->
+    <div class="button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || (roomDetailsForm.$invalid && formData.subject.length >= 2) || subjects.length === 0" ng-click="applyChanges()">Apply Changes</div>
+    <!-- leave/delete button-->
+    <a ui-sref="entryPage" class="button icon-right ion-android-walk button-assertive button-block">[Delete/Leave] Room</a>
+    
 
 
   </ion-content>
 </ion-view>
 
 <!-- Bottom tab bar for teachers -->
-<teacher-tab></teacher-tab>
+<teachers-pet-tab-bar page="roomSettings", template="templates/teacherTab.html"></teachers-pet-tab-bar>
