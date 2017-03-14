@@ -1,5 +1,10 @@
 /* Stylings specific to the entryPage view */
 
+/**
+ * CSS flags used in conjunction with hide-nav-bar and has-bouncing
+ * in order to disable the scroller on the entry page, otherwise a
+ * visible scroll bar appears and actual scrolling is possible.
+ */
 .scroll {
 	height: 100%;
 }
@@ -13,27 +18,44 @@ div.scroll-bar.scroll-bar-v{
 	display: none;
 }
 
-/* The video background */
+
+
+/**
+ * The video background modifier
+ */
 #video-bg {
 	position: fixed;
 	margin-top: -50%;
-	height: 101%;
+	height: 101%; /* Use 101% to avoid cut offs */
 	bottom: 0%;
-	z-index: -1;
+	z-index: -1; /* Sets the video "layer depth" e.g. on top of everything else */
 	border-style: none;
 	left: 50%;
 	margin-right: -50%;
 	transform: translate(-50%, 0.5%);
 }
 
-/* Brown lecturer background */
+
+
+/**
+ * Refers to ion-nav-view, mainly used to set the background image
+ */
 #entrypage {
+	background: url('../img/bg_1.png') no-repeat center center fixed;
+	background-size: cover;
 }
 
+/**
+ * Icon for the entry label
+ */
 #unihat{
 	width: 15%;
 	padding: 3% 6% 1% 1%;
 }
+
+/**
+* 
+*/
 
 #queueicon{
 	width: 1.85em;
@@ -100,12 +122,16 @@ a.entrybutton:active{
 	/*margin-right: 10px;*/
 }
 
-div.slider{
-	height: 24%;
-	width: 101%;
-	transform: translate(-0.5%, 10.5%);
+ion-slides{
+	height: 24% !important;
+	width: 101% !important;
 	border: 1px solid;
 	border-color: white;
+	transform: translate(-0.5%, 0%);
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background-color: white;
 }
 
 .slider-header {
@@ -127,14 +153,4 @@ div.slider{
 	font-size: 1.8vh;
 	font-weight: bold !important;
 	padding-top: 5%;
-}
-
-span.slider-pager-page {
-	height: 100%;
-	width: 100%;
-	color: white;
-}
-
-span.slider-pager-page.active{
-	color: white;
 }
