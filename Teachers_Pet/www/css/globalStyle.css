@@ -1,5 +1,10 @@
 /* Universal stylings, used across different views*/
 
+/* Night mode */
+.inverted {
+	filter: invert(100%);
+}
+
 /*font size of all lists. This was made to specifically target the category lists, so maybe make a custom class for that...*/
 .item.item-input.item-icon-right.category-item {
 	font-size: 14px !important;
@@ -30,7 +35,6 @@ a.teacherspet-button {
 	color: white;
 }
 
-
 .button.teacherspet-button.active, .button.teacherspet-button.activated {
 	border: 0px;
 	background-color: #2e506d;
@@ -59,6 +63,10 @@ a.teacherspet-button {
 #add-button:before{
 	font-size: 180%;
 	padding-right: 35%;
+}
+
+.inverted {
+	filter: invert(100%);
 }
 
 #createRoomForm .item.item-input{

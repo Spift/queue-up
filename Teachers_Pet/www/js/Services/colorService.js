@@ -28,7 +28,7 @@
 		    return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
 		}
 		/*
-    	 * does what is says on the tin. <dampen> argument toggles whether or not the color should be desaturated
+    	 * does what is says on the tin. <desaturation> argument is used to set the strength of the desaturation
     	 */
 		function getColorFromString(str, desaturation=0.7){
 			var i = hashCode(str);

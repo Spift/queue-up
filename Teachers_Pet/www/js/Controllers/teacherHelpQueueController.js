@@ -5,8 +5,9 @@
         .module('teacherHelpQueueController', [])
         .controller('teacherHelpQueueController', teacherHelpQueueController);
 
-    function teacherHelpQueueController($scope, colorService, roomDataService, $stateParams, $state, $ionicNavBarDelegate) {
+    function teacherHelpQueueController($scope, colorService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, constantsService) {
     	console.log('Teacher help queue controller fired');
+        $scope.Constants = constantsService.getConstants();
         $scope.room = roomDataService.getRoom();
         $scope.visibleQuestion = 0;
         /*

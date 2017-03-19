@@ -5,9 +5,9 @@
         .module('createRoomController', [])
         .controller('createRoomController', createRoomController);
 
-    function createRoomController($scope, colorService, codeGeneratorService, firebaseDataService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, $ionicHistory) {
+    function createRoomController($scope, colorService,constantsService, codeGeneratorService, firebaseDataService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, $ionicHistory) {
     	console.log('create room controller fired');
-
+        $scope.Constants = constantsService.getConstants();
         $scope.formData = {};
         $scope.formData.subjects = [];
         $scope.room = roomDataService.getRoom();
@@ -19,7 +19,7 @@
             $scope.loadingRoomData = true;
             var room = {'Categories': $scope.formData.subjects,
                         'Questions': {},
-                        'admin_code': codeGeneratorService.generateCode(6),
+                        'admin_code': codeGeneratorService.generateCode(5),//i dont think this has to be 6 in length so i changed it.
                         'code': codeGeneratorService.generateCode(5),
                         'description': $scope.formData.description,
                         'no_of_admins': 1,

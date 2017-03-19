@@ -10,6 +10,19 @@
      */
     function roomDataService($firebaseObject, $firebaseArray) {
     	var roomFirebaseObject = {};
+        var questionFirebaseArray = {};
+        /*
+         * Get the firebase object that contains all data for the current room
+         */
+        function getQuestions() {
+            return questionFirebaseArray;
+        }
+        /*
+         * Set/update the firebase object that contains all data for the current room
+         */
+        function setRoom(questions) {
+            questionFirebaseArray = questions;
+        }
         /*
          * Get the firebase object that contains all data for the current room
          */

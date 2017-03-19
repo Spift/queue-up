@@ -5,9 +5,10 @@
         .module('getHelpController', [])
         .controller('getHelpController', getHelpController);
 
-    function getHelpController($scope, $stateParams, $state, $ionicNavBarDelegate, roomDataService, firebaseDataService, localStorageService) {
+    function getHelpController($scope, $stateParams, $state, constantsService, $ionicNavBarDelegate, roomDataService, firebaseDataService, localStorageService) {
     	console.log('get help controller fired');
-    	$scope.formData = {}
+    	$scope.Constants = constantsService.getConstants();
+        $scope.formData = {}
         $scope.student = localStorageService.getName();
         $scope.room = roomDataService.getRoom();
         /*
