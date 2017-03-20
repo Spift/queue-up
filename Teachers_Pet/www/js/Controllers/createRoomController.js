@@ -54,11 +54,14 @@
         /*
          * Add a subject to the subject list
          */
-        $scope.addSubject = function(){
+
+         $scope.addSubject = function(){
+            if ($scope.formData.subject === ''){
+                return;
+            }
             $scope.formData.subjects.push($scope.formData.subject);
-            setTimeout(function() {$scope.formData.subject='';
-            }, 0);
-        }
+            $scope.formData.subject='';
+         }
 
         /* Check if subject field is valid NOT OPTIMAL */
         $scope.checkIfValid = function(input){
