@@ -5,8 +5,9 @@
         .module('roomSettingsController', [])
         .controller('roomSettingsController', roomSettingsController);
 
-    function roomSettingsController($scope, $stateParams, colorService, $state, $ionicNavBarDelegate, roomDataService, firebaseDataService) {
+    function roomSettingsController($scope, $stateParams, colorService, $ionicModal, $ionicPopup, $state, $ionicNavBarDelegate, roomDataService, firebaseDataService, constantsService) {
     	console.log('Room settings controller fired');
+        $scope.Constants = constantsService.getConstants();
         $scope.room = roomDataService.getRoom();
         $scope.nothingHasChanged = true; //bool for keeping track of whether the room objects data differs from what is in the input fields. If it differs we un-gray the refresh button.
         $scope.subjects = [];
@@ -16,6 +17,7 @@
             description : $scope.room.description,
             subject : ""
         };
+        console.log($scope.room);
         /*
          *  Watch for ANY changes to the form, and make refresh clickable if change has occur(r)ed
          */
@@ -101,6 +103,50 @@
             }
             return true;
         }
+        /*
+         * Confirm that you want to delete your question POP UP dialog.
+         */
+         $scope.showConfirmDialog = function() {
+           var confirmPopup = $ionicPopup.confirm({
+             title: 'Delete Room',
+             template: 'Are you really sure you want to delete this room?'
+           });
+
+           confirmPopup.then(function(res) {
+             if(res) {
+               console.log('You are sure. deleting room...');
+               //TODO delete room from firebase!!!
+               $state.go('entryPage');
+             } else {
+               console.log('You cancelled');
+             }
+           });
+        };
+        //Modal stuff
+        $ionicModal.fromTemplateUrl('templates/roomSettingsCategoriesModal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+          }).then(function(modal) {
+            $scope.modal = modal;
+          });
+          $scope.openModal = function() {
+            $scope.modal.show();
+          };
+          $scope.closeModal = function() {
+            $scope.modal.hide();
+          };
+          // Cleanup the modal when we're done with it!
+          $scope.$on('$destroy', function() {
+            $scope.modal.remove();
+          });
+          // Execute action on hide modal
+          $scope.$on('modal.hidden', function() {
+            // Execute action
+          });
+          // Execute action on remove modal
+          $scope.$on('modal.removed', function() {
+            // Execute action
+          });
 
         // Update the title of the view
         $ionicNavBarDelegate.title('Room Settings');

@@ -19,6 +19,15 @@
             return room;
         }
         /*
+         * Get the questions from a specific room
+         */
+        function getQuestions(roomCode) {
+            var ref = firebase.database().ref("Rooms/" + roomCode + "/Questions");
+            var questions = $firebaseArray(ref);
+                    
+            return questions;
+        }
+        /*
          * Add room to firebase
          */
         function addRoom(roomObj){
@@ -57,7 +66,8 @@
             updateRoom : updateRoom,
             addQuestion : addQuestion,
             removeQuestion : removeQuestion,
-            addRoom : addRoom
+            addRoom : addRoom,
+            getQuestions : getQuestions
         }
     }
 

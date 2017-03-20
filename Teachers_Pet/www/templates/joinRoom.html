@@ -1,5 +1,5 @@
-<ion-view title="Join Room" id="page4">
-  <ion-content padding="true" class="has-header no-footer" style="top: 0px; margin-top: 44px;">
+<ion-view title="Join Room" id="page4" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
+  <ion-content padding="true" class="has-header no-footer" style="top: 0px; margin-top: 44px;" >
 
     <!-- Room code input -->
     <form name="roomCodeForm" class="list">
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Card showing Room information. Only visible after pressing submit and given that the code is correct. 'room1' works for now -->
-    <div class="card" ng-show="validRoomData && (formData.adminCode == room.admin_code || !joinAsAdmin)">
+    <div class="card" ng-show="validRoomData && (formData.adminCode.toLowerCase() == room.admin_code || !joinAsAdmin)">
       <div class="item item-divider">
         {{room.title}}
         <div class="item-icon-right">

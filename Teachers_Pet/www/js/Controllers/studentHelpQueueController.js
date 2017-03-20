@@ -6,10 +6,12 @@
         .controller('studentHelpQueueController', studentHelpQueueController);
 
 
-    function studentHelpQueueController($scope, $firebaseArray, $firebaseObject, $ionicPopup, $location, $stateParams, $state, roomDataService, firebaseDataService, $ionicNavBarDelegate, localStorageService) {
+    function studentHelpQueueController($scope, $firebaseArray, constantsService, $firebaseObject, $ionicPopup, $location, $stateParams, $state, roomDataService, firebaseDataService, $ionicNavBarDelegate, localStorageService) {
+        $scope.Constants = constantsService.getConstants();
         $scope.studentID = localStorageService.getStudentID();
         $scope.room = roomDataService.getRoom();
         $scope.visibleQuestion = 0; // TODO: make so YOUR question is the one that is expanded upon first opening the view...
+        //$scope.Qs = firebaseDataService.getQuestions($scope.room.$id);
         /*
          * When a header is clicked, toggle the visibility of the body
          */
@@ -19,6 +21,14 @@
             }else{
                 $scope.visibleQuestion = index;
             }
+
+            /*var i = 0;
+            for(var quest in $scope.Qs) {
+                var key = $scope.Qs.$keyAt(i);
+                var q = $scope.Qs.$getRecord(key);
+                console.log(q.studentID);
+                i++;
+            }*/
         }
         /*
          * delete my question (close button only appears on questions YOU posted, so should only be available for those)
@@ -52,6 +62,13 @@
              }
            });
         };
+        /*
+         * get a color based on subject string
+         */
+        $scope.getSubjectColor = function(subject, desaturation) {
+            var color = colorService.getColorFromString(subject, desaturation);
+            return color;
+        }
         
         // Update the title of the view
         $ionicNavBarDelegate.title($scope.room.title);

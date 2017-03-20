@@ -1,4 +1,4 @@
-<ion-view title="Teacher Help Queue" id="page6" hide-back-button="true">
+<ion-view title="Teacher Help Queue" id="page6" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header">
     <label> Room Code: {{room.code}} </label> <br>
     <label> Admin Code: {{room.admin_code}} </label>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div ng-style="{'background-color': getSubjectColor(question.category, 0.9), 'border-color': getSubjectColor(question.category, 0.4)}" ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
+      <div ng-style="{'background-color': getSubjectColor(question.category, 0.9), 'border-color': getSubjectColor(question.category, 0.6)}" ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
     </div>
 
   </ion-content>

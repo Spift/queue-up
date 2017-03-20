@@ -5,8 +5,9 @@
         .module('joinRoomController', [])
         .controller('joinRoomController', joinRoomController);
 
-    function joinRoomController($scope, $stateParams, $state, $firebaseObject, $firebaseArray, firebaseDataService, $ionicLoading, $ionicNavBarDelegate, roomDataService) {
+    function joinRoomController($scope, $stateParams, constantsService, $state, $firebaseObject, $firebaseArray, firebaseDataService, $ionicLoading, $ionicNavBarDelegate, roomDataService) {
     	console.log('entry page controller fired');
+        $scope.Constants = constantsService.getConstants();
         $scope.validRoomData = false; // show/hide room info preview
         $scope.showLoadingSpinner = false; // show/hide the loading thing
         $scope.showRoomNotFoundError = false;
@@ -56,7 +57,7 @@
          */
         function findRoomInDatabase(roomCode) {
             $scope.showLoadingSpinner = true;
-            $scope.room = firebaseDataService.getRoom(roomCode);
+            $scope.room = firebaseDataService.getRoom(roomCode.toLowerCase()); // this should fix case sensitivity bug, no?
             $scope.room.$loaded()
             .then(function() {
                 //data is now available!

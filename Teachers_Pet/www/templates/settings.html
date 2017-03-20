@@ -1,25 +1,26 @@
-<ion-view title="Settings" id="page12">
+<ion-view title="Settings" id="page12" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header">
-    <ion-list id="settings-list7">
-      
-      <!-- update name list item -->
-      <form name="nameForm" novalidate>
-        <div class="item item-input-inset">
-            <label class="item-input-wrapper">
-              <input type="text" placeholder="Your name" ng-model='formData.name' id="update-name-input" required type="text" ng-minlength="2" ng-maxlength="25">
-            </label>
-            <a ng-click="refreshNamePressed()" class="button button-small" ng-disabled="nameForm.$invalid || nameHasNotChanged">Update</a>
-        </div>
+    <!-- update name list item -->
+      <form name="nameForm" novalidate class="list">
+        <ion-item class="item item-input">
+          <i class="icon ion-paw placeholder-icon" style="padding-right: 1em; "></i>
+          <input type="text" placeholder="Your name" ng-model='formData.name' id="update-name-input" required type="text" ng-minlength="2" ng-maxlength="25">
+          <a ng-click="refreshNamePressed()" ng-disabled="nameForm.$invalid || nameHasNotChanged" type="text" placeholder="Your name" ng-model='formData.name' id="update-name-input" required type="text" ng-minlength="2" ng-maxlength="25" class="button button-icon icon ion-refresh"></a>
+        </ion-item>
       </form>
 
+    <ion-list >
       <!-- other list items -->
-      <ion-item id="settings-list-item24">notification settings</ion-item>
-      <ion-item id="settings-list-item28">Appearance</ion-item>
-      <ion-toggle toggle-class="toggle-positive" id="settings-toggle5">Study Mode</ion-toggle>
-      <ion-item id="settings-list-item26">About</ion-item>
-      <ion-item id="settings-list-item27">Feedback</ion-item>
+      <ion-item>notification settings</ion-item>
+      <ion-item>Appearance</ion-item>
+      <ion-toggle toggle-class="toggle-calm" ng-model="formData.nightMode">Study Mode</ion-toggle>
+      <ion-item>About</ion-item>
+      <ion-item>Feedback</ion-item>
     </ion-list>
 
 
   </ion-content>
+
 </ion-view>
+<!-- Bottom tab bar -->
+<teachers-pet-tab-bar page="settings", template="{{tabBarTemplate}}"></teachers-pet-tab-bar>
