@@ -65,6 +65,7 @@ a.teacherspet-button {
 	padding-right: 35%;
 }
 
+/* NIGHT MODE stuff*/
 .inverted {
 	filter: invert(100%);
 }
@@ -88,6 +89,9 @@ a.teacherspet-button {
 	margin-top: -0.5%;
 	height: 3em;
 }
+
+/*input fields with button inside it, styled to make it same height as regular input fields*/
+.input-with-button
 
 /* GetHelp subject placeholder */
 select:required:invalid {
