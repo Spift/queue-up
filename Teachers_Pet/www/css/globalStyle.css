@@ -5,17 +5,23 @@
 	font-size: 14px !important;
 }
 
+/* Minus icon to remove subject */
+.button.button-icon.icon.ion-ios-minus-outline{
+	padding-bottom: 1.3%;
+}
+
 /* Highlighted question box header bar*/
 .item.item-divider.highlighted {
-	background-color: #517899;
-	border-color: #517899;
-	color: white;
+	background-color: #c9d7fc;
+	border-color: #c9d7fc;
+	/*color: white;*/
 	font-weight: bold;
 }
 
 /* Highlighted question box header bar*/
 .item.item-text-wrap.highlighted {
-	/*background-color: pink;*/
+	background-color: #eaf0ff;
+	border-color: #eaf0ff;
 }
 
 /* The standard styling for all buttons in the app */
@@ -79,6 +85,7 @@ a.teacherspet-button {
 #subjectList .item.item-input{
 	margin-top: -0.5%;
 	height: 3em;
+	border-radius: 2px;
 }
 
 /* GetHelp subject placeholder */
@@ -107,4 +114,9 @@ ion-content{
 
 ion-content.no-footer{
 	margin-bottom: 0% !important;
+}
+
+.button.button-icon.icon.ion-ios-plus-outline{
+	/*border: 1px solid;*/
+	margin-right: 0.9%;
 }
