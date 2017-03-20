@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.routes', 'app.directives','app.services',
+angular.module('app', ['ngCordova', 'ionic', 'app.routes', 'app.directives','app.services',
   'entryPageController', 'createRoomController', 'getHelpController', 'joinRoomController', 'roomSettingsController', 'settingsController',
   'studentHelpQueueController', 'teacherHelpQueueController', 'localStorageService', 'ngSanitize', 'firebaseDataService', 'firebase',
   'roomDataService', 'codeGeneratorService', 'colorService', 'constantsService'])

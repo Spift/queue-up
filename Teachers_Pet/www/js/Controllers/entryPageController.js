@@ -11,6 +11,15 @@
       console.log('Stored ID:' + localStorageService.getStudentID());
 
       $scope.formData = {};
+      $scope.vibration = function(){
+        var time = 3000;
+        navigator.vibrate(time);
+      }
+
+      $scope.vibrationPattern = function(){
+        var pattern = [10000, 2000, 500];
+        navigator.vibrate(pattern);
+      }
 
       /* video background script necessary to run the vid
        * the two event listeners checks for minimizing and restoring the app */
