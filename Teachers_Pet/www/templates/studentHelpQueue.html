@@ -18,6 +18,12 @@
         <div class="item-icon-right" ng-show="question.studentID == studentID">
           <div class="icon ion-ios-close-empty" ng-click="deleteMyQuestion($index); $event.stopPropagation();"></div> <!--if left as an <a> tag, icon becomes blue?-->
         </div>
+        <div class="item-icon-right">
+          <div class="icon ion-ios-arrow-down" style="font-size: 1.5em;" ng-hide="visibleQuestion == $index || question.studentID == studentID">  
+          </div>
+          <div class="icon ion-ios-arrow-up" style="font-size: 1.5em;" ng-hide="visibleQuestion != $index || question.studentID == studentID">            
+          </div>
+        </div>
       </div>
       <div ng-show="visibleQuestion == $index" class="item item-text-wrap" ng-class="{'item item-text-wrap highlighted' : question.studentID == studentID}">{{question.body}}</div>
     </div>
