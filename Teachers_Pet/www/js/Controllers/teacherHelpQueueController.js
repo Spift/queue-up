@@ -10,12 +10,14 @@
         $scope.Constants = constantsService.getConstants();
         $scope.room = roomDataService.getRoom();
         $scope.visibleQuestion = 0;
+        //var hej = $scope.room.$ref().child('Questions').size;
+        //console.log("HEr er e tføl: ", hej);
         /*
          * When a header is clicked, toggle the visibility of the body
          */
         $scope.expandQuestion = function(index) {
             if($scope.visibleQuestion == index) {
-                $scope.visibleQuestion = -1;//all questions are collapsed now
+                $scope.visibleQuestion = -1;    //all questions are collapsed now
             }else{
                 $scope.visibleQuestion = index;
             }

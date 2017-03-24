@@ -12,7 +12,7 @@
     	var roomFirebaseObject = {};
         var questionFirebaseArray = {};
         /*
-         * Get the firebase object that contains all data for the current room
+         * Get the firebase Array that contains all questions for the current room
          */
         function getQuestions() {
             return questionFirebaseArray;
@@ -28,7 +28,7 @@
         /*
          * Set/update the firebase object that contains all data for the current room
          */
-        function setRoom(questions) {
+        function setQuestions(questions) {
             questionFirebaseArray = questions;
         }
         /*
@@ -54,7 +54,9 @@
     	 */
     	return {
     		getRoom:getRoom,
-            setRoom:setRoom
+            setRoom:setRoom,
+            getQuestions : getQuestions,
+            setQuestions : setQuestions
     	}
     }
 

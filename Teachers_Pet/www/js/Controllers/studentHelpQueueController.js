@@ -10,6 +10,7 @@
         $scope.Constants = constantsService.getConstants();
         $scope.studentID = localStorageService.getStudentID();
         $scope.room = roomDataService.getRoom();
+        $scope.Qs = roomDataService.getQuestions();
         $scope.visibleQuestion = 0; // TODO: make so YOUR question is the one that is expanded upon first opening the view...
         $scope.Qs = firebaseDataService.getQuestions($scope.room.$id);
         $scope.ownQuestionVisible = true;

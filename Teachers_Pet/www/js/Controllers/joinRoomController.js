@@ -58,17 +58,27 @@
         function findRoomInDatabase(roomCode) {
             $scope.showLoadingSpinner = true;
             $scope.room = firebaseDataService.getRoom(roomCode.toLowerCase()); // this should fix case sensitivity bug, no?
+            $scope.questions = firebaseDataService.getQuestions(roomCode.toLowerCase());
+
             $scope.room.$loaded()
             .then(function() {
-                //data is now available!
-                $scope.showLoadingSpinner = false;
-                if($scope.room.$value !== null) { // make sure a room with given code actually exists.
-                    roomDataService.setRoom($scope.room); // store the room data in  roomDataService, so it can be accessed later by the queue view.
-                    $scope.validRoomData = true; // will make room preview appear
-                }else{
-                    $scope.showRoomNotFoundError = true;
-                    console.log("no such room :(");
-                }
+                $scope.questions.$loaded()
+                .then(function() {
+                    //data is now available!
+                    $scope.showLoadingSpinner = false;
+                    if($scope.room.$value !== null) { // make sure a room with given code actually exists.
+                        roomDataService.setRoom($scope.room); // store the room data in  roomDataService, so it can be accessed later by the queue view.
+                        roomDataService.setQuestions($scope.questions);
+                        $scope.validRoomData = true; // will make room preview appear
+                    }else{
+                        $scope.showRoomNotFoundError = true;
+                        console.log("no such room :(");
+                    }
+                })
+                .catch(function(err) {
+                    // This is where errors land. We should show an UI error as well here
+                    console.log('joinRoomController.findRoomInDatabase() Error', err.code);
+                })
             })
             .catch(function (err) {
                 // This is where errors land. We should show an UI error as well here

@@ -130,7 +130,7 @@ option {
 /* Bottom margin for pages so it is not hidden behind footer */
 ion-content{
 	position: relative;
-	margin-bottom: 15% !important;
+	margin-bottom: 20% !important;
 }
 
 ion-content.no-footer{
