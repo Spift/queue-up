@@ -12,22 +12,37 @@
       <div style="color: grey">No one has asked any questions yet.<br>When they start rolling in, they will appear here!</div>
     </div>
 
+    <!-- THE CURRENT QUESTION -->
+    <div class="card">
+      <div ng-click="expandQuestion($index);" class="item item-divider" style="color: #bbbbbb; font-weight: bold">
+        Currently Helping Peder
+        <div class="item-icon-right">
+          <div class="icon ion-ios-arrow-down" ng-hide="visibleQuestion == $index" style="font-size: 1.5em"></div>
+          <div class="icon ion-ios-arrow-up" ng-show="visibleQuestion == $index" style="font-size: 1.5em"></div>
+        </div>
+      </div>
+      <div ng-show="visibleQuestion == $index" class="item item-text-wrap">Hejsa</div>
+      <div class="item item-divider" ng-show="visibleQuestion == $index" ng-click="joinRoomPressed()">
+          <div class="col text-center" ng-click="joinRoomPressed()">
+            <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Help Next in Line&nbsp;</a>
+        </div>        
+      </div>
+    </div>
+
     <!-- the actual Queue -->
     <div class="card" ng-repeat="question in room.Questions">
       <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider">
         {{$index+1}}. {{question.student}}, {{question.category}}
         <div class="item-icon-right">
-          <div class="icon ion-android-arrow-dropdown" ng-hide="visibleQuestion == $index">            
-          </div>
-          <div class="icon ion-android-arrow-dropup" ng-show="visibleQuestion == $index">            
-          </div>
+          <div class="icon ion-ios-arrow-down" ng-hide="visibleQuestion == $index" style="font-size: 1.5em"></div>
+          <div class="icon ion-ios-arrow-up" ng-show="visibleQuestion == $index" style="font-size: 1.5em"></div>
         </div>
       </div>
       <div ng-style="{'background-color': getSubjectColor(question.category, 0.9), 'border-color': getSubjectColor(question.category, 0.6)}" ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
-      <div class="item item-divider" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" ng-show="visibleQuestion == $index">
-        <div class="col text-center" ng-click="joinRoomPressed()">
+      <div class="item item-divider" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" ng-show="visibleQuestion == $index" ng-click="joinRoomPressed()">
+          <div class="col text-center" ng-click="joinRoomPressed()">
             <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Help {{question.student}}&nbsp;</a>
-        </div>
+        </div>        
       </div>
     </div>
 
@@ -36,3 +51,9 @@
 
 <!-- Bottom tab bar for teachers -->
 <teachers-pet-tab-bar page="teacherHelpQueue", template="templates/teacherTab.html"></teachers-pet-tab-bar>
+
+
+
+<!--div class="col text-center" ng-click="joinRoomPressed()">
+            <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Help {{question.student}}&nbsp;</a>
+        </div-->
