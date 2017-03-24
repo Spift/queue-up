@@ -10,7 +10,7 @@
         $scope.Constants = constantsService.getConstants();
         $scope.studentID = localStorageService.getStudentID();
         $scope.room = roomDataService.getRoom();
-        $scope.Qs = roomDataService.getQuestions();
+        $scope.questions = roomDataService.getQuestions();
         $scope.visibleQuestion = 0; // TODO: make so YOUR question is the one that is expanded upon first opening the view...
         /*
          * When a header is clicked, toggle the visibility of the body
@@ -20,15 +20,7 @@
                 $scope.visibleQuestion = -1;//all questions are collapsed now
             }else{
                 $scope.visibleQuestion = index;
-            }
-
-            var i = 0;
-            for(var quest in $scope.Qs) {
-                var key = $scope.Qs.$keyAt(i);
-                var q = $scope.Qs.$getRecord(key);
-                console.log(q.studentID);
-                i++;
-            }
+            }                
         }
         /*
          * delete my question (close button only appears on questions YOU posted, so should only be available for those)
