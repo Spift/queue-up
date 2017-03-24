@@ -13,7 +13,7 @@
 
     <!-- the actual Queue -->
     <div class="card" ng-repeat="question in room.Questions">
-      <div ng-click="expandQuestion($index)" class="item item-divider" ng-class="{'item-icon-right item item-divider highlighted' : question.studentID == studentID}">
+      <div ng-click="expandQuestion($index)" class="item item-divider item-icon-right" ng-class="{'item item-icon-right item item-divider highlighted' : question.studentID == studentID}">
         {{$index+1}}. {{question.student}}, {{question.category}}
         <div class="item-icon-right" ng-show="question.studentID == studentID">
           <div class="icon ion-ios-close-empty" ng-click="deleteMyQuestion($index); $event.stopPropagation();"></div>
