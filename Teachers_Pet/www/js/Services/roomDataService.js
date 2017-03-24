@@ -18,6 +18,14 @@
             return questionFirebaseArray;
         }
         /*
+         * Get a question based on a specific index in questions
+         */
+        function getQuestionFromIndex(index, questions) {
+          var key = questions.$keyAt(index);
+          var q = questions.$getRecord(key);
+          return q;
+        }
+        /*
          * Set/update the firebase object that contains all data for the current room
          */
         function setRoom(questions) {

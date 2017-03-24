@@ -1,30 +1,32 @@
 <ion-view title="Teacher Help Queue" id="page6" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header">
-    <label> Room Code: {{room.code}} </label> <br>
-    <label> Admin Code: {{room.admin_code}} </label>
-    <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">40 students need help with greedy algorithms</p>
-    </div>
-    <div class="spacer" style="width: 300px; height: 0px;"></div>
-    
+      <label id="room_code"> Room Code: {{room.code}} </label> <br>
+      <label id="admin_code"> Admin Code: {{room.admin_code}} </label>
+      <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">40 students need help with greedy algorithms</p>
+      </div>
+      <div class="spacer" style="width: 300px; height: 0px;"></div>
+
     <!-- Error code shown if no questions have been posted yet-->
     <div style="margin:auto; width:90%; text-align:center" ng-show="room.Questions===undefined">
       <div style="color: grey">No one has asked any questions yet.<br>When they start rolling in, they will appear here!</div>
     </div>
 
     <!-- the actual Queue -->
-    <div class="card" ng-repeat="question in room.Questions">
-      <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider">
-        {{$index+1}}. {{question.student}}, {{question.category}}
-        <div class="item-icon-right">
-          <div class="icon ion-ios-arrow-up" ng-hide="visibleQuestion == $index">            
-          </div>
-          <div class="icon ion-ios-arrow-down" ng-show="visibleQuestion == $index">            
+    <ion-scroll delegate-handle="question-scroll" style="z-index: 10; height: 88%;">
+      <div class="card" ng-repeat="question in room.Questions">
+        <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider">
+          {{$index+1}}. {{question.student}}, {{question.category}}
+          <div class="item-icon-right">
+            <div class="icon ion-ios-arrow-up" ng-hide="visibleQuestion == $index">
+            </div>
+            <div class="icon ion-ios-arrow-down" ng-show="visibleQuestion == $index">
+            </div>
           </div>
         </div>
+        <div ng-style="{'background-color': getSubjectColor(question.category, 0.9), 'border-color': getSubjectColor(question.category, 0.6)}" ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
       </div>
-      <div ng-style="{'background-color': getSubjectColor(question.category, 0.9), 'border-color': getSubjectColor(question.category, 0.6)}" ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
-    </div>
+    </ion-scroll>
 
   </ion-content>
 </ion-view>
