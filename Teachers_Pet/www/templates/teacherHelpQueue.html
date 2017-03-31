@@ -14,16 +14,16 @@
 
     <!-- THE CURRENT QUESTION -->
     <div class="card" ng-hide="currentlyBeingHelped == -1">
-      <div ng-click="visibleQuestion = " class="item item-divider" style="font-weight: bold">
+      <div class="item item-divider" style="font-weight: bold">
         Currently Helping {{currentlyBeingHelped.student}}
-        <div class="item-icon-right" ng-click="closeCurrentQuestion()">
+        <div class="item-icon-right" ng-click="regretHelping()">
           <div class="icon ion-ios-close-empty" style="font-size: 1.5em"></div>
         </div>
       </div>
       <div ng-show="visibleQuestion == -1" class="item item-text-wrap">{{currentlyBeingHelped.body}}</div>
-      <div class="item item-divider card-footer-button" ng-click="doneHelping()">
+      <div class="item item-divider card-footer-button" ng-click="doneHelping(currentlyBeingHelped)">
           <div class="col text-center card-footer-button">
-            <a class="button icon-left ion-checkmark button-clear button-dark" style="text-align:center;">Mark as Helped&nbsp;</a>
+            <a class="button icon-left ion-checkmark button-clear button-dark" style="text-align:center;">Done Helping&nbsp;</a>
         </div>        
       </div>
     </div>

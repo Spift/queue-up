@@ -36,11 +36,15 @@
         $scope.doneHelping = function(question) {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
+            $scope.questions.$remove(question)
+            .then(function(ref) {
+              console.log("done deleting: SHOW LOADING DIALOG FOR THIS");
+            });
         }
         /*
-         * You close the currently helping because you regret starting to help that person
+         * You regret starting to help that person, and put them back in the queue
          */
-        $scope.regretHelping = function(question) {
+        $scope.regretHelping = function() {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
         }
