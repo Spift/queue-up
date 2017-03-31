@@ -5,6 +5,11 @@
  * in order to disable the scroller on the entry page, otherwise a
  * visible scroll bar appears and actual scrolling is possible.
  */
+
+.div.scroll{
+	height: 0%;
+}
+
 .scroll {
 	height: 100%;
 }
@@ -16,6 +21,10 @@
 
 div.scroll-bar.scroll-bar-v{
 	display: none;
+}
+
+div.scroll.padding{
+	height: 100%;
 }
 
 

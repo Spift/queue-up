@@ -1,61 +1,56 @@
 <ion-view title="Teacher Help Queue" id="page6" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
-  <ion-content padding="true" class="has-header">
-    <label> Room Code: {{room.code}} </label> <br>
-    <label> Admin Code: {{room.admin_code}} </label>
-    <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">40 students need help with greedy algorithms</p>
-    </div>
-    <div class="spacer" style="width: 300px; height: 0px;"></div>
-    
+  <ion-content padding="true" class="has-header" has-bouncing="false">
+      <label id="room_code"> Room Code: {{room.code}} </label> <br>
+      <label id="admin_code"> Admin Code: {{room.admin_code}} </label>
+      <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">40 students need help with greedy algorithms</p>
+      </div>
+      <div class="spacer" style="width: 300px; height: 0px;"></div>
+
     <!-- Error code shown if no questions have been posted yet-->
     <div style="margin:auto; width:90%; text-align:center" ng-show="room.Questions===undefined">
       <div style="color: grey">No one has asked any questions yet.<br>When they start rolling in, they will appear here!</div>
     </div>
 
-    <!-- THE CURRENT QUESTION -->
-    <div class="card">
-      <div ng-click="expandQuestion($index);" class="item item-divider" style="color: #bbbbbb; font-weight: bold">
-        Currently Helping Peder
-        <div class="item-icon-right">
-          <div class="icon ion-ios-arrow-down" ng-hide="visibleQuestion == $index" style="font-size: 1.5em"></div>
-          <div class="icon ion-ios-arrow-up" ng-show="visibleQuestion == $index" style="font-size: 1.5em"></div>
-        </div>
-      </div>
-      <div ng-show="visibleQuestion == $index" class="item item-text-wrap">Hejsa</div>
-      <div class="item item-divider" ng-show="visibleQuestion == $index" ng-click="joinRoomPressed()">
-          <div class="col text-center" ng-click="joinRoomPressed()">
-            <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Help Next in Line&nbsp;</a>
-        </div>        
-      </div>
-    </div>
-
-    <!-- the actual Queue -->
-    <div class="card" ng-repeat="question in room.Questions">
-      <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider item-icon-right">
-        {{$index+1}}. {{question.student}}, {{question.category}}
-        <div class="item-icon-right">
-          <div class="icon ion-ios-arrow-down" style="font-size: 1.5em;" ng-hide="visibleQuestion == $index">  
+      <!-- THE CURRENT QUESTION -->
+      <section class="fill-height-or-more" style="height: 88%;">
+        <div class="card" ng-hide="currentlyBeingHelped == -1">
+          <div ng-click="visibleQuestion = " class="item item-divider" style="font-weight: bold">
+            Currently Helping {{currentlyBeingHelped.student}}
+            <div class="item-icon-right" ng-click="closeCurrentQuestion()">
+              <div class="icon ion-ios-close-empty" style="font-size: 1.5em"></div>
+            </div>
           </div>
-          <div class="icon ion-ios-arrow-up" style="font-size: 1.5em;" ng-show="visibleQuestion == $index">            
+          <div ng-show="visibleQuestion == -1" class="item item-text-wrap">{{currentlyBeingHelped.body}}</div>
+          <div class="item item-divider card-footer-button" ng-click="doneHelping()">
+              <div class="col text-center card-footer-button">
+                <a class="button icon-left ion-checkmark button-clear button-dark" style="text-align:center;">Mark as Helped&nbsp;</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div ng-style="{'background-color': getSubjectColor(question.category, 0.9), 'border-color': getSubjectColor(question.category, 0.6)}" ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
-      <div class="item item-divider helper" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" ng-show="visibleQuestion == $index">
-        <div class="col text-center helper" ng-click="joinRoomPressed()">
-            <a id="help-button" class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Help {{question.student}}&nbsp;</a>
+
+      <!-- the actual Queue -->
+      <div id="queue-scroll">
+      <div class="card" ng-repeat="question in room.Questions" ng-hide="question == currentlyBeingHelped" >
+        <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider item-icon-right">
+          {{$index+1}}. {{question.student}}, {{question.category}}
+          <div class="item-icon-right">
+            <div class="icon ion-ios-arrow-down" style="font-size: 1.5em;" ng-hide="visibleQuestion == $index">
+            </div>
+            <div class="icon ion-ios-arrow-up" style="font-size: 1.5em;" ng-show="visibleQuestion == $index">
+            </div>
+          </div>
+        </div>
+        <div ng-style="{'background-color': getSubjectColor(question.category, 0.9), 'border-color': getSubjectColor(question.category, 0.6)}" ng-show="visibleQuestion == $index" class="item item-text-wrap">{{question.body}}</div>
+        <div class="item item-divider card-footer-button" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" ng-show="visibleQuestion == $index">
+          <div class="col text-center card-footer-button" ng-click="joinRoomPressed()">
+              <a ng-click="beginHelping(question)" id="help-button" class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Help {{question.student}}&nbsp;</a>
+          </div>
         </div>
       </div>
-    </div>
-
+    </section>
   </ion-content>
 </ion-view>
 
 <!-- Bottom tab bar for teachers -->
 <teachers-pet-tab-bar page="teacherHelpQueue", template="templates/teacherTab.html"></teachers-pet-tab-bar>
-
-
-
-<!--div class="col text-center" ng-click="joinRoomPressed()">
-            <a class="button icon-right ion-chevron-right button-clear button-dark" style="text-align:center;">Help {{question.student}}&nbsp;</a>
-        </div-->

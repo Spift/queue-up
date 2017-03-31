@@ -10,15 +10,13 @@
         $scope.Constants = constantsService.getConstants();
         $scope.studentID = localStorageService.getStudentID();
         $scope.room = roomDataService.getRoom();
-        $scope.Qs = roomDataService.getQuestions();
+        $scope.questions = roomDataService.getQuestions();
         $scope.visibleQuestion = -1;
-        // $scope.ownQuestionVisible = true;
-        // $scope.ownQuestionIndex = -1;
-
+        // expand YOUR question if you have one upon entering the view
         var i = 0;
-        for(var i = 0; i < $scope.Qs.length; i++) {
-            var key = $scope.Qs.$keyAt(i);
-            var q = $scope.Qs.$getRecord(key);
+        for(var i = 0; i < $scope.questions.length; i++) {
+            var key = $scope.questions.$keyAt(i);
+            var q = $scope.questions.$getRecord(key);
             console.log("Question id: " + q.studentID);
             console.log("Scope id: " + $scope.studentID);
             if (q.studentID == $scope.studentID){
