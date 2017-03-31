@@ -6,13 +6,21 @@
 }
 
 /*font size of all lists. This was made to specifically target the category lists, so maybe make a custom class for that...*/
-.item.item-input.item-icon-right.category-item {
+.item.item-icon-right.category-item {
 	font-size: 14px !important;
 }
 
 /* Minus icon to remove subject */
 .button.button-icon.icon.ion-ios-minus-outline{
 	padding-bottom: 1.3%;
+}
+
+.item.item-divider.helper {
+	height: 2.8em;
+}
+
+.col.text-center {
+	transform: translate(0%, -23%);
 }
 
 /* Highlighted question box header bar*/
@@ -58,6 +66,11 @@ a.teacherspet-button {
 	opacity: 0.3 !important;
 }
 
+/* NIGHT MODE stuff*/
+.inverted {
+	filter: invert(100%);
+}
+
 /* Button highlighted as soon as pressed */
 .button.button-icon.active, .button.button-icon.activated{
 	opacity: 1.0 !important;
@@ -71,29 +84,25 @@ a.teacherspet-button {
 	padding-right: 35%;
 }
 
-/* NIGHT MODE stuff*/
-.inverted {
-	filter: invert(100%);
-}
-
-#createRoomForm .item.item-input{
+#createRoomForm .item{
 	width: 100.5%;
 	margin-left: -0.25%;
 }
 
-#createRoomForm .item.item-input, #subjectForm .item.item-input{
+#createRoomForm .item, #subjectForm .item{
 	height: 3em;
 }
 
-#subjectForm .item.item-input{
+#subjectForm .item{
 	margin-top: -5.9%;
 	border-bottom-right-radius: 2.5px;
 	border-bottom-left-radius: 2.5px;
 }
 
-#subjectList .item.item-input{
+#subjectList .item{
 	margin-top: -0.5%;
-	height: 3em;
+	/*height: 3em;*/
+	line-height: 80%;
 	border-radius: 2px;
 }
 

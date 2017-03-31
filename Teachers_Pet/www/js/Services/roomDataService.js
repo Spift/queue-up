@@ -12,10 +12,18 @@
     	var roomFirebaseObject = {};
         var questionFirebaseArray = {};
         /*
-         * Get the firebase object that contains all data for the current room
+         * Get the firebase Array that contains all questions for the current room
          */
         function getQuestions() {
             return questionFirebaseArray;
+        }
+
+        /* Get a question with a certain index */
+        function questionFromIndex(index){
+            var questions = firebaseDataService.getQuestions($scope.room.$id);
+            var key = $scope.Qs.$keyAt(index);
+            var q = $scope.Qs.$getRecord(key);
+            return q;
         }
         /*
          * Get a question based on a specific index in questions
@@ -28,7 +36,7 @@
         /*
          * Set/update the firebase object that contains all data for the current room
          */
-        function setRoom(questions) {
+        function setQuestions(questions) {
             questionFirebaseArray = questions;
         }
         /*
@@ -54,7 +62,9 @@
     	 */
     	return {
     		getRoom:getRoom,
-            setRoom:setRoom
+            setRoom:setRoom,
+            getQuestions : getQuestions,
+            setQuestions : setQuestions
     	}
     }
 

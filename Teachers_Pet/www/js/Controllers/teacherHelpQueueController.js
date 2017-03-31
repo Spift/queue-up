@@ -11,6 +11,7 @@
         $scope.room = roomDataService.getRoom();
         $scope.visibleQuestion = 0;
         //$scope.Qs = roomDataService.getQuestions($scope.room.$id);
+
         /*
          * When a header is clicked, toggle the visibility of the body
          */
