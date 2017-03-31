@@ -15,12 +15,24 @@
 	padding-bottom: 1.3%;
 }
 
-.item.item-divider.helper {
+div.card {
+
+	margin-top: 0%;
+	margin-bottom: 2%;
+}
+
+/* Create room help button */
+.item.item-divider.card-footer-button {
 	height: 2.8em;
 }
 
-.col.text-center {
+.col.text-center.card-footer-button {
 	transform: translate(0%, -23%);
+}
+
+div.card.outlined {
+	border-style: dashed;
+	border-radius: 5px;
 }
 
 /* Highlighted question box header bar*/

@@ -10,43 +10,27 @@
         $scope.Constants = constantsService.getConstants();
         $scope.studentID = localStorageService.getStudentID();
         $scope.room = roomDataService.getRoom();
-        $scope.Qs = roomDataService.getQuestions();
-        $scope.visibleQuestion = 0; // TODO: make so YOUR question is the one that is expanded upon first opening the view...
-        $scope.Qs = firebaseDataService.getQuestions($scope.room.$id);
-        $scope.ownQuestionVisible = true;
-        $scope.ownQuestionIndex = -1;
-
-        setTimeout(function() {
-            var i = 0;
-            for(var quest in $scope.Qs) {
-                var key = $scope.Qs.$keyAt(i);
-                var q = $scope.Qs.$getRecord(key);
-                if (q.studentID == $scope.studentID){
-                    $scope.visibleQuestion = i;
-                    break;
-                }
-                i++;
+        $scope.questions = roomDataService.getQuestions();
+        $scope.visibleQuestion = -1;
+        // expand YOUR question if you have one upon entering the view
+        var i = 0;
+        for(var i = 0; i < $scope.questions.length; i++) {
+            var key = $scope.questions.$keyAt(i);
+            var q = $scope.questions.$getRecord(key);
+            console.log("Question id: " + q.studentID);
+            console.log("Scope id: " + $scope.studentID);
+            if (q.studentID == $scope.studentID){
+                $scope.visibleQuestion = i;
+                break;
             }
-        }, 0);
+        }
 
         /*
          * When a header is clicked, toggle the visibility of the body
          */
         $scope.expandQuestion = function(index) {
-                    var i = 0;
-            for(var quest in $scope.Qs) {
-                var key = $scope.Qs.$keyAt(i);
-                var q = $scope.Qs.$getRecord(key);
-                if (q.studentID == $scope.studentID){
-                    $scope.visibleQuestion = i;
-                }
-                i++;
-            }
             if($scope.visibleQuestion == index) {
                 $scope.visibleQuestion = -1;//all questions are collapsed now
-                // if(index == $scope.ownQuestionIndex){
-                //     $scope.ownQuestionVisible = false;
-                // }
             }else{
                 $scope.visibleQuestion = index;
             }

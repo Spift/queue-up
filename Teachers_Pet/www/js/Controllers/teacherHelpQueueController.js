@@ -9,9 +9,15 @@
     	console.log('Teacher help queue controller fired');
         $scope.Constants = constantsService.getConstants();
         $scope.room = roomDataService.getRoom();
+        $scope.questions = roomDataService.getQuestions();
+        $scope.currentlyBeingHelped = -1; // the question object is -1 if no one is currently being helped
         $scope.visibleQuestion = 0;
+<<<<<<< HEAD
         //$scope.Qs = roomDataService.getQuestions($scope.room.$id);
 
+=======
+        $scope.expandedCurrentQuestion = true; // expand the Currently Being Helped question box at the top of the queue
+>>>>>>> e3e5aec2b6c2c39183528df9fa66b79ea0c0a439
         /*
          * When a header is clicked, toggle the visibility of the body
          */
@@ -29,6 +35,27 @@
           else{
             $scope.visibleQuestion = index;
           }
+        }
+        /*
+         * Put question to the top of the queue and mark it as currently being solved
+         */
+        $scope.beginHelping = function(question) {
+            $scope.currentlyBeingHelped = question;
+            $scope.visibleQuestion = -1; // collapse all other questions, expand this top question
+        }
+        /*
+         * Put question to the top of the queue and mark it as currently being solved
+         */
+        $scope.doneHelping = function(question) {
+            $scope.currentlyBeingHelped = -1;
+            $scope.visibleQuestion = -1;
+        }
+        /*
+         * You close the currently helping because you regret starting to help that person
+         */
+        $scope.regretHelping = function(question) {
+            $scope.currentlyBeingHelped = -1;
+            $scope.visibleQuestion = -1;
         }
         /*
          * get a color based on subject string
