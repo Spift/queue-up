@@ -25,12 +25,18 @@
 
 	    <!-- Category list -->
 	    <ion-list id="subjectList">
-	      <ion-item ng-style="{'background-color': getSubjectColor(subject, 0.9), 'border-color': getSubjectColor(subject, 0.7)}" class="item item-input item-icon-right category-item" ng-repeat="subject in subjects track by $index">
+	      <ion-item ng-style="{'background-color': getSubjectColor(subject, 0.9), 'border-color': getSubjectColor(subject, 0.7)}" class="item item-icon-right category-item" ng-repeat="subject in subjects track by $index">
 	        {{subject}}
 	        <a class="button button-icon icon ion-ios-close-empty" ng-click="removeSubject($index)"></a>
 	      </ion-item>
 	    </ion-list>
 
+
+    <!-- refresh button-->
+    <div class="button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || (roomDetailsForm.$invalid && formData.subject.length >= 2) || subjects.length === 0" ng-click="applyChanges()">Apply Changes</div>
+    <!-- leave/delete button-->
+    <a ng-click="showConfirmDialog()" class="button icon-right ion-close button-assertive button-block">Delete Room</a>
+    
     </ion-content>
 
 

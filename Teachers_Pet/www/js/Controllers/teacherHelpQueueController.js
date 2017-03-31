@@ -35,6 +35,14 @@
          */
         $scope.doneHelping = function(question) {
             $scope.currentlyBeingHelped = -1;
+            $scope.visibleQuestion = -1;
+        }
+        /*
+         * You close the currently helping because you regret starting to help that person
+         */
+        $scope.regretHelping = function(question) {
+            $scope.currentlyBeingHelped = -1;
+            $scope.visibleQuestion = -1;
         }
         /*
          * get a color based on subject string

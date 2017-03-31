@@ -46,6 +46,7 @@
         localStorageService.setName($scope.formData.name);
         $state.go("joinRoom");
       }
+
     	/*
        * Create Room Button press. Always saves the input content to localstorage
        */

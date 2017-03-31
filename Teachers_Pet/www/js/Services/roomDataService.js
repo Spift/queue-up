@@ -17,6 +17,14 @@
         function getQuestions() {
             return questionFirebaseArray;
         }
+
+        /* Get a question with a certain index */
+        function questionFromIndex(index){
+            var questions = firebaseDataService.getQuestions($scope.room.$id);
+            var key = $scope.Qs.$keyAt(index);
+            var q = $scope.Qs.$getRecord(key);
+            return q;
+        }
         /*
          * Set/update the firebase object that contains all data for the current room
          */

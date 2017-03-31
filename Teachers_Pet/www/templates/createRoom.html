@@ -19,8 +19,8 @@
         <form name="subjectForm" id="subjectForm" novalidate>
           <ion-item id="sub-label" class="item item-input">
             <i class="icon ion-social-freebsd-devil placeholder-icon" style="padding-right: 1em; "></i>
-            <input required name="sub_input" type="text" placeholder="Enter a subject" ng-model="formData.subject" type="text" ng-minlength="2" ng-maxlength="140">
-            <a id="add-button" ng-click="addSubject()" ng-disabled="subjectForm.$invalid" class="button button-icon icon ion-ios-plus-outline"></a>
+            <input required name="sub_input" type="text" placeholder="Enter a subject" ng-model="formData.subject" type="text" ng-minlength="2" ng-maaxlength="140">
+            <a id="add-button" ng-click="addSubject()" ng-disabled="subjectForm.$invalid" style="font-size: 0.9em;" class="button button-icon icon ion-ios-plus-outline"></a>
           </ion-item>
         </form>
 
@@ -29,8 +29,8 @@
 
           <!-- Category list -->
           <ion-list required id="subjectList">
-            <ion-item ng-style="{'background-color': getSubjectColor(subject, 0.9), 'border-color': getSubjectColor(subject, 0.7)}" class="item item-input item-icon-right category-item" ng-repeat="subject in formData.subjects track by $index">{{$index+1}}. {{subject}}
-            <a class="button button-icon icon ion-ios-minus-outline" ng-click="removeSubject($index)"></a>
+            <ion-item ng-style="{'background-color': getSubjectColor(subject, 0.9), 'border-color': getSubjectColor(subject, 0.7)}" class="item  item-icon-right category-item" ng-repeat="subject in formData.subjects track by $index">{{$index+1}}. {{subject}}
+            <div class="icon ion-ios-minus-outline" style="font-size: 1.8em;" ng-click="removeSubject($index)"></div>
             </ion-item>
           </ion-list>
           <!-- <div class="spacer" style="width: 300px; height: 83px;"></div> -->
