@@ -12,12 +12,9 @@
         $scope.questions = roomDataService.getQuestions();
         $scope.currentlyBeingHelped = -1; // the question object is -1 if no one is currently being helped
         $scope.visibleQuestion = 0;
-<<<<<<< HEAD
         //$scope.Qs = roomDataService.getQuestions($scope.room.$id);
 
-=======
         $scope.expandedCurrentQuestion = true; // expand the Currently Being Helped question box at the top of the queue
->>>>>>> e3e5aec2b6c2c39183528df9fa66b79ea0c0a439
         /*
          * When a header is clicked, toggle the visibility of the body
          */
