@@ -16,16 +16,12 @@
     <preference name="FadeSplashScreenDuration" value="3000" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
-    <!-- Sets the splash screen cover -->
     <preference name="SplashScreen" value="false" />
-    <!-- Background video setings on the entry page -->
     <preference name="AllowInlineMediaPlayback" value="true" />
-    <preference name="MediaPlaybackRequiresUserAction" value="false"/>
-    <!-- Force portrait orientation, disables landscape orientation -->
-    <preference name="orientation" value="portrait"/>
-    <!-- Fix for Cordova whitelist plugin -->
-    <allow-navigation href="https://*/*"/>
-    <allow-navigation href="http://*/*"/>
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="orientation" value="portrait" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="http://*/*" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
@@ -85,6 +81,6 @@
     <plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
     <plugin name="cordova-plugin-console" spec="~1.0.5" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
-    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
     <plugin name="cordova-plugin-device" spec="~1.1.4" />
+    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
 </widget>
