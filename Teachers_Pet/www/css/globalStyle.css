@@ -130,7 +130,7 @@ option {
 /* Bottom margin for pages so it is not hidden behind footer */
 ion-content{
 	position: relative;
-	margin-bottom: 20% !important;
+	margin-bottom: 18% !important;
 }
 
 ion-content.no-footer{
@@ -140,4 +140,16 @@ ion-content.no-footer{
 .button.button-icon.icon.ion-ios-plus-outline{
 	/*border: 1px solid;*/
 	margin-right: 0.9%;
+}
+
+.fill-height-or-more {
+  display: flex;
+  flex-direction: column;
+}
+
+.fill-height-or-more > div {
+  /* these are the flex items */
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: auto;
 }
