@@ -47,10 +47,47 @@
 			}
 			return true;
     	}
+        /*
+         * set room code
+         */
+        function setRoomCode(code) {
+            localStorage.setItem("code", code);
+        }
+        /*
+         * get room Code
+         */
+        function getRoomCode() {
+            var code = localStorage.getItem("code");
+            if(code == null) { // is this a good error code?
+                return null;
+            }
+            return code;
+        }
+        /*
+         * set admin code
+         */
+        function setAdminCode(admin) {
+            localStorage.setItem("admin", admin);
+        }
+        /*
+         * get admin code
+         */
+        function getAdminCode() {
+            var admin = localStorage.getItem("admin");
+            if(admin == null) { // is this a good error code?
+                return null;
+            }
+            return admin;
+        }
+
     	/*
     	 * Available methods that the service should offer to the controller must be listed here:
     	 */
     	return {
+            setAdminCode : setAdminCode,
+            getAdminCode : getAdminCode,
+            getRoomCode : getRoomCode,
+            setRoomCode : setRoomCode,
     		getName : getName,
     		setName : setName,
             setStudentID:setStudentID,

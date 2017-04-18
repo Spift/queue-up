@@ -15,8 +15,8 @@
       <section class="fill-height-or-more" style="height: 96%;">
         <div class="card" ng-hide="currentlyBeingHelped == -1">
           <div class="item item-divider" style="font-weight: bold">
-            Currently Helping {{currentlyBeingHelped.$key}}
-            <div class="item-icon-right" ng-click="regretHelping()">
+            Currently Helping {{currentlyBeingHelped.name}}
+            <div class="item-icon-right" ng-click="regretHelping(currentlyBeingHelped)">
               <div class="icon ion-ios-close-empty" style="font-size: 1.5em"></div>
             </div>
           </div>
