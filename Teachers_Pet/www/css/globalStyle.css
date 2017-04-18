@@ -1,5 +1,10 @@
 /* Universal stylings, used across different views*/
 
+.header-offset{
+	top: 0px !important;
+	margin-top: 12% !important;
+}
+
 /* Night mode */
 .inverted {
 	filter: invert(100%);

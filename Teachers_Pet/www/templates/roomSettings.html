@@ -1,18 +1,18 @@
 <ion-view title="Room Settings" id="page9" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
-  <ion-content padding="true" class="has-header" style="top: 0px; margin-top: 44px;">
+  <ion-content padding="true" class="has-header header-offset">
     <div id="roomSettings-markdown6" class="show-list-numbers-and-dots">
       <p>Room Code: {{room.code}}</p>
       <p>Teacher Code: {{room.admin_code}}</p>
     </div>
-    
+
     <!-- room details form -->
-    <form name="roomDetailsForm" class="list" novalidate>  
+    <form name="roomDetailsForm" class="list" novalidate>
       <!-- Room name input -->
       <label class="item item-input">
         <i class="icon ion-medkit placeholder-icon" style="padding-right: 1em; "></i>
         <input id="room-name-input" type="text" placeholder="Enter the name of your room" ng-model="formData.roomName" required type="text" ng-minlength="2" ng-maxlength="25">
       </label>
-      
+
       <!-- Room description input -->
       <label class="item item-input">
         <i class="icon ion-funnel placeholder-icon" style="padding-right: 1em; "></i>
@@ -25,13 +25,13 @@
         Edit Categories / Subjects
         <i class="icon ion-chevron-right" style="font-size : 16px;"></i>
       </div>
-    </form>  
+    </form>
 
     <!-- refresh button-->
     <div class="button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || (roomDetailsForm.$invalid && formData.subject.length >= 2) || subjects.length === 0" ng-click="applyChanges()">Apply Changes</div>
     <!-- leave/delete button-->
     <a ng-click="showConfirmDialog()" class="button icon-right ion-close button-assertive button-block">Delete Room</a>
-    
+
 
 
   </ion-content>

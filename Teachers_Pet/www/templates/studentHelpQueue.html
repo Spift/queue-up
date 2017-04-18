@@ -1,5 +1,5 @@
 <ion-view title="Student Help Queue" id="page7" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
-  <ion-content padding="true" class="has-header" style="top: 0px; margin-top: 44px;">
+  <ion-content padding="true" class="has-header header-offset">
     <div class="spacer" style="width: 300px; height: 0px;"></div>
     <!-- Random Queue information -->
     <div id="studentHelpQueue-markdown5" class="show-list-numbers-and-dots">
@@ -19,9 +19,9 @@
           <div class="icon ion-ios-close-empty" ng-click="deleteMyQuestion($index); $event.stopPropagation();"></div>
         </div>
         <div class="item-icon-right">
-          <div class="icon ion-ios-arrow-down" style="font-size: 1.5em;" ng-hide="visibleQuestion == $index || question.studentID == studentID">  
+          <div class="icon ion-ios-arrow-down" style="font-size: 1.5em;" ng-hide="visibleQuestion == $index || question.studentID == studentID">
           </div>
-          <div class="icon ion-ios-arrow-up" style="font-size: 1.5em;" ng-hide="visibleQuestion != $index || question.studentID == studentID">            
+          <div class="icon ion-ios-arrow-up" style="font-size: 1.5em;" ng-hide="visibleQuestion != $index || question.studentID == studentID">
           </div>
         </div>
       </div>
