@@ -18,6 +18,11 @@
 div.card {
 	margin-top: 0%;
 	margin-bottom: 2%;
+	z-index: 3;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+	-moz-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+	box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
 }
 
 div.card.outlined {
@@ -156,15 +161,4 @@ ion-content.no-footer{
 .button.button-icon.icon.ion-ios-plus-outline{
 	/*border: 1px solid;*/
 	margin-right: 0.9%;
-}
-
-.fill-height-or-more {
-  display: flex;
-  flex-flow: column;
-}
-
-#queue-scroll {
-  /* these are the flex items */
-	flex: 2;
-	overflow: auto;
 }
