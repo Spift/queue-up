@@ -30,7 +30,7 @@
         /*
          * Function used to hide the keyboard when a room is found
          */
-        $scope.closeKeyboard = function(){
+        function closeKeyboard(){
             console.log("Closing keyboard");
             document.activeElement.blur();
         };
@@ -79,7 +79,11 @@
                         roomDataService.setRoom($scope.room); // store the room data in  roomDataService, so it can be accessed later by the queue view.
                         roomDataService.setQuestions($scope.questions);
                         $scope.validRoomData = true; // will make room preview appear
-                        $scope.closeKeyboard(); // Hide keyboard
+                        if(($scope.formData.adminCode != undefined && $scope.formData.adminCode.length == 6) || 
+                            $scope.formData.code.length == roomCodeLength && $scope.formData.adminCode.length == 0){
+                            console.log($scope.formData.adminCode);
+                            closeKeyboard(); // Hide keyboard
+                        }
                     }else{
                         $scope.showRoomNotFoundError = true;
                         console.log("no such room :(");
