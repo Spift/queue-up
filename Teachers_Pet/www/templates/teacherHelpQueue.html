@@ -1,7 +1,7 @@
 <ion-view title="Teacher Help Queue" id="page6" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header" has-bouncing="false">
       <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
-        <p style="color:#000000;">40 students need help with greedy algorithms</p>
+        <p style="color:#000000;"><b>{{popularCategoryNumber}}</b> students need help with <b>{{popularCategoryName}}</b></p>
       </div>
       <div class="spacer" style="width: 300px; height: 0px;"></div>
 
@@ -15,8 +15,9 @@
       <section ng-hide="room.Questions===undefined" class="amazing-flexbox">
         <div class="card" ng-hide="currentlyBeingHelped == -1">
           <div class="item item-divider" style="font-weight: bold">
-            Currently Helping {{currentlyBeingHelped.name}}
-            <div class="item-icon-right" ng-click="regretHelping(currentlyBeingHelped)">
+
+            Currently Helping {{currentlyBeingHelped.student}}
+            <div class="item-icon-right" ng-click="regretHelping()">
               <div class="icon ion-ios-close-empty" style="font-size: 1.5em"></div>
             </div>
           </div>
