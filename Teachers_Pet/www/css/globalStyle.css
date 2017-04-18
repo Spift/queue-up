@@ -39,6 +39,9 @@ div.card.outlined {
 .item.item-divider.card-footer-button {
 	height: 2.8em;
 }
+.card{
+	margin-top: 10px;
+}
 
 .col.text-center.card-footer-button {
 	transform: translate(0%, -23%);
@@ -115,7 +118,7 @@ a.teacherspet-button {
 }
 
 #subjectForm .item{
-	margin-top: -5.9%;
+	margin-top: -6.1%;
 	border-bottom-right-radius: 2.5px;
 	border-bottom-left-radius: 2.5px;
 }

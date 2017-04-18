@@ -12,7 +12,7 @@
 
 
       <!-- THE CURRENT QUESTION -->
-      <section class="amazing-flexbox" style="height: 96%;">
+      <section ng-hide="room.Questions===undefined" class="amazing-flexbox">
         <div class="card" ng-hide="currentlyBeingHelped == -1">
           <div class="item item-divider" style="font-weight: bold">
             Currently Helping {{currentlyBeingHelped.$key}}
