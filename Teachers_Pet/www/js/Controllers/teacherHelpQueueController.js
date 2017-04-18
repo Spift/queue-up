@@ -50,8 +50,7 @@
         /*
          * When a header is clicked, toggle the visibility of the body
          */
-        $scope.expandQuestion = function(index, question) {
-          
+        $scope.expandQuestion = function(index) {
           if($scope.visibleQuestion == index) {
             $scope.visibleQuestion = -1;//all questions are collapsed now
           }
@@ -83,7 +82,6 @@
         $scope.doneHelping = function(question) {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
-            
             for(var i = 0; i < $scope.questions.length; i++) {
                 var key = $scope.questions.$keyAt(i);
                 var q = $scope.questions.$getRecord(key);
@@ -94,7 +92,7 @@
                 }
             }
             //console.log($scope.questions.$keyAt(question));
-            
+
         }
         /*
          * You regret starting to help that person, and put them back in the queue

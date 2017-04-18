@@ -1,11 +1,11 @@
 /* the AMAZING flexbox settings */
-.teacher-amazing-flexbox {
+.student-amazing-flexbox {
   display: flex;
   flex-flow: column;
   height: 100%;
 }
 
-.teacher-queue-scroll {
+.student-queue-scroll {
   /* scroll element pretty settings */
   z-index: 4;
   border-radius: 10px;

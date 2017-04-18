@@ -1,11 +1,11 @@
 <ion-view title="Join Room" id="page4" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
-  <ion-content padding="true" class="has-header no-footer" style="top: 0px; margin-top: 12%;">
+  <ion-content padding="true" class="has-header no-footer header-offset">
 
     <!-- Room code input -->
     <form name="roomCodeForm" class="list">
       <label class="item item-input" id="joinRoom-input6" name="room_code">
         <i class="icon ion-pound placeholder-icon" style="padding-right: 1em; "></i>
-        <input id="room-code-input" value="fcuzn" type="text" placeholder="Enter Room Code (try 'fcuzn') (fix caps bug)" ng-model="formData.code">
+        <input id="room-code-input" value="fcuzn" type="text" placeholder="Enter Room Code (try 'fcuzn')" ng-model="formData.code">
       </label>
     </form>
 
@@ -22,7 +22,7 @@
     <form name="adminCodeForm" class="list" ng-show="joinAsAdmin">
       <label class="item item-input" name="admin_code">
         <i class="icon ion-university placeholder-icon" style="padding-right: 1em; "></i>
-        <input id="room-code-input" type="text" placeholder="Enter Teacher code (try 'dsfm1x') (fix caps bug)" ng-model="formData.adminCode">
+        <input id="room-code-input" type="text" placeholder="Enter Teacher code (try 'dsfm1x')" ng-model="formData.adminCode">
       </label>
     </form>
 

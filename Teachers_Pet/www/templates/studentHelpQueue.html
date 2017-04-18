@@ -1,35 +1,38 @@
 <ion-view title="Student Help Queue" id="page7" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
-  <ion-content padding="true" class="has-header" style="top: 0px; margin-top: 44px;">
-
-    <!-- Room information -->
-    <div>
-      <center>
-        <p><b>Room Code:</b> {{room.code}}</p>
-        <p>{{room.description}}</p>
-      </center>
-    </div>
+  <ion-content padding="true" class="has-header header-offset">
 
     <!-- Error code shown if no questions have been posted yet-->
     <div style="margin:auto; width:90%; text-align:center" ng-show="room.Questions === undefined">
       <div style="color: grey">No one has asked any questions yet.<br>Why not be the first? Press "Get Help"!</div>
     </div>
 
-    <!-- the actual Queue -->
-    <div class="card" ng-repeat="question in room.Questions">
-      <div ng-click="expandQuestion($index)" class="item item-divider item-icon-right" ng-class="{'item item-icon-right item item-divider highlighted' : question.studentID == studentID}">
-        {{$index+1}}. {{question.student}}, {{question.category}}
-        <div class="item-icon-right" ng-show="question.studentID == studentID">
-          <div class="icon ion-ios-close-empty" ng-click="deleteMyQuestion($index); $event.stopPropagation();"></div>
-        </div>
-        <div class="item-icon-right">
-          <div class="icon ion-ios-arrow-down" style="font-size: 1.5em;" ng-hide="visibleQuestion == $index || question.studentID == studentID">  
-          </div>
-          <div class="icon ion-ios-arrow-up" style="font-size: 1.5em;" ng-hide="visibleQuestion != $index || question.studentID == studentID">            
-          </div>
-        </div>
+    <section ng-hide="room.Questions===undefined" class="student-amazing-flexbox">
+      <!-- Room information -->
+      <div>
+        <center>
+          <p><b>Room Code:</b> {{room.code}}</p>
+          <p>{{room.description}}</p>
+        </center>
       </div>
-      <div ng-show="visibleQuestion == $index" class="item item-text-wrap" ng-class="{'item item-text-wrap highlighted' : question.studentID == studentID}">{{question.body}}</div>
-    </div>
+      <!-- the actual Queue -->
+      <ion-scroll delegate-handle="student-scroller" class="student-queue-scroll">
+        <div class="card last-card" ng-repeat="question in room.Questions">
+          <div ng-click="expandQuestion($index)" class="item item-divider item-icon-right" ng-class="{'item item-icon-right item item-divider highlighted' : question.studentID == studentID}">
+            {{$index+1}}. {{question.student}}, {{question.category}}
+            <div class="item-icon-right" ng-show="question.studentID == studentID">
+              <div class="icon ion-ios-close-empty" ng-click="deleteMyQuestion($index); $event.stopPropagation();"></div>
+            </div>
+            <div class="item-icon-right">
+              <div class="icon ion-ios-arrow-down" style="font-size: 1.5em;" ng-hide="visibleQuestion == $index || question.studentID == studentID">
+              </div>
+              <div class="icon ion-ios-arrow-up" style="font-size: 1.5em;" ng-hide="visibleQuestion != $index || question.studentID == studentID">
+              </div>
+            </div>
+          </div>
+          <div ng-show="visibleQuestion == $index" class="item item-text-wrap" ng-class="{'item item-text-wrap highlighted' : question.studentID == studentID}">{{question.body}}</div>
+        </div>
+      </ion-scroll>
+    </section>
 
   </ion-content>
 </ion-view>

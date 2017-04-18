@@ -54,6 +54,11 @@ div.scroll.padding{
 	background-size: cover;
 }
 
+.header-offset-entry{
+	top: 0px !important;
+	margin-top: 0% !important;
+}
+
 /**
  * Icon for the entry label
  */
