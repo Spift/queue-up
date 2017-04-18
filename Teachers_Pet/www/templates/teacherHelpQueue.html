@@ -1,6 +1,5 @@
 <ion-view title="Teacher Help Queue" id="page6" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header" has-bouncing="false">
-    <div class="spacer" style="width: 300px; height: 0px;"></div>
 
     <!-- Error code shown if no questions have been posted yet-->
     <div style="margin:auto; width:90%; text-align:center" ng-show="room.Questions===undefined">
@@ -12,7 +11,6 @@
       <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
         <p style="color:#000000;"><b>{{popularCategoryNumber}}</b> students need help with <b>{{popularCategoryName}}</b></p>
       </div>
-        <div class="spacer" style="width: 300px; height: 0px;"></div>
 
         <div class="card" ng-hide="currentlyBeingHelped == -1">
           <div class="item item-divider" style="font-weight: bold">
@@ -31,7 +29,7 @@
         </div>
 
       <!-- the actual Queue -->
-      <ion-scroll delegate-handle="teacher-scroll" class="teacher-queue-scroll">
+      <ion-scroll class="teacher-queue-scroll">
         <div class="card last-card" ng-repeat="question in room.Questions" ng-hide="question == currentlyBeingHelped" >
           <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider item-icon-right">
             {{$index+1}}. {{question.student}}, {{question.category}}
