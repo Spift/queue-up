@@ -1,7 +1,5 @@
 <ion-view title="Teacher Help Queue" id="page6" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header" has-bouncing="false">
-      <label id="room_code"> Room Code: {{room.code}} </label> <br>
-      <label id="admin_code"> Admin Code: {{room.admin_code}} </label>
       <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
         <p style="color:#000000;">40 students need help with greedy algorithms</p>
       </div>
@@ -12,19 +10,20 @@
       <div style="color: grey">No one has asked any questions yet.<br>When they start rolling in, they will appear here!</div>
     </div>
 
+
       <!-- THE CURRENT QUESTION -->
-      <section class="amazing-flexbox" style="height: 88%;">
+      <section class="amazing-flexbox" style="height: 96%;">
         <div class="card" ng-hide="currentlyBeingHelped == -1">
-          <div ng-click="visibleQuestion" class="item item-divider" style="font-weight: bold">
-            Currently Helping {{currentlyBeingHelped.student}}
-            <div class="item-icon-right" ng-click="closeCurrentQuestion()">
+          <div class="item item-divider" style="font-weight: bold">
+            Currently Helping {{currentlyBeingHelped.$key}}
+            <div class="item-icon-right" ng-click="regretHelping()">
               <div class="icon ion-ios-close-empty" style="font-size: 1.5em"></div>
             </div>
           </div>
           <div ng-show="visibleQuestion == -1" class="item item-text-wrap">{{currentlyBeingHelped.body}}</div>
-          <div class="item item-divider card-footer-button" ng-click="doneHelping()">
+          <div class="item item-divider card-footer-button" ng-click="doneHelping(currentlyBeingHelped)">
               <div class="col text-center card-footer-button">
-                <a class="button icon-left ion-checkmark button-clear button-dark" style="text-align:center;">Mark as Helped&nbsp;</a>
+                <a class="button icon-left ion-checkmark button-clear button-dark" style="text-align:center;">Remove from Queue&nbsp;</a>
             </div>
           </div>
         </div>

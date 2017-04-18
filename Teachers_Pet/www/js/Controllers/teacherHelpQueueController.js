@@ -5,7 +5,7 @@
         .module('teacherHelpQueueController', [])
         .controller('teacherHelpQueueController', teacherHelpQueueController);
 
-    function teacherHelpQueueController($scope, colorService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, constantsService, $ionicScrollDelegate, $ionicPosition) {
+    function teacherHelpQueueController($scope, colorService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, constantsService, $ionicScrollDelegate, $ionicPosition, firebaseDataService) {
     	console.log('Teacher help queue controller fired');
         $scope.Constants = constantsService.getConstants();
         $scope.room = roomDataService.getRoom();
@@ -18,7 +18,8 @@
         /*
          * When a header is clicked, toggle the visibility of the body
          */
-        $scope.expandQuestion = function(index) {
+        $scope.expandQuestion = function(index, question) {
+          console.log($scope.questions.$keyAt(question));
           var count = Object.keys($scope.room.Questions).length - 1;
           console.log("Current expanded card position is: ");
           var cardHeightRatio = event.clientY / window.innerHeight;
@@ -44,16 +45,29 @@
             $scope.visibleQuestion = -1; // collapse all other questions, expand this top question
         }
         /*
-         * Put question to the top of the queue and mark it as currently being solved
+         * Delete question from the database
          */
         $scope.doneHelping = function(question) {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
+            
+            var i = 0;
+            for(var i = 0; i < $scope.questions.length; i++) {
+                var key = $scope.questions.$keyAt(i);
+                var q = $scope.questions.$getRecord(key);
+                if(q.studentID == question.studentID) {
+                  console.log(key);
+                  firebaseDataService.removeQuestion($scope.room.$id, key);
+                  break;
+                }
+            }
+            //console.log($scope.questions.$keyAt(question));
+            
         }
         /*
-         * You close the currently helping because you regret starting to help that person
+         * You regret starting to help that person, and put them back in the queue
          */
-        $scope.regretHelping = function(question) {
+        $scope.regretHelping = function() {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
         }
