@@ -5,16 +5,17 @@
         .module('joinRoomController', [])
         .controller('joinRoomController', joinRoomController);
 
-    function joinRoomController($scope, $stateParams, constantsService, $state, $firebaseObject, $firebaseArray, firebaseDataService, $ionicLoading, $ionicNavBarDelegate, roomDataService) {
+    function joinRoomController($scope, $stateParams, localStorageService, constantsService, $state, $firebaseObject, $firebaseArray, firebaseDataService, $ionicLoading, $ionicNavBarDelegate, roomDataService) {
     	console.log('entry page controller fired');
         $scope.Constants = constantsService.getConstants();
         $scope.validRoomData = false; // show/hide room info preview
         $scope.showLoadingSpinner = false; // show/hide the loading thing
         $scope.showRoomNotFoundError = false;
-        $scope.formData = {code: "fcuzn", adminCode : "dsfm1x"};
-        $scope.joinAsAdmin = false;
+        $scope.formData = {code: localStorageService.getRoomCode(), adminCode : localStorageService.getAdminCode()};
+        $scope.joinAsAdmin = ($scope.formData.adminCode != null);
         var roomCodeLength = 5; // the standard length of a room Code: if innput field text has this length, we automatically look in firebase for a room. no need for a button press
         
+
         /*
          * Every time the roomCode input field changes, if it has the right length, search firebase for a valid room
          */
@@ -39,6 +40,8 @@
          * Join Room button was pressed, so goto student help queue. Or admin queue if admin code was also entered
          */
         $scope.joinRoomPressed = function(formToClear) {
+            localStorageService.setRoomCode($scope.formData.code);
+            localStorageService.setAdminCode($scope.formData.adminCode);
             $scope.validRoomData = false;
             $scope.showRoomNotFoundError = false;
             $scope.showLoadingSpinner = false;
