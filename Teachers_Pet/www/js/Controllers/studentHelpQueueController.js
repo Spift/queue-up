@@ -17,8 +17,6 @@
         for(var i = 0; i < $scope.questions.length; i++) {
             var key = $scope.questions.$keyAt(i);
             var q = $scope.questions.$getRecord(key);
-            console.log("Question id: " + q.studentID);
-            console.log("Scope id: " + $scope.studentID);
             if (q.studentID == $scope.studentID){
                 $scope.visibleQuestion = i;
                 break;
