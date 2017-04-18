@@ -36,7 +36,7 @@
                 if (q.studentID == $scope.studentID){
                     if(q.notify) {
                         console.log("SEND NOTIFICATION NOW!!!");
-                        showNotificationPopup();
+                        //showNotificationPopup();
                     }
                 }
             }
