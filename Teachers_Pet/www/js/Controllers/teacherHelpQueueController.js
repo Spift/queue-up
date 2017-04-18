@@ -20,14 +20,17 @@
          */
         $scope.expandQuestion = function(index) {
           var count = Object.keys($scope.room.Questions).length - 1;
-          //getQuestionFromIndex(index, $scope.Qs);
-          if($scope.visibleQuestion == index) {
-              $scope.visibleQuestion = -1;//all questions are collapsed now
+          console.log("Current expanded card position is: ");
+          var cardHeightRatio = event.clientY / window.innerHeight;
+
+          /* Offset by scrolling, if card is near bottom of screen */
+          if(cardHeightRatio > 0.60) {
+            var scrollOffset = cardHeightRatio * 200;
+            $ionicScrollDelegate.$getByHandle('teacher-scroll').scrollBy(0, scrollOffset, true);
+            $ionicScrollDelegate.$getByHandle('teacher-scroll').resize();
           }
-          else if(count == index) {
-            $ionicScrollDelegate.$getByHandle('question-scroll').resize();
-            $ionicScrollDelegate.$getByHandle('question-scroll').scrollTo(0, 1000, [true]);
-            $scope.visibleQuestion = index;
+          if($scope.visibleQuestion == index) {
+            $scope.visibleQuestion = -1;//all questions are collapsed now
           }
           else{
             $scope.visibleQuestion = index;
