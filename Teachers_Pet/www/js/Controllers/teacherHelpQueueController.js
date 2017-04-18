@@ -5,23 +5,34 @@
         .module('teacherHelpQueueController', [])
         .controller('teacherHelpQueueController', teacherHelpQueueController);
 
-    function teacherHelpQueueController($scope, colorService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, constantsService) {
+    function teacherHelpQueueController($scope, colorService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, constantsService, $ionicScrollDelegate, $ionicPosition, firebaseDataService) {
     	console.log('Teacher help queue controller fired');
         $scope.Constants = constantsService.getConstants();
         $scope.room = roomDataService.getRoom();
         $scope.questions = roomDataService.getQuestions();
         $scope.currentlyBeingHelped = -1; // the question object is -1 if no one is currently being helped
         $scope.visibleQuestion = 0;
+        //$scope.Qs = roomDataService.getQuestions($scope.room.$id);
+
         $scope.expandedCurrentQuestion = true; // expand the Currently Being Helped question box at the top of the queue
         /*
          * When a header is clicked, toggle the visibility of the body
          */
-        $scope.expandQuestion = function(index) {
-            if($scope.visibleQuestion == index) {
-                $scope.visibleQuestion = -1;    //all questions are collapsed now
-            }else{
-                $scope.visibleQuestion = index;
-            }
+        $scope.expandQuestion = function(index, question) {
+          console.log($scope.questions.$keyAt(question));
+          var count = Object.keys($scope.room.Questions).length - 1;
+          //getQuestionFromIndex(index, $scope.Qs);
+          if($scope.visibleQuestion == index) {
+              $scope.visibleQuestion = -1;//all questions are collapsed now
+          }
+          else if(count == index) {
+            $ionicScrollDelegate.$getByHandle('question-scroll').resize();
+            $ionicScrollDelegate.$getByHandle('question-scroll').scrollTo(0, 1000, [true]);
+            $scope.visibleQuestion = index;
+          }
+          else{
+            $scope.visibleQuestion = index;
+          }
         }
         /*
          * Put question to the top of the queue and mark it as currently being solved
@@ -31,15 +42,24 @@
             $scope.visibleQuestion = -1; // collapse all other questions, expand this top question
         }
         /*
-         * Put question to the top of the queue and mark it as currently being solved
+         * Delete question from the database
          */
         $scope.doneHelping = function(question) {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
-            $scope.questions.$remove(question)
-            .then(function(ref) {
-              console.log("done deleting: SHOW LOADING DIALOG FOR THIS");
-            });
+            
+            var i = 0;
+            for(var i = 0; i < $scope.questions.length; i++) {
+                var key = $scope.questions.$keyAt(i);
+                var q = $scope.questions.$getRecord(key);
+                if(q.studentID == question.studentID) {
+                  console.log(key);
+                  firebaseDataService.removeQuestion($scope.room.$id, key);
+                  break;
+                }
+            }
+            //console.log($scope.questions.$keyAt(question));
+            
         }
         /*
          * You regret starting to help that person, and put them back in the queue

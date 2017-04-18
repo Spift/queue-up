@@ -16,9 +16,13 @@
 }
 
 div.card {
-
 	margin-top: 0%;
 	margin-bottom: 2%;
+}
+
+div.card.outlined {
+	border-style: dashed;
+	border-radius: 5px;
 }
 
 /* Create room help button */
@@ -28,11 +32,6 @@ div.card {
 
 .col.text-center.card-footer-button {
 	transform: translate(0%, -23%);
-}
-
-div.card.outlined {
-	border-style: dashed;
-	border-radius: 5px;
 }
 
 /* Highlighted question box header bar*/
@@ -152,4 +151,15 @@ ion-content.no-footer{
 .button.button-icon.icon.ion-ios-plus-outline{
 	/*border: 1px solid;*/
 	margin-right: 0.9%;
+}
+
+.fill-height-or-more {
+  display: flex;
+  flex-flow: column;
+}
+
+#queue-scroll {
+  /* these are the flex items */
+	flex: 2;
+	overflow: auto;
 }

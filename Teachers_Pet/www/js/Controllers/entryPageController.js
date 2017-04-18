@@ -89,7 +89,7 @@
       // slider data
       $scope.sliderData = [
         {
-          head: "Students!",
+          head: "Studentss!",
           body: "Det være seg innlagt humor eller tilfeldig genererte ord som ser langt fra troverdige ut."
         },
         {

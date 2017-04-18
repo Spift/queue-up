@@ -12,9 +12,9 @@
         $scope.showLoadingSpinner = false; // show/hide the loading thing
         $scope.showRoomNotFoundError = false;
         $scope.formData = {code: "fcuzn", adminCode : "dsfm1x"};
-
         $scope.joinAsAdmin = false;
         var roomCodeLength = 5; // the standard length of a room Code: if innput field text has this length, we automatically look in firebase for a room. no need for a button press
+        
         /*
          * Every time the roomCode input field changes, if it has the right length, search firebase for a valid room
          */
@@ -26,6 +26,15 @@
                 $scope.showRoomNotFoundError = false;
             }
         }, true);
+
+        /*
+         * Function used to hide the keyboard when a room is found
+         */
+        $scope.closeKeyboard = function(){
+            console.log("Closing keyboard");
+            document.activeElement.blur();
+        };
+
         /*
          * Join Room button was pressed, so goto student help queue. Or admin queue if admin code was also entered
          */
@@ -70,6 +79,7 @@
                         roomDataService.setRoom($scope.room); // store the room data in  roomDataService, so it can be accessed later by the queue view.
                         roomDataService.setQuestions($scope.questions);
                         $scope.validRoomData = true; // will make room preview appear
+                        $scope.closeKeyboard(); // Hide keyboard
                     }else{
                         $scope.showRoomNotFoundError = true;
                         console.log("no such room :(");

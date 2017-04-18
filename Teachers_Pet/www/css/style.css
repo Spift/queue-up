@@ -42,3 +42,14 @@ p.icontext{
 */
 
 
+#room_code{
+	width: 100%;
+}
+
+#admin_code{
+	width: 100%;
+}
+
+ion-content.scroll-content.ionic-scroll.overflow-scroll.has-header {
+	margin-bottom: 100%;
+}
