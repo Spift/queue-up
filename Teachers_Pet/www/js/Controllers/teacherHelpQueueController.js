@@ -18,18 +18,7 @@
         /*
          * When a header is clicked, toggle the visibility of the body
          */
-        $scope.expandQuestion = function(index, question) {
-          console.log($scope.questions.$keyAt(question));
-          var count = Object.keys($scope.room.Questions).length - 1;
-          console.log("Current expanded card position is: ");
-          var cardHeightRatio = event.clientY / window.innerHeight;
-
-          /* Offset by scrolling, if card is near bottom of screen */
-          if(cardHeightRatio > 0.60) {
-            var scrollOffset = cardHeightRatio * 200;
-            $ionicScrollDelegate.$getByHandle('teacher-scroll').scrollBy(0, scrollOffset, true);
-            $ionicScrollDelegate.$getByHandle('teacher-scroll').resize();
-          }
+        $scope.expandQuestion = function(index) {
           if($scope.visibleQuestion == index) {
             $scope.visibleQuestion = -1;//all questions are collapsed now
           }
@@ -50,7 +39,7 @@
         $scope.doneHelping = function(question) {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
-            
+
             var i = 0;
             for(var i = 0; i < $scope.questions.length; i++) {
                 var key = $scope.questions.$keyAt(i);
@@ -62,7 +51,7 @@
                 }
             }
             //console.log($scope.questions.$keyAt(question));
-            
+
         }
         /*
          * You regret starting to help that person, and put them back in the queue
