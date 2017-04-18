@@ -30,8 +30,8 @@
 
       <!-- the actual Queue -->
       <div id="queue-scroll">
-      <div class="card" ng-repeat="question in room.Questions" ng-hide="question == currentlyBeingHelped" >
-        <div ng-click="expandQuestion($index, question);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider item-icon-right">
+      <div class="card last-card" ng-repeat="question in room.Questions" ng-hide="question == currentlyBeingHelped" >
+        <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider item-icon-right">
           {{$index+1}}. {{question.student}}, {{question.category}}
           <div class="item-icon-right">
             <div class="icon ion-ios-arrow-down" style="font-size: 1.5em;" ng-hide="visibleQuestion == $index">

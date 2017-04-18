@@ -25,6 +25,11 @@ div.card.outlined {
 	border-radius: 5px;
 }
 
+.last-card:last-of-type {
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+
 /* Create room help button */
 .item.item-divider.card-footer-button {
 	height: 2.8em;

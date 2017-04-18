@@ -1,0 +1,9 @@
+#queue-scroll {
+  overflow:scroll;
+  z-index: 4;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+  -moz-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+  box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+  margin-bottom: 2%;
+}
