@@ -12,7 +12,7 @@
 
 
       <!-- THE CURRENT QUESTION -->
-      <section class="fill-height-or-more" style="height: 96%;">
+      <section ng-hide="room.Questions===undefined" class="amazing-flexbox">
         <div class="card" ng-hide="currentlyBeingHelped == -1">
           <div class="item item-divider" style="font-weight: bold">
             Currently Helping {{currentlyBeingHelped.name}}
@@ -29,7 +29,7 @@
         </div>
 
       <!-- the actual Queue -->
-      <div id="queue-scroll">
+      <ion-scroll id="scroller" delegate-handle="teacher-scroll" class="teacher-queue-scroll">
       <div class="card last-card" ng-repeat="question in room.Questions" ng-hide="question == currentlyBeingHelped" >
         <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider item-icon-right">
           {{$index+1}}. {{question.student}}, {{question.category}}
@@ -47,6 +47,7 @@
           </div>
         </div>
       </div>
+    </ion-scroll>
     </section>
   </ion-content>
 </ion-view>

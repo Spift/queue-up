@@ -8,6 +8,16 @@
         <input id="room-code-input" value="fcuzn" type="text" placeholder="Enter Room Code (try 'fcuzn') (fix caps bug)" ng-model="formData.code">
       </label>
     </form>
+
+    <!-- spacer -->
+    <div class="spacer" style="margin-top: -3%;"></div>
+
+    <a ng-click="toggleAdmin()" ng-hide="joinAsAdmin">Need to join as a teacher?</a>
+    <a ng-click="toggleAdmin()" ng-show="joinAsAdmin">Need to join as a student?</a>
+
+    <!-- spacer -->
+    <div class="spacer" style="height: 1.5%;"></div>
+
     <!-- Admin code input -->
     <form name="adminCodeForm" class="list" ng-show="joinAsAdmin">
       <label class="item item-input" name="admin_code">
@@ -15,8 +25,6 @@
         <input id="room-code-input" type="text" placeholder="Enter Teacher code (try 'dsfm1x') (fix caps bug)" ng-model="formData.adminCode">
       </label>
     </form>
-    <a ng-click="toggleAdmin()" ng-hide="joinAsAdmin">Need to join as a teacher?</a>
-    <a ng-click="toggleAdmin()" ng-show="joinAsAdmin">Need to join as a student?</a>
 
     <!-- Error code shown if inputted room code doesnt correspond to a room in database -->
     <div style="margin:auto; width:50%; text-align:center" ng-show="showRoomNotFoundError">

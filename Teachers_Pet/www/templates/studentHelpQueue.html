@@ -1,9 +1,12 @@
 <ion-view title="Student Help Queue" id="page7" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header" style="top: 0px; margin-top: 44px;">
-    <div class="spacer" style="width: 300px; height: 0px;"></div>
-    <!-- Random Queue information -->
-    <div id="studentHelpQueue-markdown5" class="show-list-numbers-and-dots">
-      <p>{{room.description}}</p>
+
+    <!-- Room information -->
+    <div>
+      <center>
+        <p><b>Room Code:</b> {{room.code}}</p>
+        <p>{{room.description}}</p>
+      </center>
     </div>
 
     <!-- Error code shown if no questions have been posted yet-->

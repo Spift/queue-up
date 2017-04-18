@@ -1,8 +1,10 @@
 <ion-view title="Room Settings" id="page9" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header" style="top: 0px; margin-top: 44px;">
-    <div id="roomSettings-markdown6" class="show-list-numbers-and-dots">
-      <p>Room Code: {{room.code}}</p>
-      <p>Teacher Code: {{room.admin_code}}</p>
+    <div id="roomInfo">
+      <center>
+        <b><p>Room Code:</b> {{room.code}}</p>
+        <b><p>Teacher Code:</b> {{room.admin_code}}</p>
+      </center>
     </div>
     
     <!-- room details form -->
@@ -20,11 +22,11 @@
       </label>
 
       <!-- change Categories button -->
-      <div class="item item-icon-left item-icon-right" style="font-size: 14px" ng-click="openModal()">
-        <i class="icon ion-funnel placeholder-icon" style="font-size : 16px;"></i>
+      <label class="item item-icon-left item-icon-right" style="font-size: 14px" ng-click="openModal()">
+        <i class="icon ion-funnel placeholder-icon" style=" font-size: 16px; margin-left: -1%; "></i>
         Edit Categories / Subjects
         <i class="icon ion-chevron-right" style="font-size : 16px;"></i>
-      </div>
+      </label>
     </form>  
 
     <!-- refresh button-->
