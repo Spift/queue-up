@@ -53,7 +53,8 @@
         /*
          * When a header is clicked, toggle the visibility of the body
          */
-        $scope.expandQuestion = function(index) {
+        $scope.expandQuestion = function(index, question) {
+          
           if($scope.visibleQuestion == index) {
             $scope.visibleQuestion = -1;//all questions are collapsed now
           }
@@ -67,17 +68,6 @@
         $scope.beginHelping = function(question) {
             $scope.currentlyBeingHelped = question;
             $scope.visibleQuestion = -1; // collapse all other questions, expand this top question
-
-            var i = 0;
-            for(var i = 0; i < $scope.questions.length; i++) {
-                var key = $scope.questions.$keyAt(i);
-                var q = $scope.questions.$getRecord(key);
-                if(q.studentID == question.studentID) {
-                  q.notify = true;
-                  $scope.questions.$save(q);
-                  break;
-                }
-            }
         }
         /*
          * Delete question from the database
@@ -85,6 +75,7 @@
         $scope.doneHelping = function(question) {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
+            
             for(var i = 0; i < $scope.questions.length; i++) {
                 var key = $scope.questions.$keyAt(i);
                 var q = $scope.questions.$getRecord(key);
@@ -95,24 +86,15 @@
                 }
             }
             //console.log($scope.questions.$keyAt(question));
-
+            
         }
         /*
          * You regret starting to help that person, and put them back in the queue
          */
-        $scope.regretHelping = function(question) {
+        $scope.regretHelping = function() {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
-            var i = 0;
-            for(var i = 0; i < $scope.questions.length; i++) {
-                var key = $scope.questions.$keyAt(i);
-                var q = $scope.questions.$getRecord(key);
-                if(q.studentID == question.studentID) {
-                  q.notify = false;
-                  $scope.questions.$save(q);
-                  break;
-                }
-            }
+            
         }
         /*
          * get a color based on subject string

@@ -35,6 +35,13 @@
             ref.child(roomObj.code).set(roomObj);
         }
         /*
+         * delete Room
+         */
+        function deleteRoom(roomID) {
+            var ref = firebase.database().ref("Rooms/" + roomID);
+            ref.remove();
+        } 
+        /*
          * Update a room already in the database. 
          */
         function updateRoom(roomID, changes){
@@ -67,7 +74,8 @@
             addQuestion : addQuestion,
             removeQuestion : removeQuestion,
             addRoom : addRoom,
-            getQuestions : getQuestions
+            getQuestions : getQuestions,
+            deleteRoom : deleteRoom,
         }
     }
 
