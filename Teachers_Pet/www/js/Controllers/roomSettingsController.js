@@ -115,7 +115,9 @@
            confirmPopup.then(function(res) {
              if(res) {
                console.log('You are sure. deleting room...');
+               //console.log();
                //TODO delete room from firebase!!!
+               firebaseDataService.deleteRoom($scope.room.$id);
                $state.go('entryPage');
              } else {
                console.log('You cancelled');

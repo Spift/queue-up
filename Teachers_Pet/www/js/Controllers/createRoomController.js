@@ -34,20 +34,31 @@
          */
         function findRoomInDatabase(roomCode) {
             $scope.room = firebaseDataService.getRoom(roomCode);
+            $scope.questions = firebaseDataService.getQuestions(roomCode.toLowerCase());
+            
             $scope.room.$loaded()
             .then(function() {
-                //data is now available!
-                $scope.loadingRoomData = false;
-                if($scope.room.$value !== null) { // make sure a room with given code actually exists.
-                    roomDataService.setRoom($scope.room); // store the room data in  roomDataService, so it can be accessed later by the queue view.
-                    $state.go("teacherHelpQueue");
-                }else{
-                    // TODO: UI Error here!!!!
-                    console.log("no such room :(");
-                }
+                $scope.questions.$loaded()
+                .then(function() {
+                    //data is now available!
+                    $scope.loadingRoomData = false;
+                    if($scope.room.$value !== null) { // make sure a room with given code actually exists.
+                        console.log("hejsa");
+                        roomDataService.setRoom($scope.room); // store the room data in  roomDataService, so it can be accessed later by the queue view.
+                        roomDataService.setQuestions($scope.questions);
+                        $state.go("teacherHelpQueue");
+                    }else{
+                        // TODO: UI Error here!!!!
+                        console.log("no such room :(");
+                    }
+                })
+                .catch(function (err) {
+                    // This is where errors land. We should show an UI error here as well
+                    console.log('joinRoomController.findRoomInDatabase() Error', err.code);
+                })
             })
             .catch(function (err) {
-                // This is where errors land. We should show an UI error here as well
+                // This is where errors land. We should show an UI error as well here
                 console.log('joinRoomController.findRoomInDatabase() Error', err.code);
             });
         }

@@ -50,8 +50,7 @@
                             'body': $scope.formData.body,
                             'category': $scope.formData.category,
                             'studentID': localStorageService.getStudentID(),
-                            'student': localStorageService.getName(),
-                            'notify' : false
+                            'student': localStorageService.getName()
                             };
             console.log(question);
             firebaseDataService.addQuestion($scope.room.$id, question);

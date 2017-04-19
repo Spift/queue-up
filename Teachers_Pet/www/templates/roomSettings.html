@@ -12,7 +12,7 @@
       <!-- Room name input -->
       <label class="item item-input">
         <i class="icon ion-medkit placeholder-icon" style="padding-right: 1em; "></i>
-        <input id="room-name-input" type="text" placeholder="Enter the name of your room" ng-model="formData.roomName" required type="text" ng-minlength="2" ng-maxlength="25">
+        <input id="room-name-input" type="text" placeholder="Enter the name of your room" ng-model="formData.roomName" required type="text" ng-minlength="2" ng-maxlength="40">
       </label>
 
       <!-- Room description input -->
@@ -29,7 +29,7 @@
       </label>
     </form>
     <!-- refresh button-->
-    <div class="button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || (roomDetailsForm.$invalid && formData.subject.length >= 2) || subjects.length === 0" ng-click="applyChanges()">Apply Changes</div>
+    <div class="button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || (roomDetailsForm.$invalid && formData.subject.length >= 2) || subjects.length === 0 || roomDetailsForm.$invalid" ng-click="applyChanges()">Apply Changes</div>
     <!-- leave/delete button-->
     <a ng-click="showConfirmDialog()" class="button icon-right ion-close button-assertive button-block">Delete Room</a>
 
