@@ -5,7 +5,7 @@
         .module('teacherHelpQueueController', [])
         .controller('teacherHelpQueueController', teacherHelpQueueController);
 
-    function teacherHelpQueueController($scope, colorService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, constantsService, $ionicScrollDelegate, $ionicPosition, firebaseDataService) {
+    function teacherHelpQueueController($scope, $timeout, colorService, roomDataService, $stateParams, $state, $ionicNavBarDelegate, constantsService, $ionicScrollDelegate, $ionicPosition, firebaseDataService) {
     	console.log('Teacher help queue controller fired');
         $scope.Constants = constantsService.getConstants();
         $scope.room = roomDataService.getRoom();
@@ -25,7 +25,6 @@
 
         /* Function to keep track of number of students that need help with categories */
         function updatePopularCategory(){
-
           for(var i = 0; i < $scope.room.Categories.length; i++){
             $scope.categoryCounter[i] = 0;
           }
@@ -43,9 +42,13 @@
           $scope.popularCategoryNumber = Math.max.apply(Math, $scope.categoryCounter);
         }
 
-        $scope.questions.$watch(function(){
+        console.log("Lookie here: " + $scope.questions);
+        setTimeout(function() {
+          $scope.questions.$watch(function(){
+          console.log("Watching");
           updatePopularCategory();
         })
+        }, 10);
 
         /*
          * When a header is clicked, toggle the visibility of the body

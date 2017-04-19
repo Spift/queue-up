@@ -4,13 +4,13 @@
         <form id="createRoomForm" name="createRoomForm" class="list" novalidate>
           <!-- Room name input -->
           <ion-item class="item item-input">
-            <i class="icon ion-social-sass placeholder-icon" style="padding-right: 1em; "></i>
+            <i class="icon ion-home placeholder-icon" style="padding-right: 1em; "></i>
             <input id="room-name-input" type="text" placeholder="Enter the name of your room" ng-model="formData.roomName" required type="text" ng-minlength="2" ng-maxlength="25">
           </ion-item>
 
           <!-- Room description input -->
           <ion-item class="item item-input">
-            <i class="icon ion-social-octocat placeholder-icon" style="padding-right: 1em; "></i>
+            <i class="icon ion-document-text placeholder-icon" style="padding-right: 1em; "></i>
             <input id="room-description-input" type="text" placeholder="Enter a description for the room" ng-model="formData.description" required type="text" ng-minlength="12" ng-maxlength="140">
           </ion-item>
         </form>
@@ -18,7 +18,7 @@
           <!-- Room categories input -->
         <form name="subjectForm" id="subjectForm" novalidate>
           <ion-item id="sub-label" class="item item-input">
-            <i class="icon ion-social-freebsd-devil placeholder-icon" style="padding-right: 1em; "></i>
+            <i class="icon ion-ios-book placeholder-icon" style="padding-right: 1em; "></i>
             <input required name="sub_input" type="text" placeholder="Enter a subject" ng-model="formData.subject" type="text" ng-minlength="2" ng-maaxlength="140">
             <a id="add-button" ng-click="addSubject()" ng-disabled="subjectForm.$invalid" style="font-size: 0.9em;" class="button button-icon icon ion-ios-plus-outline"></a>
           </ion-item>

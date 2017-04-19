@@ -21,7 +21,8 @@
     <!-- Admin code input -->
     <form name="adminCodeForm" class="list" ng-show="joinAsAdmin">
       <label class="item item-input" name="admin_code">
-        <i class="icon ion-university placeholder-icon" style="padding-right: 1em; "></i>
+        <i class="icon ion-locked placeholder-icon" style="padding-right: 1em; " ng-hide="validRoomData && (formData.adminCode.toLowerCase() == room.admin_code || !joinAsAdmin)"></i>
+        <i class="icon ion-unlocked placeholder-icon" style="padding-right: 1em; " ng-show="validRoomData && (formData.adminCode.toLowerCase() == room.admin_code || !joinAsAdmin)"></i>
         <input id="room-code-input" type="text" placeholder="Enter Teacher code (try 'dsfm1x')" ng-model="formData.adminCode">
       </label>
     </form>

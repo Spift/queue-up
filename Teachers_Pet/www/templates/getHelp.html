@@ -3,7 +3,8 @@
 
     <form name="addQuestionForm" class="list">
       <!-- category drop downnn -->
-      <label class="item item-select">
+      <label class="item item-select" id="helpSubject">
+        <i class="icon ion-ios-book placeholder-icon" style=" font-size: 16px; margin-left: -1%; "></i>
         <select ng-model=formData.category required>
           <option value="" disabled selected hidden>Add a subject</option>
           <option ng-repeat="category in room.Categories">{{category}}</option>
@@ -11,7 +12,7 @@
       </label>
       <!-- question body input -->
       <label class="item item-input">
-        <i class="icon ion-wineglass placeholder-icon" style="padding-right: 1em; "></i>
+        <i class="icon ion-help placeholder-icon" style="padding-right: 1em; "></i>
         <input id="room-code-input" type="text" placeholder="Enter question text (min. 6 chars)" ng-model="formData.body" required type="text" ng-minlength="6" ng-maxlength="140">
       </label>
     </form>
@@ -19,7 +20,7 @@
     <!-- The question preview box-->
     <div class="card" ng-hide="addQuestionForm.$invalid">
       <div class="item item-divider">
-        {{student}} &nbsp; {{formData.category}}
+        {{student}}, &nbsp; {{formData.category}}
         <div class="item-icon-right">
           <div class="icon ion-ios-close-empty" ng-click="closePreview(addQuestionForm)"></div> <!-- if left as an <a> tag, the close icon becomes blue???-->
         </div>

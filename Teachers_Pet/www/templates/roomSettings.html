@@ -11,27 +11,27 @@
     <form name="roomDetailsForm" class="list" novalidate>
       <!-- Room name input -->
       <label class="item item-input">
-        <i class="icon ion-medkit placeholder-icon" style="padding-right: 1em; "></i>
+        <i class="icon ion-home placeholder-icon" style="padding-right: 1em; "></i>
         <input id="room-name-input" type="text" placeholder="Enter the name of your room" ng-model="formData.roomName" required type="text" ng-minlength="2" ng-maxlength="25">
       </label>
 
       <!-- Room description input -->
       <label class="item item-input">
-        <i class="icon ion-funnel placeholder-icon" style="padding-right: 1em; "></i>
+        <i class="icon ion-document-text placeholder-icon" style="padding-right: 1em; "></i>
         <input id="room-description-input" type="text" placeholder="Enter a description for the room" ng-model="formData.description" required type="text" ng-minlength="12" ng-maxlength="140">
       </label>
 
       <!-- change Categories button -->
       <label class="item item-icon-left item-icon-right" style="font-size: 14px" ng-click="openModal()">
-        <i class="icon ion-funnel placeholder-icon" style=" font-size: 16px; margin-left: -1%; "></i>
-        Edit Categories / Subjects
+        <i id="susu" class="icon ion-ios-book placeholder-icon" style=" font-size: 16px; margin-left: -1%;"></i>
+        <p id="edit-cat">Edit Categories / Subjects</p>
         <i class="icon ion-chevron-right" style="font-size : 16px;"></i>
       </label>
     </form>
     <!-- refresh button-->
-    <div class="button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || (roomDetailsForm.$invalid && formData.subject.length >= 2) || subjects.length === 0" ng-click="applyChanges()">Apply Changes</div>
+    <div class="button update-button icon-right ion-android-sync button-block" ng-disabled="nothingHasChanged || (roomDetailsForm.$invalid && formData.subject.length >= 2) || subjects.length === 0" ng-click="applyChanges()">Apply Changes</div>
     <!-- leave/delete button-->
-    <a ng-click="showConfirmDialog()" class="button icon-right ion-close button-assertive button-block">Delete Room</a>
+    <a ng-click="showConfirmDialog()" class="button delete-button icon-right ion-close button-block">Delete Room</a>
 
 
 
