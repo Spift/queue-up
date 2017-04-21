@@ -1,18 +1,17 @@
 <ion-view title="Teacher Help Queue" id="page6" hide-back-button="true" ng-class="{inverted: Constants.IN_NIGHT_MODE}">
   <ion-content padding="true" class="has-header" has-bouncing="false">
-      <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
-        <p style="color:#000000;"><b>{{popularCategoryNumber}}</b> students need help with <b>{{popularCategoryName}}</b></p>
-      </div>
-      <div class="spacer" style="width: 300px; height: 0px;"></div>
 
     <!-- Error code shown if no questions have been posted yet-->
     <div style="margin:auto; width:90%; text-align:center" ng-show="room.Questions===undefined">
       <div style="color: grey">No one has asked any questions yet.<br>When they start rolling in, they will appear here!</div>
     </div>
-
-
-      <!-- THE CURRENT QUESTION -->
-      <section ng-hide="room.Questions===undefined" class="amazing-flexbox">
+      <!-- Flexbox section -->
+      <section ng-hide="room.Questions===undefined" class="teacher-amazing-flexbox">
+        <!-- The category statistics list -->
+        <div id="teacherHelpQueue-markdown4" class="show-list-numbers-and-dots">
+          <p style="color:#000000;"><b>{{popularCategoryNumber}}</b> students need help with <b>{{popularCategoryName}}</b></p>
+        </div>
+        <!-- THE CURRENT QUESTION -->
         <div class="card" ng-hide="currentlyBeingHelped == -1">
           <div class="item item-divider" style="font-weight: bold">
 

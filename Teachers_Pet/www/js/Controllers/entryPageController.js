@@ -6,11 +6,6 @@
         .controller('entryPageController', entryPageController);
 
     function entryPageController($scope, $location, $rootScope, $stateParams, $state, localStorageService, $timeout, codeGeneratorService) {
-    	console.log('entry page controller fired');
-      console.log('Stored name:' + localStorageService.getName());
-      console.log('Stored ID:' + localStorageService.getStudentID());
-
-      $scope.formData = {};
 
       /* video background script necessary to run the vid
        * the two event listeners checks for minimizing and restoring the app */
@@ -27,6 +22,12 @@
         console.log('resume');
         video.play();
       }, false);
+
+    	console.log('entry page controller fired');
+      console.log('Stored name:' + localStorageService.getName());
+      console.log('Stored ID:' + localStorageService.getStudentID());
+
+      $scope.formData = {};
 
       // if a name exists in local storage, put it in the input field. -1 is an error code i just came up with ......
       var name = localStorageService.getName();

@@ -64,17 +64,6 @@
         $scope.beginHelping = function(question) {
             $scope.currentlyBeingHelped = question;
             $scope.visibleQuestion = -1; // collapse all other questions, expand this top question
-
-            var i = 0;
-            for(var i = 0; i < $scope.questions.length; i++) {
-                var key = $scope.questions.$keyAt(i);
-                var q = $scope.questions.$getRecord(key);
-                if(q.studentID == question.studentID) {
-                  q.notify = true;
-                  $scope.questions.$save(q);
-                  break;
-                }
-            }
         }
         /*
          * Delete question from the database
@@ -100,16 +89,6 @@
         $scope.regretHelping = function(question) {
             $scope.currentlyBeingHelped = -1;
             $scope.visibleQuestion = -1;
-            var i = 0;
-            for(var i = 0; i < $scope.questions.length; i++) {
-                var key = $scope.questions.$keyAt(i);
-                var q = $scope.questions.$getRecord(key);
-                if(q.studentID == question.studentID) {
-                  q.notify = false;
-                  $scope.questions.$save(q);
-                  break;
-                }
-            }
         }
         /*
          * get a color based on subject string
