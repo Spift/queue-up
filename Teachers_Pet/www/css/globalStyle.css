@@ -5,6 +5,37 @@
 	margin-top: 12% !important;
 }
 
+/* Size of subject field in getHelp view */
+#helpSubject{
+	height: 2.6em;
+}
+
+/* Color of delete room button */
+.button.delete-button {
+	background-color: #b50e0e;
+	color: white;
+}
+
+
+
+.button.delete-button:hover {
+	background-color: #a50b0b;
+	color: white;
+}
+
+.button.delete-button.active, .button.delete-button.activated {
+	border: 0px;
+	background-color: #a50b0b;
+}
+
+/* Color of refresh room button */
+.button.update-button{
+	background-color: #e8e1e1;
+}
+
+#edit-cat{
+	margin-left: -5%;
+}
 /* Night mode */
 .inverted {
 	filter: invert(100%);

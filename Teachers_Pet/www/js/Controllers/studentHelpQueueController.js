@@ -24,27 +24,6 @@
         }
 
         /*
-         * called everytime data changes
-         */
-        var unwatch = $scope.questions.$watch(function() {
-            //console.log("data changed!");
-            for(var i = 0; i < $scope.questions.length; i++) {
-                var key = $scope.questions.$keyAt(i);
-                var q = $scope.questions.$getRecord(key);
-                console.log("Question id: " + q.studentID);
-                console.log("Scope id: " + $scope.studentID);
-                if (q.studentID == $scope.studentID){
-                    if(q.notify) {
-                        console.log("SEND NOTIFICATION NOW!!!");
-                        //showNotificationPopup();
-                    }
-                }
-            }
-        });
-        // at some time in the future, we can unregister using
-        //unwatch();
-
-        /*
          * When a header is clicked, toggle the visibility of the body
          */
         $scope.expandQuestion = function(index) {
@@ -68,19 +47,6 @@
                 i++;
             }
         }
-        /*
-         * SHOW NOTIFICATION POPUP
-         */
-         function showNotificationPopup() {
-           var confirmPopup = $ionicPopup.alert({
-             title: 'Teacher is coming!',
-             template: 'Quick! Hide!'
-           });
-
-           confirmPopup.then(function(res) {
-             //nothing done
-           });
-        };
         /*
          * Confirm that you want to delete your question POP UP dialog.
          */

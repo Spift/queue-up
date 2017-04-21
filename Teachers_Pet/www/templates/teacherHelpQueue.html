@@ -29,7 +29,11 @@
         </div>
 
       <!-- the actual Queue -->
+<<<<<<< HEAD
       <ion-scroll class="teacher-queue-scroll">
+=======
+      <ion-scroll id="scroller" delegate-handle="teacher-scroll" class="teacher-queue-scroll">
+>>>>>>> fd73c78fdaa2178298b6bbf7d3fc8b22843ff6bc
       <div class="card last-card" ng-repeat="question in room.Questions" ng-hide="question == currentlyBeingHelped" >
         <div ng-click="expandQuestion($index);" ng-style="{'background-color': getSubjectColor(question.category, 0.7), 'border-color': getSubjectColor(question.category, 0.7)}" class="item item-divider item-icon-right">
           {{$index+1}}. {{question.student}}, {{question.category}}
