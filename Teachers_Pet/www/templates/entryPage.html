@@ -1,21 +1,18 @@
 <ion-view title="Entry Page" id="entrypage" hide-back-button="true" hide-nav-bar="true">
 
+  <!-- Video background -->
+  <video id="video-bg" webkit-playsinline playsinline loop>
+    <source src="img/lec_1_blur.mp4" type="video/mp4">
+  </video>
+
   <ion-content class="no-footer header-offset-entry" has-bouncing="false">
 
     <ion-item ng-repeat="item in items" href="#">
     <img ng-src="{{item.img}}" imageonload="onLoad({{$index}})" id="img-{{$index}}" />
     </ion-item>
 
-    <!-- Video background -->
-    <video id="video-bg" webkit-playsinline playsinline loop>
-      <source src="img/lec_1_blur.mp4" type="video/mp4">
-    </video>
-
-    <!-- spacer -->
-    <div class="spacer" style="height: 37.5%;"></div>
-
     <!-- name input field -->
-    <form id="nameForm" name="nameForm" novalidate style="width: 100%; height: 7%;">
+    <form id="nameForm" name="nameForm" novalidate>
       <label id="entrylabel" class="item item-input" name="name_input">
         <img id="unihat" src="img/uni_hat.png" alt="Hat">
         <input id="entryname" name="entryname" required type="text" ng-minlength="2" ng-maxlength="25" placeholder="Enter your name" ng-model='formData.name'>
@@ -30,8 +27,8 @@
 
     <!-- slider -->
     <ion-slides options="data.sliderOptions" slider="data.sliderDelegate">
-      <ion-slide-page show-pager="true" ng-repeat="sliderPage in sliderData" style="height: 20%;">
-        <div class="slider-container" style="border: 1px white;">
+      <ion-slide-page show-pager="true" ng-repeat="sliderPage in sliderData">
+        <div class="slider-container">
           <center class="slider-header">{{sliderPage.head}}</center>
           <center ng-bind-html="sliderPage.body" class="slider-body"></center>
         </div>
