@@ -27,10 +27,6 @@ angular.module('app', ['ngCordova', 'ionic', 'app.routes', 'app.directives','app
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
     }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleLightContent();
-    }
   })
 })
 

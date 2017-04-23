@@ -128,14 +128,9 @@ div.scroll.padding{
 }
 
 ion-slides{
-	margin-top: 5% !important;
-	height: 75% !important;
+	height: 79% !important;
 	width: 101% !important;
 	border-color: white;
-}
-
-div.swiper-pagination.swiper-pagination-clickable {
-	margin-bottom: 65%;
 }
 
 span.swiper-pagination-bullet.swiper-pagination-bullet {

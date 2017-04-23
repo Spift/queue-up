@@ -13,6 +13,7 @@
       video.addEventListener('canplay', function() {
           video.play();
       });
+      video.play();
 
       document.addEventListener("pause", () => {
         console.log('paused');
@@ -92,7 +93,7 @@
       $scope.sliderData = [
         {
           head: "I am here to help, if you need me",
-          body: "The following bullet points or slider pages contains a small introduction to the app and its functionalities. If you need help joining or creating a room, please refer to these.<br><br>Thank you for trying out Q.up!"
+          body: "The following bullet points or slider pages contain a small introduction to the app and its functionalities. If you need help joining or creating a room, please refer to these.<br><br>Thank you for trying out Q.up!"
         },
         {
           head: "Hello there",
