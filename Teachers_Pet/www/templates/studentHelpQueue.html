@@ -15,8 +15,8 @@
         </center>
       </div>
       <!-- the actual Queue -->
-      <ion-scroll delegate-handle="student-scroller" class="student-queue-scroll">
-        <div class="card last-card" ng-repeat="question in room.Questions">
+      <ion-scroll class="student-queue-scroll">
+        <div class="card student-card last-card" ng-repeat="question in room.Questions">
           <div ng-click="expandQuestion($index)" class="item item-divider item-icon-right" ng-class="{'item item-icon-right item item-divider highlighted' : question.studentID == studentID}">
             {{$index+1}}. {{question.student}}, {{question.category}}
             <div class="item-icon-right" ng-show="question.studentID == studentID">

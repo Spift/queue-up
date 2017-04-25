@@ -56,7 +56,7 @@ div.scroll.padding{
 
 .header-offset-entry{
 	top: 0px !important;
-	margin-top: 0% !important;
+	margin-top: 63% !important;
 }
 
 /**
@@ -93,7 +93,9 @@ div.scroll.padding{
 }
 
 #nameForm {
-	margin-bottom: -2.3%;
+	width: 100%;
+	height: 7%;
+	margin-bottom: 3%;
 }
 
 #entrylabel-error{/* red transparent entry label */
@@ -122,14 +124,17 @@ div.scroll.padding{
 	/*margin-left: 10px;*/
 	border-radius: 10px;
 	transform: scale(0.9, 0.9);
-	margin-right: 7.2%;
+	margin-right: 7.8%;
 }
 
 ion-slides{
-	height: 24% !important;
+	height: 79% !important;
 	width: 101% !important;
 	border-color: white;
-	transform: translate(-0.5%, -20%);
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet {
+	background-color: white;
 }
 
 span.swiper-pagination-bullet.swiper-pagination-bullet-active {

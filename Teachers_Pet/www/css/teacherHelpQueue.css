@@ -5,6 +5,29 @@
   height: 100%;
 }
 
+div.card.last-card:last-of-type {
+	margin-top: 2%;
+	margin-bottom: 0%;
+}
+
+div.card.current-card {
+	-webkit-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+	-moz-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+	box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+	margin-top: 0%;
+	margin-bottom: 4%;
+	z-index: 5;
+}
+
+div.card.teacher-card {
+	-webkit-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+	-moz-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+	box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
+	margin-top: 0%;
+	margin-bottom: 2%;
+	z-index: 5;
+}
+
 .teacher-queue-scroll {
   /* scroll element pretty settings */
   z-index: 4;
@@ -12,7 +35,7 @@
   -webkit-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
   -moz-box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
   box-shadow: 0px 0px 2.5px 2.5px rgba(206,206,206,0.5);
-  margin-bottom: 2%;
+  margin-bottom: 0%;
   /* these are the flex items */
   flex: 2;
   overflow: auto;
