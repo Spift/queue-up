@@ -13,6 +13,7 @@ angular.module('app', ['ngCordova', 'ionic', 'app.routes', 'app.directives','app
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   //Transitions
   $ionicConfigProvider.views.transition('platform');
+  $ionicConfigProvider.views.swipeBackEnabled(false);
 
 
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
