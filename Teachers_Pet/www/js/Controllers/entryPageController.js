@@ -92,24 +92,24 @@
       // slider data
       $scope.sliderData = [
         {
-          head: "I am here to help, if you need me",
-          body: "The following bullet points or slider pages contain a small introduction to the app and its functionalities. If you need help joining or creating a room, please refer to these.<br><br>Thank you for trying out Q.up!"
-        },
-        {
           head: "Hello there",
           body: "Q.up is a student and TA (Teaching Assistant) tool that aims to distribute the given help during a class in a more efficient and fair way using the 'first come, first served' principle."
         },
         {
-          head: "Join a room (for students)",
-          body: "1. Enter your name<br>2. Press the 'Join Room' button<br>3. Enter the 'Room Code' received from your TA.<br>4. Click 'Join this room' once the room has been found.<br>5. Feel free to ask questions by clicking the 'Get Help' icon.<br>6. The TA will see your question pop up and will locate you once it is your turn to receive help."
+          head: "The queue itself",
+          body: "The questions will pop up in the queue window. If you're a student, your question will be highlighted. If you're a teacher, the questions will be color coded based on the subject."
         },
         {
-          head: "Join a room (for teachers)",
-          body: "1. Enter your name.<br>2. Press the 'Join Room' button<br>3. Press the 'Need to join as Teacher?' text.<br>4. Enter the 'Room Code' and 'Teacher Code'.<br>5. Click 'Join as Teacher' once the room has been found."
+          head: "Join a room",
+          body: "Enter your name and join a room either as a student or teacher by using your given code(s)."
         },
         {
-          head: "Create a room (for teachers)",
-          body: "1. Enter your name.<br>2. Press the 'Create Room' button.<br>3. Enter a relevant name and description for your room.<br>4. Enter one or more subjects the students can ask about,<br>use the '+' icon to add a subject.<br>5. Press the 'Create Room' button, once the room is ready.<br>6. Questions will then pop up in the queue once the students starts posting them.<br>7. Click on the first question and press the 'Help name' button."
+          head: "Create a room",
+          body: "Enter your name and create a room by filling out the necessary room information and subject(s)."
+        },
+        {
+          head: "Get help",
+          body: "Once you're in a room, simply press 'Get Help' and choose a subject and write your related question."
         }
       ];
 
