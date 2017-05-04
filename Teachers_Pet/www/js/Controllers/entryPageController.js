@@ -97,7 +97,7 @@
         },
         {
           head: "The queue itself",
-          body: "The questions will pop up in the queue window. If you're a student, your question will be highlighted. If you're a teacher, the questions will be color coded based on the subject."
+          body: "The questions will pop up in the queue window. If you're a student, your question will be highlighted. If you're a teacher, the questions will be color coded based on the subject. If you select and help a student, a notifcation will be sent to the student."
         },
         {
           head: "Join a room",
